@@ -1,5 +1,5 @@
 <template>
-  <pre-loader></pre-loader>
+  <!-- <pre-loader></pre-loader> -->
   <header>
     <img id="logoImg" alt="Demos logo" loading="lazy" src="@/assets/icons/logo2.png" />
 
@@ -110,11 +110,10 @@ gsap.registerPlugin(ScrollTrigger)
 const target = ref();
 
 const scene = new THREE.Scene();
-
+let mesh 
 const loader = new GLTFLoader()
 loader.load(model, (gltf) => {
-  const mesh = gltf.scene
-  console.log(gltf.scene)
+  mesh = gltf.scene
   mesh.position.set(.5, 0.8, -1)
 
   scene.add(mesh)
@@ -125,10 +124,26 @@ loader.load(model, (gltf) => {
 
 
 // Add ambient light
-const light = new THREE.DirectionalLight(0xffffff); // soft white light
+const light = new THREE.DirectionalLight(0xffffff, 1); // soft white light
 light.position.set(1, 2, 1)
 scene.add(light);
 
+const light2 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+light2.position.set(2, 2, 1)
+scene.add(light2);
+
+
+const light3 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+light3.position.set(2, 2, 3)
+scene.add(light3);
+
+const light4 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+light4.position.set(-1, -1, 1)
+scene.add(light4);
+
+const light5 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+light5.position.set(-1, -1, 5)
+scene.add(light5);
 
 
 const renderer = new THREE.WebGLRenderer();
@@ -151,13 +166,16 @@ scene.add(camera)
 function animate() {
   requestAnimationFrame(animate);
 
+  if (mesh) mesh.rotation.y += 0.01;
+
   renderer.render(scene, camera);
 }
 
 onMounted(() => {
-
-
   target.value.appendChild(renderer.domElement);
+
+
+
   animate();
 });
 </script>
