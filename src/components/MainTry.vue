@@ -110,7 +110,7 @@ const target = ref();
 const scene = new THREE.Scene();
 
 const loader = new GLTFLoader()
-loader.load('./src/assets/3dmodels/asphera3.glb', (glb) => {
+loader.load('./public/asphera3.glb', (glb) => {
   const mesh = glb.scene
   console.log(glb.scene)
   mesh.position.set(.5, 0.8, -1)
