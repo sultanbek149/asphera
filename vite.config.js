@@ -15,7 +15,7 @@ export default defineConfig({
       }
     })
   ],
-  assetsInclude: ['**/*.glb'],
+  assetsInclude: ['**/*.glb', '**/*.gltf'],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

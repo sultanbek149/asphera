@@ -110,9 +110,9 @@ const target = ref();
 const scene = new THREE.Scene();
 
 const loader = new GLTFLoader()
-loader.load('./public/asphera3.glb', (glb) => {
-  const mesh = glb.scene
-  console.log(glb.scene)
+loader.load('/public/asphera3.gltf', (gltf) => {
+  const mesh = gltf.scene
+  console.log(gltf.scene)
   mesh.position.set(.5, 0.8, -1)
 
   scene.add(mesh)
@@ -491,8 +491,8 @@ header {
 
 
 #logoImg {
-  @apply absolute left-0 top-0 mt-[1.5rem] ml-[1rem] h-[35%] w-auto;
-  aspect-ratio: 7/1.5;
+  @apply absolute left-0 top-0 w-[75px];
+  /* aspect-ratio: 7/1.5; */
 }
 
 #menuBtn {
