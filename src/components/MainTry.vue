@@ -101,6 +101,8 @@ import { gsap } from 'gsap'
 
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
+// import model from 'favicon.ico'
+
 gsap.registerPlugin(ScrollTrigger)
 
 
@@ -110,7 +112,7 @@ const target = ref();
 const scene = new THREE.Scene();
 
 const loader = new GLTFLoader()
-loader.load('/public/asphera3.gltf', (gltf) => {
+loader.load('asphera3.gltf', (gltf) => {
   const mesh = gltf.scene
   console.log(gltf.scene)
   mesh.position.set(.5, 0.8, -1)
