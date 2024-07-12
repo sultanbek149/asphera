@@ -1,5 +1,5 @@
 <template>
-  <!-- <pre-loader></pre-loader> -->
+  <pre-loader></pre-loader>
   <header>
     <img id="logoImg" alt="Demos logo" loading="lazy" src="@/assets/icons/logo2.png" />
 
