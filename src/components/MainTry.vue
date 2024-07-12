@@ -94,7 +94,7 @@
 import { ref, onMounted } from 'vue';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-
+import model from '@/assets/asphera3.gltf'
 
 
 import { gsap } from 'gsap'
@@ -112,7 +112,7 @@ const target = ref();
 const scene = new THREE.Scene();
 
 const loader = new GLTFLoader()
-loader.load('asphera3.gltf', (gltf) => {
+loader.load(model, (gltf) => {
   const mesh = gltf.scene
   console.log(gltf.scene)
   mesh.position.set(.5, 0.8, -1)

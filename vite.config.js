@@ -2,6 +2,10 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import gltf from 'vite-plugin-gltf';
+import { draco } from "@gltf-transform/functions";
+
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +17,10 @@ export default defineConfig({
           isCustomElement: (tag) => tag === 'spline-viewer'
         }
       }
-    })
+    }),
+    gltf({
+      transforms: [draco()],
+    }),
   ],
   assetsInclude: ['**/*.glb', '**/*.gltf'],
   resolve: {
