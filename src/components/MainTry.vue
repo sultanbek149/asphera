@@ -37,7 +37,11 @@
       <!-- <spline-viewer id="host" v-once
         url="https://prod.spline.design/9yoCKQd-0-E6Tx1j/scene.splinecode">
       </spline-viewer> -->
-      <div ref="target" class="glb flex justify-end"></div>
+      <div class="glb flex justify-end">
+        <video autoplay="true" muted>
+          <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
+        </video>
+      </div>
 
     </section>
 
@@ -91,10 +95,10 @@
 
 // import closeBtn from '@/assets/icons/closeBtn.svg'
 // import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh } from 'three'
-import { ref, onMounted } from 'vue';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import model from '@/assets/asphera3.gltf'
+// import { ref, onMounted } from 'vue';
+// import * as THREE from 'three';
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+// import model from '@/assets/asphera3.gltf'
 
 
 import { gsap } from 'gsap'
@@ -107,53 +111,53 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 
-const target = ref();
+// const target = ref();
 
-const scene = new THREE.Scene();
-let mesh 
-const loader = new GLTFLoader()
-loader.load(model, (gltf) => {
-  mesh = gltf.scene
-  mesh.position.set(.5, 0.8, -1)
+// const scene = new THREE.Scene();
+// let mesh
+// const loader = new GLTFLoader()
+// loader.load(model, (gltf) => {
+//   mesh = gltf.scene
+//   mesh.position.set(.5, 0.8, -1)
 
-  scene.add(mesh)
-}, undefined, (err) => {
-  console.log('error')
-})
+//   scene.add(mesh)
+// }, undefined, (err) => {
+//   console.log('error')
+// })
 
 
 
 // Add ambient light
-const light = new THREE.DirectionalLight(0xffffff, 1); // soft white light
-light.position.set(1, 2, 1)
-scene.add(light);
+// const light = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+// light.position.set(1, 2, 1)
+// scene.add(light);
 
-const light2 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
-light2.position.set(2, 2, 1)
-scene.add(light2);
-
-
-const light3 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
-light3.position.set(2, 2, 3)
-scene.add(light3);
-
-const light4 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
-light4.position.set(-1, -1, 1)
-scene.add(light4);
-
-const light5 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
-light5.position.set(-1, -1, 5)
-scene.add(light5);
+// const light2 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+// light2.position.set(2, 2, 1)
+// scene.add(light2);
 
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(1000, 1000);
-renderer.setClearColor(0xffffff, 0)
+// const light3 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+// light3.position.set(2, 2, 3)
+// scene.add(light3);
 
-const camera = new THREE.PerspectiveCamera(25, 1000 / 1000, 0.1, 1000);
-// camera.position.set(0, 1, 10)
-camera.position.z = 11;
-scene.add(camera)
+// const light4 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+// light4.position.set(-1, -1, 1)
+// scene.add(light4);
+
+// const light5 = new THREE.DirectionalLight(0xffffff, 1); // soft white light
+// light5.position.set(-1, -1, 5)
+// scene.add(light5);
+
+
+// const renderer = new THREE.WebGLRenderer();
+// renderer.setSize(1000, 1000);
+// renderer.setClearColor(0xffffff, 0)
+
+// const camera = new THREE.PerspectiveCamera(25, 1000 / 1000, 0.1, 1000);
+// // camera.position.set(0, 1, 10)
+// camera.position.z = 11;
+// scene.add(camera)
 
 
 
@@ -163,21 +167,21 @@ scene.add(camera)
 
 
 
-function animate() {
-  requestAnimationFrame(animate);
+// function animate() {
+//   requestAnimationFrame(animate);
 
-  if (mesh) mesh.rotation.y += 0.01;
+//   if (mesh) mesh.rotation.y += 0.01;
 
-  renderer.render(scene, camera);
-}
+//   renderer.render(scene, camera);
+// }
 
-onMounted(() => {
-  target.value.appendChild(renderer.domElement);
+// onMounted(() => {
+//   target.value.appendChild(renderer.domElement);
 
 
 
-  animate();
-});
+//   animate();
+// });
 </script>
 
 

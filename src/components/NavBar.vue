@@ -196,7 +196,7 @@ a {
   }
 
   #logo {
-    @apply block w-[70px];
+    @apply block w-[45px];
     /* aspect-ratio: 7/1.5; */
   }
 

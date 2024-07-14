@@ -1,6 +1,6 @@
 <template>
   <footer ref="footer">
-    <img ref="logo" id="logo" src="../assets/icons/logo.png" alt="Demos logo" loading="lazy" />
+    <img ref="logo" id="logo" src="../assets/icons/logo2.png" alt="Demos logo" loading="lazy" />
 
     <p id="copyright" class="inter">© 2024 ASPHERA</p>
 
@@ -27,8 +27,8 @@ footer {
 }
 
 #logo {
-  @apply block h-[35%] w-auto;
-  aspect-ratio: 7/1.5;
+  @apply relative w-[65px];
+  /* aspect-ratio: 7/1.5; */
 }
 
 #copyright {

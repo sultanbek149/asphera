@@ -85,7 +85,7 @@ export const docsModule = {
           {
             'id': 0
             , 'info': `
-- Introduction 
+// - Introduction 
 - Main part 
 - Talking about this
 - Conclusion for first company`
