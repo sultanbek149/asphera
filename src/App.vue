@@ -57,7 +57,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto;
   max-width: 100vw;
   overscroll-behavior: none;
 }

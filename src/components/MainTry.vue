@@ -38,8 +38,7 @@
         url="https://prod.spline.design/9yoCKQd-0-E6Tx1j/scene.splinecode">
       </spline-viewer> -->
       <div class="glb flex justify-end">
-        <video autoplay="true" muted>
-          
+        <video autoplay="true" muted class="h-[500px]">
           <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
         </video>
       </div>
