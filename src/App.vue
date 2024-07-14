@@ -61,6 +61,10 @@ body {
   overscroll-behavior: none;
 }
 
+body {
+  overflow-y: hidden;
+}
+
 .headingFont {
   font-family: 'Red Hat Display', sans-serif;
 }

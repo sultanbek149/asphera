@@ -37,8 +37,8 @@
       <!-- <spline-viewer id="host" v-once
         url="https://prod.spline.design/9yoCKQd-0-E6Tx1j/scene.splinecode">
       </spline-viewer> -->
-      <div class="glb flex justify-end">
-        <video autoplay="true" muted class="h-[500px]">
+      <div class="glb flex justify-end h-full">
+        <video autoplay="true" muted class="w-[70%]" loop>
           <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
         </video>
       </div>
@@ -531,7 +531,7 @@ section {
 #main {
   @apply -mb-[9rem] relative;
 
-  background-image: url('@/assets/icons/sun.svg');
+  /* background-image: url('@/assets/icons/sun.svg'); */
   background-repeat: no-repeat;
   background-size: 150%;
   background-position: top right;
