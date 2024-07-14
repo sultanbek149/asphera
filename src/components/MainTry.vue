@@ -39,6 +39,7 @@
       </spline-viewer> -->
       <div class="glb flex justify-end">
         <video autoplay="true" muted>
+          
           <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
         </video>
       </div>

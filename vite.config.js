@@ -2,8 +2,8 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import gltf from 'vite-plugin-gltf';
-import { draco } from "@gltf-transform/functions";
+// import gltf from 'vite-plugin-gltf';
+// import { draco } from "@gltf-transform/functions";
 
 
 
@@ -18,9 +18,9 @@ export default defineConfig({
         }
       }
     }),
-    gltf({
-      transforms: [draco()],
-    }),
+    // gltf({
+    //   transforms: [draco()],
+    // }),
   ],
   assetsInclude: ['**/*.glb', '**/*.gltf'],
   resolve: {
