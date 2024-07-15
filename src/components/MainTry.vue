@@ -27,7 +27,7 @@
 
   <main>
     <section id="main">
-      <div ref="logoWrapper" id="logoWrapper">
+      <div ref="logoWrapper" id="logoWrapper" class="z-50">
         <h1 id="logo" class="headingFont">Asphera Technologies</h1>
 
         <h2 id="slogan" class="fira">{{ slogan + '|' }}</h2>
@@ -43,9 +43,11 @@
         url="https://prod.spline.design/9yoCKQd-0-E6Tx1j/scene.splinecode">
       </spline-viewer> -->
       <div class="glb flex justify-end h-full">
-        <video autoplay="true" muted="true" class="w-[70%]" loop="true">
-          <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
-        </video>
+        <div class="relative max-[768px]:-right-20 w-[90%] min-[525px]:w-[70%] min-[625px]:w-[60%] min-[1000px]:w-[50%] h-full flex items-center">
+          <video autoplay="true" muted="true" loop="true">
+            <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
 
     </section>
@@ -542,6 +544,7 @@ section {
   background-position: top right;
   background-position-x: -50%;
   background-position-y: 70%;
+  z-index: 1000;
 }
 
 #logoWrapper {

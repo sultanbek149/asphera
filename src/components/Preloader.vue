@@ -43,6 +43,9 @@ export default {
     z-index: 99999;
     background-color: black;
     transition: all ease .8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .preloader.unshow {
@@ -50,8 +53,7 @@ export default {
 }
 
 .preloader video {
-    width: 100%;
-    height: 100%;
+    @apply min-[1000px]:h-[70%] min-[1000px]:w-[70%] w-full h-full; 
 }
 
 html {
