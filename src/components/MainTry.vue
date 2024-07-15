@@ -1,7 +1,12 @@
 <template>
   <pre-loader></pre-loader>
   <header>
-    <img id="logoImg" alt="Demos logo" loading="lazy" src="@/assets/icons/logo2.png" />
+    <div class="absolute left-0 w-[45px] h-full">
+      <div class="relative w-[45px] h-full max-[500px]:ml-[20px] max-[500px]:mt-[5px]">
+        <img id="logoImg" class="absolute top-1/2" alt="Demos logo" loading="lazy"
+          src="@/assets/icons/asphera_black.png" />
+      </div>
+    </div>
 
     <div class="flex flex-row w-[50%] h-fit justify-center items-center">
       <my-button @click="scrollTo('contact')" id="hireSmall">Hire us</my-button>
@@ -38,7 +43,7 @@
         url="https://prod.spline.design/9yoCKQd-0-E6Tx1j/scene.splinecode">
       </spline-viewer> -->
       <div class="glb flex justify-end h-full">
-        <video autoplay="true" muted class="w-[70%]" loop>
+        <video autoplay="true" muted="true" class="w-[70%]" loop="true">
           <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
         </video>
       </div>
@@ -515,7 +520,7 @@ header {
 
 
 #logoImg {
-  @apply absolute left-0 top-0 w-[75px];
+  @apply absolute top-1/2 w-[45px] -translate-y-1/2;
   /* aspect-ratio: 7/1.5; */
 }
 

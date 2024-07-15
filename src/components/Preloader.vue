@@ -1,7 +1,7 @@
 <template>
     <transition>
-        <div v-if="show" class="preloader">
-            <video autoplay="true" muted>
+        <div v-if="show" ref="preloader" class="preloader">
+            <video autoplay="true" muted="true">
                 <source src="@/assets/white.mp4" type="video/mp4">
             </video>
         </div>
@@ -22,9 +22,12 @@ export default {
     methods: {
         showToggle() {
             setTimeout(() => {
+                this.$refs.preloader.classList.add('unshow')
+            }, 4000)
+            setTimeout(() => {
                 this.show = false
                 document.querySelector('html').style.overflowY = 'scroll'
-            }, 4500);
+            }, 5000);
         }
     }
 }
@@ -39,6 +42,11 @@ export default {
     bottom: 0;
     z-index: 99999;
     background-color: black;
+    transition: all ease .8s;
+}
+
+.preloader.unshow {
+    opacity: 0;
 }
 
 .preloader video {

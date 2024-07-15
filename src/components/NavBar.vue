@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <nav ref="nav" v-show="isMenu">
-      <img ref="logo" id="logo" src="../assets/icons/logo2.png" alt="Demos logo" loading="lazy" />
+      <img ref="logo" id="logo" src="@/assets/icons/asphera_black.png" alt="Demos logo" loading="lazy" />
 
       <ul id="links" class="inter">
         <div @mouseenter="openPreview(options[0].id)" @click="scrollTo(options[0].name)" class="linkWrapper">
