@@ -1,6 +1,6 @@
 <template>
   <pre-loader></pre-loader>
-  <header>
+  <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
       <div class="relative w-[45px] h-full max-[500px]:ml-[20px] max-[500px]:mt-[5px]">
         <img id="logoImg" class="absolute top-1/2" alt="Demos logo" loading="lazy"

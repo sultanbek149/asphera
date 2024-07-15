@@ -50,7 +50,7 @@ export default {
 <style scoped>
 #previewWrapper {
   @apply opacity-0 fixed top-0 mt-[4.5rem] h-64 w-full bg-black backdrop-blur-md bg-opacity-[20%] border-y-[#373737] border-y-2;
-  z-index: 1000;
+  z-index: 1001;
   @apply grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
