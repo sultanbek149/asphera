@@ -21,6 +21,7 @@ import ArticleHeader from '@/components/ArticleHeader.vue'
 import BurgerButton from '@/components/BurgerButton.vue'
 import ContactPopup from '@/components/ContactPopup.vue'
 import Preloader from '@/components/Preloader.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 
 
 export default [
@@ -46,5 +47,6 @@ export default [
   NavBarPreview,
   MainTry,
   MyDropdown,
-  Preloader
+  Preloader,
+  LanguageSwitcher
 ]

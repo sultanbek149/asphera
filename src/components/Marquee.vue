@@ -7,7 +7,7 @@
       small: getSize['small'],
       medium: getSize['medium']
     }">
-      <span v-for="i in [1, 2, 3]" class="justify-self-center self-center">
+      <span v-for="i in [1, 2, 3]" :key="i" class="justify-self-center self-center">
         | Web3 | Web2 | Telegram | Softs
       </span>
     </div>

@@ -3,7 +3,7 @@
     <div v-if="isVisible" id="leftSidebarWrapper">
       <h3 id="leftHeading">On this page:</h3>
       <div ref="list" v-html="markdownToHtml"></div>
-      <form id="docsSearch" @submit.prevent">
+      <form id="docsSearch" @submit.prevent>
         <fieldset>
           <input @input="searchArticle" v-model="searchQuery" type="text" id="name" required aria-required="true"
             placeholder="Search in docs" />

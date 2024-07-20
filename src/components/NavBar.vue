@@ -30,7 +30,7 @@
           <img id="twitter" src="../assets/icons/twitter.png" alt="twitter icon" loading="lazy" />
         </a>
       </ul>
-      <my-button @click="scrollTo(options[3].name)" id="hire">Hire us</my-button>
+      <my-button @click="scrollTo(options[3].name)" id="hire">{{ $t('buttons.hireUs') }}</my-button>
     </nav>
   </transition>
 </template>

@@ -9,7 +9,7 @@
     </div>
 
     <div class="flex flex-row w-[50%] h-fit justify-center items-center">
-      <my-button @click="scrollTo('contact')" id="hireSmall">Hire us</my-button>
+      <my-button @click="switchLang" id="hireSmall">{{ $t('buttons.hireus') }}</my-button>
 
       <!-- <button id="menuBtn" aria-label="Menu button"> -->
       <!-- <img id="menuImg" :src="menuBtn" alt="Menu button" @click="toggleMenu" /> -->
@@ -38,12 +38,9 @@
 
       </div>
 
-
-      <!-- <spline-viewer id="host" v-once
-        url="https://prod.spline.design/9yoCKQd-0-E6Tx1j/scene.splinecode">
-      </spline-viewer> -->
       <div class="glb flex justify-end h-full">
-        <div class="relative max-[768px]:-right-20 w-[90%] min-[525px]:w-[70%] min-[625px]:w-[60%] min-[1000px]:w-[50%] h-full flex items-center">
+        <div
+          class="relative max-[768px]:-right-20 w-[90%] min-[525px]:w-[70%] min-[625px]:w-[60%] min-[1000px]:w-[50%] h-full flex items-center">
           <video autoplay="true" muted="true" loop="true">
             <source src="@/assets/asphera_lock_final.mp4" type="video/mp4">
           </video>
@@ -106,17 +103,40 @@
 // import * as THREE from 'three';
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 // import model from '@/assets/asphera3.gltf'
-
-
 import { gsap } from 'gsap'
 
 import ScrollTrigger from 'gsap/ScrollTrigger'
+
+import { useHead } from '@unhead/vue'
+
+import { computed, ref } from 'vue'
+
+import { useI18n } from 'vue-i18n'
 
 // import model from 'favicon.ico'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const { t, locale } = useI18n({ useScope: 'global' })
 
+const switchLang = () => {
+  locale.value === 'ja' ? locale.value = 'en' : locale.value = 'ja'
+}
+
+const myPage = ref({ description: 'This is my page' })
+const title = ref('pele')
+
+useHead({
+  // ref (recommended)
+  title,
+  // computed getter (recommended)
+  meta: [{ name: 'description', content: () => myPage.value.description },],
+  // computed (not recommended)
+  script: [computed(() => ({
+    src: 'https://example.com/script.js',
+    defer: true,
+  }))],
+})
 
 // const target = ref();
 

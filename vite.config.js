@@ -1,9 +1,8 @@
-import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import gltf from 'vite-plugin-gltf';
-// import { draco } from "@gltf-transform/functions";
+import { resolve, dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 
 
@@ -18,11 +17,16 @@ export default defineConfig({
         }
       }
     }),
+    VueI18nPlugin({
+      /* options */
+      // locale messages resource pre-compile option
+      include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales/**'),
+    })
     // gltf({
     //   transforms: [draco()],
     // }),
   ],
-  assetsInclude: ['**/*.glb', '**/*.gltf'],
+  // assetsInclude: ['**/*.glb', '**/*.gltf'],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

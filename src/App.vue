@@ -51,14 +51,15 @@ export default {
 /*   box-shadow: inset 0px 3rem 0px 0px black; */
 /* } */
 
-html,
 body {
   @apply bg-black text-white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: auto;
   max-width: 100vw;
   overscroll-behavior: none;
+
 }
 
 body {
@@ -84,5 +85,21 @@ body {
   font-family: 'Public Sans', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+@media not all and (hover: none) {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
 }
 </style>

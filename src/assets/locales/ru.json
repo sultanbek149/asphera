@@ -1,0 +1,184 @@
+{
+  "buttons": {
+    "hireUs": "Наймите нас"
+  },
+  "navigation": {
+    "header": {
+      "cases": "Cases",
+      "services": "Services",
+      "about": "About"
+    },
+    "cases": [
+      {
+        "name": "Web3 cases",
+        "description": "Successful projects using blockchain technologies."
+      },
+      {
+        "name": "Web2 cases",
+        "description": "Examples of our websites and web applications."
+      },
+      {
+        "name": "Telegram mini apps",
+        "description": null
+      },
+      {
+        "name": "AI Chatbot",
+        "description": null
+      },
+      {
+        "name": "Other cases",
+        "description": null
+      }
+    ],
+    "services": [
+      {
+        "name": "Web3",
+        "description": "Implement advanced blockchain technology into your project."
+      },
+      {
+        "name": "Web2",
+        "description": "Create cutting-edge and effective websites for your business. As well as much more. "
+      },
+      {
+        "name": "Websites",
+        "description": null
+      },
+      {
+        "name": "Telegram mini apps",
+        "description": null
+      },
+      {
+        "name": "Other services",
+        "description": null
+      }
+    ],
+    "about": [
+      {
+        "name": "Who we are?",
+        "description": "Meet Asphera Tech."
+      },
+      {
+        "name": "Referral Program.",
+        "description": "Participate in our referral program and get rewards up to $500 for each client."
+      },
+      {
+        "name": "Our blog",
+        "description": null
+      },
+      {
+        "name": "Our team",
+        "description": null
+      },
+      {
+        "name": "Our partners",
+        "description": null
+      }
+    ]
+  },
+
+  "banner": {
+    "title": "Asphera Tech",
+    "phrases": [
+      "Digital Solutions for Your Business",
+      "Transforming Ideas into Digital Reality",
+      "Innovative Web2 and Web3 Development"
+    ],
+    "subtitle": "Singular company. We specialize in developing and implementing advanced Web2 and Web3 products for businesses. 50+ projects developed."
+  },
+  "marquee": [
+    [
+      "Web",
+      "AI",
+      "Blockchain",
+      "Telegram mini-Apps",
+      "Mobile Applications",
+      "Automation",
+      "Databases"
+    ],
+    [
+      "Website",
+      "Telegram mini-App",
+      "Application",
+      "Landing Page",
+      "Bot",
+      "NFT",
+      "dApp",
+      "Memecoin",
+      "Smart Contract",
+      "DeFi"
+    ],
+    ["Web2", "Web3", "Telegram", "iOS", "Android"]
+  ],
+  "cases": {
+    "title": "CASES",
+    "textAbove": "Honored projects",
+    "textBelow": "Building the future together",
+    "items": [
+      {
+        "name": "Suncontract.org",
+        "type": "website",
+        "link": "https://suncontract.org/",
+        "twitter": "https://x.com/sun_contract?s=21",
+        "description": "Developed a modern and high performing website using cutting edge technology. "
+      },
+      {
+        "name": "Spool.fi",
+        "type": "website",
+        "link": "https://enterprise.spool.fi/",
+        "twitter": "https://x.com/spoolfi?s=21",
+        "description": "Developed a modern, minimalistic and intuitive website."
+      },
+      {
+        "name": "Tea Story",
+        "type": "website",
+        "link": "https://www.teastory.club/",
+        "instagram": "https://www.instagram.com/_teastore_?igsh=aGVyb255NmExMHA=",
+        "description": "We designed a modern and stylish website for premium products. "
+      },
+      {
+        "name": "Corpasbot",
+        "type": "telegram-bot",
+        "description": "Developed a corporate telegram bot that helps employees complete daily tasks, receive information and keep in touch with colleagues"
+      },
+      {
+        "name": "Edu Track",
+        "type": "database",
+        "description": "Designed and implemented a Database to manage academic records of students, faculty, and courses."
+      },
+      {
+        "name": "EventManagerBot",
+        "type": "telegram-bot",
+        "description": "Developed a telegram bot to organize and manage corporate and public events"
+      },
+      {
+        "name": "Sm.Assistant",
+        "type": "ai-chatbot",
+        "description": "Developed an AI chatbot for customer support at a large e-commerce company"
+      }
+    ]
+  },
+  "whatWeOffer": {
+    "title": "WHAT WE OFFER",
+    "services": [
+      "Websites",
+      "Landing Pages",
+      "Mobile Applications",
+      "AI Chatbots",
+      "Telegram Mini-Apps",
+      "Telegram Bots",
+      "Databases",
+      "Software, Scripts for Business Process Automation",
+      "Smart Contract Development",
+      "NFT Collections",
+      "Tokens",
+      "DeFi Development",
+      "dApps",
+      "Full list of services"
+    ]
+  },
+  "whoWeAre": [],
+  "feedbackForm": {
+    "title": "Ready to improve your business performance?",
+    "subtitle": "Leave your contact details, and we will get in touch with you today to discuss and start working. We will offer optimal solutions to increase your profit, reduce costs, and enhance efficiency."
+  }
+}

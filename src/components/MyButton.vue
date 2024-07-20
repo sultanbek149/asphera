@@ -1,5 +1,5 @@
 <template>
-  <button @touchstart="toggleActive" @touchend="toggleActive()" :class="{ active: isActive }">
+  <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }" class="w-[10rem] flex items-center pt-[4px] pb-2 rounded-3xl font-bold">
     <slot></slot>
   </button>
 </template>
@@ -7,22 +7,19 @@
 <script>
 export default {
   name: 'my-button',
-  data() {
-    return {
-      isActive: false
-    }
-  },
-  methods: {
-    toggleActive() {
-      this.isActive = !this.isActive
-    }
-  }
 }
+</script>
+
+<script setup>
+import {ref} from 'vue'
+const isActive = ref(false)
+
+const toggleActive = () => isActive.value = !isActive.value
+
 </script>
 
 <style scoped>
 button {
-  @apply w-[10rem] h-9 rounded-3xl;
   background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242), rgb(21, 198, 251)) 0% 0% / 300% 300%;
   background-size: 200% auto;
   -webkit-animation: gradient_move 3s ease infinite;

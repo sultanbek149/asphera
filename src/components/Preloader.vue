@@ -17,6 +17,8 @@ export default {
         }
     },
     mounted() {
+        console.log('HELL YA')
+        document.querySelector('html').style.overflowY = 'hidden'
         this.showToggle()
     },
     methods: {
@@ -54,9 +56,5 @@ export default {
 
 .preloader video {
     @apply min-[1000px]:h-[70%] min-[1000px]:w-[70%] w-full h-full; 
-}
-
-html {
-    overflow-y: hidden;
 }
 </style>
