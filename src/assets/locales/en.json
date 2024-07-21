@@ -2,6 +2,10 @@
   "buttons": {
     "hireUs": "Hire us"
   },
+  "locales": {
+    "en": "English",
+    "ru": "Русский"
+  },
   "navigation": {
     "header": {
       "cases": "Cases",
@@ -79,9 +83,9 @@
   "banner": {
     "title": "Asphera Tech",
     "phrases": [
-      "Digital Solutions for Your Business",
-      "Transforming Ideas into Digital Reality",
-      "Innovative Web2 and Web3 Development"
+      "Digital Solutions for Your Business.",
+      "Transforming Ideas into Digital Reality.",
+      "Innovative Web2 and Web3 Development."
     ],
     "subtitle": "Singular company. We specialize in developing and implementing advanced Web2 and Web3 products for businesses. 50+ projects developed."
   },

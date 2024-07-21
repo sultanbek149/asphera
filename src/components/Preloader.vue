@@ -29,7 +29,7 @@ export default {
             setTimeout(() => {
                 this.show = false
                 document.querySelector('html').style.overflowY = 'scroll'
-            }, 5000);
+            }, 4500);
         }
     }
 }

@@ -1,13 +1,19 @@
 <template>
   <transition name="fade">
     <div v-show="isVisible" id="previewWrapper">
-      <prev-big @click="goToAbout(0)" id="prevFirst" :teaser="getTeaser" :title="getCurrentSection[0].name"></prev-big>
-      <prev-big @click="goToAbout(1)" id="prevSecond" class="big" :teaser="getTeaser"
-        :title="getCurrentSection[1].name"></prev-big>
+      <prev-big @click="goToAbout(0)" id="prevFirst" :teaser="$t(`navigation.${ids[getCurrentId]}[0].description`)"
+        :title="$t(`navigation.${ids[getCurrentId]}[0].name`)"></prev-big>
+      <prev-big @click="goToAbout(1)" id="prevSecond" class="big"
+        :teaser="$t(`navigation.${ids[getCurrentId]}[1].description`)"
+        :title="$t(`navigation.${ids[getCurrentId]}[1].name`)"></prev-big>
 
-      <prev-small @click="goToAbout(2)" :title="getCurrentSection[2].name" id="prevCaseFirst"></prev-small>
-      <prev-small @click="goToAbout(3)" :title="getCurrentSection[3].name" id="prevCaseSecond"></prev-small>
-      <prev-small @click="goToAbout(4)" :title="getCurrentSection[4].name" id="prevCaseThird"></prev-small>
+      <prev-small @click="goToAbout(2)" :title="$t(`navigation.${ids[getCurrentId]}[2].name`)"
+        id="prevCaseFirst"></prev-small>
+      <prev-small @click="goToAbout(3)" :title="$t(`navigation.${ids[getCurrentId]}[3].name`)"
+        id="prevCaseSecond"></prev-small>
+      <prev-small @click="goToAbout(4)" :title="$t(`navigation.${ids[getCurrentId]}[4].name`)"
+        id="prevCaseThird"></prev-small>
+
     </div>
 
   </transition>
@@ -19,13 +25,15 @@ export default {
   data() {
     return {
       isOnHover: false,
+      ids: [
+        'cases', 'services', 'about'
+      ]
     }
   },
   props: {
     isVisible: { type: Boolean },
   },
   methods: {
-
     goToAbout(id) {
       this.$store.commit('docs/setCurrentPartId', id)
       this.$store.commit('docs/setCurrentArticle')
@@ -42,8 +50,12 @@ export default {
     getTeaser() {
       let lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sodales est.'
       return lorem;
+    },
+    getCurrentId() {
+      let id = this.$store.getters['docs/getCurrentSectionId']
+      return id
     }
-  }
+  },
 }
 </script>
 

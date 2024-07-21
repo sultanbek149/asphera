@@ -1,5 +1,5 @@
 <template>
-  <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }" class="w-[10rem] flex items-center pt-[4px] pb-2 rounded-3xl font-bold">
+  <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }" class="w-[10rem] flex items-center pt-[4px] pb-2 rounded-3xl font-[500]">
     <slot></slot>
   </button>
 </template>

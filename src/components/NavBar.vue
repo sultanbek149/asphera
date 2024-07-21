@@ -6,19 +6,19 @@
       <ul id="links" class="inter">
         <div @mouseenter="openPreview(options[0].id)" @click="scrollTo(options[0].name)" class="linkWrapper">
           <li>
-            <a @click.prevent href="#cases">Cases</a>
+            <a @click.prevent href="#cases">{{ $t('navigation.header.cases') }}</a>
           </li>
           <div class="line"></div>
         </div>
         <div @mouseenter="openPreview(options[1].id)" @click="scrollTo(options[1].name)" class="linkWrapper">
           <li>
-            <a @click.prevent href="#services">Services</a>
+            <a @click.prevent href="#services">{{ $t('navigation.header.services') }}</a>
           </li>
           <div class="line"></div>
         </div>
         <div @mouseenter="openPreview(options[2].id)" @click="scrollTo(options[2].name)" class="linkWrapper">
           <li>
-            <a @click.prevent href="#about">About</a>
+            <a @click.prevent href="#about">{{ $t('navigation.header.about') }}</a>
           </li>
           <div class="line"></div>
         </div>
@@ -30,11 +30,15 @@
           <img id="twitter" src="../assets/icons/twitter.png" alt="twitter icon" loading="lazy" />
         </a>
       </ul>
-      <my-button @click="scrollTo(options[3].name)" id="hire">{{ $t('buttons.hireUs') }}</my-button>
+      <div class="flex gap-4 items-center">
+        <language-switcher />
+        <my-button @click="scrollTo(options[3].name)" id="hire">{{ $t('buttons.hireUs') }}</my-button>
+      </div>
     </nav>
   </transition>
 </template>
 <script>
+
 export default {
   name: 'my-nav',
   props: {

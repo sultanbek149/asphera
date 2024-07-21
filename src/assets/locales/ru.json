@@ -4,17 +4,17 @@
   },
   "navigation": {
     "header": {
-      "cases": "Cases",
-      "services": "Services",
-      "about": "About"
+      "cases": "Кейсы",
+      "services": "Услуги",
+      "about": "О нас"
     },
     "cases": [
       {
-        "name": "Web3 cases",
-        "description": "Successful projects using blockchain technologies."
+        "name": "Web3 кейсы",
+        "description": "Успешные проекты с использованием блокчейн технологий."
       },
       {
-        "name": "Web2 cases",
+        "name": "Web2 кейсы",
         "description": "Examples of our websites and web applications."
       },
       {
@@ -26,21 +26,21 @@
         "description": null
       },
       {
-        "name": "Other cases",
+        "name": "Полный обзор кейсов",
         "description": null
       }
     ],
     "services": [
       {
         "name": "Web3",
-        "description": "Implement advanced blockchain technology into your project."
+        "description": "Внедрите передовые блокчейн технологии в ваш проект."
       },
       {
         "name": "Web2",
-        "description": "Create cutting-edge and effective websites for your business. As well as much more. "
+        "description": "Создаем ультрасовременные и эффективные веб-сайты для вашего бизнеса. А также многое другое. "
       },
       {
-        "name": "Websites",
+        "name": "Веб-сайты",
         "description": null
       },
       {
@@ -48,29 +48,29 @@
         "description": null
       },
       {
-        "name": "Other services",
+        "name": "Полный список услуг",
         "description": null
       }
     ],
     "about": [
       {
-        "name": "Who we are?",
-        "description": "Meet Asphera Tech."
+        "name": "Кто мы?",
+        "description": "Познакомьтесь с компанией Asphera Tech."
       },
       {
-        "name": "Referral Program.",
-        "description": "Participate in our referral program and get rewards up to $500 for each client."
+        "name": "Реферальная программа.",
+        "description": "Участвуйте в нашей реферальной программе и получайте вознаграждения до 500$ за каждого клиента."
       },
       {
-        "name": "Our blog",
+        "name": "Наш блог",
         "description": null
       },
       {
-        "name": "Our team",
+        "name": "Наша команда",
         "description": null
       },
       {
-        "name": "Our partners",
+        "name": "Наши партнёры",
         "description": null
       }
     ]
@@ -79,9 +79,9 @@
   "banner": {
     "title": "Asphera Tech",
     "phrases": [
-      "Digital Solutions for Your Business",
-      "Transforming Ideas into Digital Reality",
-      "Innovative Web2 and Web3 Development"
+      "Digital Solutions for Your Business.",
+      "Transforming Ideas into Digital Reality.",
+      "Innovative Web2 and Web3 Development.`"
     ],
     "subtitle": "Singular company. We specialize in developing and implementing advanced Web2 and Web3 products for businesses. 50+ projects developed."
   },
