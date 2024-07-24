@@ -1,17 +1,19 @@
 <template>
   <form @submit.prevent>
     <fieldset>
-      <input v-model="name" type="text" id="name" required aria-required="true" placeholder="Your name" />
+      <input v-model="name" type="text" id="name" required aria-required="true"
+        :placeholder="$t('feedbackForm.placeholders.name')" />
       <input v-model="social" type="text" id="social" required aria-required="true"
-        placeholder="Your telegram or whatsapp" />
+        :placeholder="$t('feedbackForm.placeholders.socials')" />
 
-      <input v-model="email" type="email" id="email" required aria-required="true" placeholder="Your email" />
+      <input v-model="email" type="email" id="email" required aria-required="true"
+        :placeholder="$t('feedbackForm.placeholders.email')" />
 
       <textarea id="message" name="message" v-model="message" rows="4" required aria-required="true"
-        placeholder="How can we help you"></textarea>
+        :placeholder="$t('feedbackForm.placeholders.help')"></textarea>
 
-      <transparent-button id="submitBtn" @click.prevent="submitForm"
-        aria-label="Submit button">Submit</transparent-button>
+      <transparent-button id="submitBtn" @click.prevent="submitForm" aria-label="Submit button">{{
+        $t('feedbackForm.placeholders.submit') }}</transparent-button>
     </fieldset>
   </form>
 </template>

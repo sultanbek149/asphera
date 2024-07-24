@@ -23,16 +23,16 @@ export default {
 
 <style scoped>
 footer {
-  @apply flex justify-between px-[1rem] items-center w-[100vw] h-[2.5rem];
+  @apply flex justify-between px-[1rem] items-center w-[100vw] h-[3.5rem];
 }
 
 #logo {
-  @apply relative w-[45px];
+  @apply relative min-[768px]:w-[45px] w-[30px];
   /* aspect-ratio: 7/1.5; */
 }
 
 #copyright {
-  @apply font-thin text-[0.5rem] self-end mb-3;
+  @apply font-thin text-[0.5rem] self-end mb-4;
 }
 
 #socialWrapper {

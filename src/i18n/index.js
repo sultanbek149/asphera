@@ -1,6 +1,6 @@
 import { createI18n } from "vue-i18n";
 import en from '@/assets/locales/en.json'
-import ru from '@/assets/locales/ru.json'
+import enDocs from '@/store/enDocs'
 
 
 export default createI18n({
@@ -9,7 +9,7 @@ export default createI18n({
     globalInjection: true,
     legacy: false,
     messages: {
-        en, ru
+        en: { ...en, ...enDocs }
     }
 })
 

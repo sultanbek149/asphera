@@ -1,5 +1,5 @@
 <template>
-  <pre-loader></pre-loader>
+  <!-- <pre-loader></pre-loader> -->
   <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
       <div class="relative w-[45px] h-full max-[500px]:ml-[20px] max-[500px]:mt-[5px]">
@@ -9,7 +9,7 @@
     </div>
 
     <div class="flex flex-row w-[50%] h-fit justify-center items-center">
-      <my-button @click="switchLang" id="hireSmall">{{ $t('buttons.hireUs') }}</my-button>
+      <my-button @click="scrollTo('contact')" id="hireSmall">{{ $t('buttons.hireUs') }}</my-button>
 
       <!-- <button id="menuBtn" aria-label="Menu button"> -->
       <!-- <img id="menuImg" :src="menuBtn" alt="Menu button" @click="toggleMenu" /> -->
@@ -17,7 +17,6 @@
       <burger-btn :isMenu="isMenu" @toggleMenu="toggleMenu"></burger-btn>
 
     </div>
-
 
 
     <my-nav @openPreview="openPreview" :isMenu="isMenu" @closeSideBar="toggleMenu"></my-nav>
@@ -32,8 +31,7 @@
 
         <h2 id="slogan" class="fira">{{ slogan + '|' }}</h2>
         <h2 id="logoShort" class="fira">
-          Singular company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac
-          sodales est. Class aptent taciti
+          {{ $t('banner.subtitle') }}
         </h2>
 
       </div>
@@ -49,34 +47,30 @@
 
     </section>
 
-    <marquee v-once size="big" direction="toLeft"></marquee>
-    <marquee v-once size="medium" direction="toRight"></marquee>
-    <marquee v-once size="small" direction="toLeft"></marquee>
-
+    <marquee v-once size="big" direction="toLeft">{{ $t('marquee[0]') }}</marquee>
+    <marquee v-once size="medium" direction="toRight">{{ $t('marquee[1]') }}</marquee>
+    <marquee v-once size="small" direction="toLeft">{{ $t('marquee[2]') }}</marquee>
     <section ref="cases" id="cases">
 
       <div ref="casesTitle" id="casesTitleWrapper">
-        <h3 class="casesSlogan fira">Honored projects</h3>
-        <h2 id="casesTitle" class="headingFont">CASES</h2>
-        <h3 class="casesSlogan fira">Our principles. We’re partners, not providers</h3>
+        <h3 class="casesSlogan fira">{{ $t('cases.textAbove') }}</h3>
+        <h2 id="casesTitle" class="headingFont">{{ $t('cases.title') }}</h2>
+        <h3 class="casesSlogan fira">{{ $t('cases.textBelow') }}</h3>
       </div>
 
       <div id="casesWrapper" ref="casesWrapper" @scroll="checkScroll">
-        <case-card v-for="i in [1, 2, 3, 4, 5, 6]" ref="case" :key="i" class="case"></case-card>
+        <case-card v-for="item in $tm('cases.items')" ref="case" :key="item.name" class="case" :caseItem="item" />
       </div>
     </section>
 
     <section id="services">
-      <transition name="fade">
-        <service-info :title="currentService" @close="toggleServiceInfo" v-if="isService"></service-info>
-      </transition>
-
-      <h2 ref="offer" class="headingFont" id="servicesTitle">WHAT WE OFFER?</h2>
+      <h2 ref="offer" class="headingFont uppercase" id="servicesTitle">{{ $t('whatWeOffer.title') }}</h2>
 
       <div id="servicesWrapper">
-        <service-card @toggleServiceInfo="toggleServiceInfo" v-for="service in services" :key="service.id"
-          :title="service.title" :description="service.desc" :price="service.price" :current="currentService"
-          :isService="isService" @infoOpen="currentService = service.title"></service-card>
+
+        <service-card v-for="service in services" :key="service.id" :title="service.title" :description="service.desc"
+          :price="service.price" :current="currentService" @infoOpen="currentService = service.title"></service-card>
+
       </div>
     </section>
     <section id="about">
@@ -84,9 +78,14 @@
     </section>
     <section id="contact">
       <contact-message ref="contactMessage"></contact-message>
-      <legend class="headingFont" id="contactTitle">
-        Our Team Is Ready To Help! Get started now!
+      <legend class="headingFont max-[768px]:!text-start" id="contactTitle">
+        {{ $t('feedbackForm.title') }}
+        <p
+          class="text-[1rem] mt-4 leading-6 min-[768px]:text-[1.5rem] min-[768px]:leading-10 min-[768px]:mt-10  font-[300] ">
+          {{ $t('feedbackForm.subtitle') }}
+        </p>
       </legend>
+
       <contact-form @send="showSuccessMessage"></contact-form>
     </section>
 
@@ -109,22 +108,22 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 import { useHead } from '@unhead/vue'
 
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, watch } from 'vue'
 
 import { useI18n } from 'vue-i18n'
+import i18n from '@/i18n'
 
-// import model from 'favicon.ico'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const { t, locale } = useI18n({ useScope: 'global' })
+// import model from 'favicon.ico'
 
-const switchLang = () => {
-  locale.value === 'ja' ? locale.value = 'en' : locale.value = 'ja'
-}
+// const switchLang = () => {
+//   locale.value === 'ja' ? locale.value = 'en' : locale.value = 'ja'
+// }
 
 const myPage = ref({ description: 'This is my page' })
-const title = ref('pele')
+const title = ref('Asphera')
 
 useHead({
   // ref (recommended)
@@ -136,6 +135,67 @@ useHead({
     src: 'https://example.com/script.js',
     defer: true,
   }))],
+})
+
+const { t } = useI18n({ useScope: 'global' })
+
+
+const slogan = ref('')
+let currentPhraseIndex = 0
+let typingSpeed = 70
+let deletingSpeed = 80
+let isDeleting = false
+
+const phrases = ref([
+  t('banner.phrases[0]'),
+  t('banner.phrases[1]'),
+  t('banner.phrases[2]')
+])
+
+watch(i18n.global.locale, () => {
+  phrases.value = [
+    t('banner.phrases[0]'),
+    t('banner.phrases[1]'),
+    t('banner.phrases[2]')
+  ]
+})
+
+
+const typingSlogan = () => {
+  const current = currentPhraseIndex % phrases.value.length
+  const fullPhrase = phrases.value[current]
+
+  if (isDeleting) {
+    // Remove a character
+    slogan.value = fullPhrase.substring(0, slogan.value.length - 1)
+  } else {
+    // Add a character
+    slogan.value = fullPhrase.substring(0, slogan.value.length + 1)
+  }
+
+  // Determine the typing speed
+  let typeSpeed = typingSpeed
+  if (isDeleting) {
+    typeSpeed = deletingSpeed
+  }
+
+  // If phrase is complete, pause before starting to delete
+  if (!isDeleting && slogan.value === fullPhrase) {
+    // Pause at end
+    typeSpeed = 2000
+    isDeleting = true
+  } else if (isDeleting && slogan.value === '') {
+    isDeleting = false
+    currentPhraseIndex++
+    // Pause before start typing next phrase
+    typeSpeed = 500
+  }
+
+  setTimeout(() => typingSlogan(), typeSpeed)
+}
+
+onMounted(() => {
+  typingSlogan()
 })
 
 // const target = ref();
@@ -204,11 +264,11 @@ useHead({
 
 // onMounted(() => {
 //   target.value.appendChild(renderer.domElement);
-
-
-
 //   animate();
 // });
+
+
+
 </script>
 
 
@@ -229,17 +289,7 @@ export default {
       isBurger: false,
       isMobile: false,
       tl: null,
-      phrases: [
-        this.$t('banner.phrases[0]'),
-        this.$t('banner.phrases[1]'),
-        this.$t('banner.phrases[2]')
-      ],
       currentService: '',
-      slogan: '',
-      currentPhraseIndex: 0,
-      typingSpeed: 70,
-      deletingSpeed: 80,
-      isDeleting: false,
       services: [
         {
           id: 1,
@@ -277,10 +327,10 @@ export default {
       this.$emit('closeSideBar')
       const element = document.getElementById(sectionId)
       if (element) {
-        const yOffset = -140
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+        const yOffset = -1040
+        // const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
 
-        window.scrollTo({ top: y, behavior: 'smooth' })
+        window.scrollTo({ behavior: 'smooth' })
       }
     },
     handleScrollBar() {
@@ -299,7 +349,7 @@ export default {
     },
     toggleNavHower() {
       console.log('leave')
-      if (this.isNavHowered == false) {
+      if (this.isNavHowered === false) {
         this.isNavHowered = true
         return;
       }
@@ -317,23 +367,6 @@ export default {
       } else if (title === 'Softs') {
         return 3;
       }
-    },
-    toggleServiceInfo() {
-      this.isService = !this.isService
-
-      this.$nextTick(() => {
-        let partId = this.getPartIdByTitle(this.currentService)
-        console.log('part: ' + partId)
-
-        this.$store.commit('docs/setCurrentSectionId', 1)
-        console.log(this.$store.getters['docs/getCurrentSectionId'])
-        this.$store.commit('docs/setCurrentPartId', partId)
-        console.log('part id: ' + this.$store.getters['docs/getCurrentPartId'])
-        this.$store.commit('docs/setCurrentArticle')
-        this.$store.commit('docs/setCurrentPageInfo')
-        this.$store.commit('docs/setCurrentNavigationHooks')
-      });
-
     },
     toggleMenu() {
       if (window.innerWidth < 500) {
@@ -363,38 +396,6 @@ export default {
         this.tl.scrollTrigger.refresh()
       }
       this.toggleMenuIcon()
-    },
-    typingSlogan() {
-      const current = this.currentPhraseIndex % this.phrases.length
-      const fullPhrase = this.phrases[current]
-
-      if (this.isDeleting) {
-        // Remove a character
-        this.slogan = fullPhrase.substring(0, this.slogan.length - 1)
-      } else {
-        // Add a character
-        this.slogan = fullPhrase.substring(0, this.slogan.length + 1)
-      }
-
-      // Determine the typing speed
-      let typeSpeed = this.typingSpeed
-      if (this.isDeleting) {
-        typeSpeed = this.deletingSpeed
-      }
-
-      // If phrase is complete, pause before starting to delete
-      if (!this.isDeleting && this.slogan === fullPhrase) {
-        // Pause at end
-        typeSpeed = 2000
-        this.isDeleting = true
-      } else if (this.isDeleting && this.slogan === '') {
-        this.isDeleting = false
-        this.currentPhraseIndex++
-        // Pause before start typing next phrase
-        typeSpeed = 500
-      }
-
-      setTimeout(() => this.typingSlogan(), typeSpeed)
     },
 
     // loadSpline() {
@@ -515,7 +516,6 @@ export default {
     window.addEventListener('resize', this.handleResize)
     // window.addEventListener('scroll', this.handleScrollBar)
     this.handleResize()
-    this.typingSlogan()
 
     //loading the 3d element
     // this.loadSpline()
@@ -572,16 +572,16 @@ section {
 }
 
 #logoWrapper>#logo {
-  @apply text-4xl ml-[0.1rem] w-[50%];
+  @apply text-4xl ml-[0.1rem] w-[60%];
   font-weight: 200;
 }
 
 #logoShort {
-  @apply ml-1 text-[#777777] text-[0.6rem] font-light w-[74%];
+  @apply ml-1 text-[#777777] text-[0.9rem] font-light w-[80%];
 }
 
 #slogan {
-  @apply text-[#777777] font-light text-lg w-[70%] pl-1;
+  @apply text-[#777777] font-light text-lg w-[90%] pl-1 max-[500px]:font-medium;
 }
 
 #host {
@@ -591,7 +591,7 @@ section {
 }
 
 #cases {
-  @apply h-fit mb-[10rem] !important;
+  @apply h-fit mb-[5rem] !important;
 }
 
 #casesTitle {
@@ -609,7 +609,7 @@ section {
 }
 
 #casesWrapper {
-  @apply flex flex-col gap-14 justify-start items-center w-full h-full pt-[1vh] pb-[50vh] mt-[9rem];
+  @apply flex flex-col gap-14 justify-start items-center w-full h-full pt-[1vh] mt-[9rem];
 }
 
 .case {
@@ -632,7 +632,7 @@ section {
 }
 
 #servicesWrapper {
-  @apply flex flex-col justify-center items-center gap-[1rem] pt-20;
+  @apply flex flex-col justify-center items-center gap-[1rem] pt-14;
 }
 
 #servicesWrapper::-webkit-scrollbar {
@@ -640,7 +640,7 @@ section {
 }
 
 #servicesTitle {
-  @apply text-[2.2rem] text-center;
+  @apply text-[2rem] text-center;
   font-weight: 600;
 }
 
@@ -672,7 +672,7 @@ section {
 
 @media (max-width: 721px) {
   #cases {
-    @apply -mb-[77%] -mt-[5rem] !important;
+    @apply -mt-[5rem] !important;
   }
 
   #casesWrapper {
@@ -727,10 +727,6 @@ section {
 /*722px*/
 
 @media (min-width: 722px) {
-  #services {
-    @apply -mt-[30rem];
-  }
-
   #logoWrapper>#logo {
     width: 100%;
   }
@@ -740,12 +736,8 @@ section {
     scale: 134%;
   }
 
-  #logoShort {
-    @apply -mt-[3rem];
-  }
-
   #slogan {
-    @apply w-[80%] h-[10vh];
+    @apply w-[80%];
   }
 
   #host {
@@ -777,7 +769,7 @@ section {
 
 @media (min-width: 1000px) {
   #cases {
-    @apply gap-[5rem] !important;
+    @apply gap-[5rem] pb-[10rem] !important;
   }
 
   #casesTitleWrapper {
@@ -801,17 +793,23 @@ section {
 /*1024px*/
 
 @media (min-width: 1024px) {
+  #logoWrapper>#logo {
+    font-weight: 500;
+    font-size: 4.3rem;
+  }
+
   #logoWrapper {
-    @apply mt-[23vh] ml-[23.5rem];
-    scale: 200%;
+    @apply mt-[150px] ml-[2rem];
+    scale: 100%;
   }
 
   #logoShort {
-    @apply -mt-[3.5rem] w-[50%];
+    @apply w-[50%] text-[1.2rem];
+    height: fit-content;
   }
 
   #slogan {
-    @apply w-[30rem];
+    @apply w-[60rem] text-[2.1rem] pl-0 mt-11;
     margin-bottom: 5px;
   }
 }
@@ -824,7 +822,7 @@ section {
   }
 
   #casesWrapper {
-    @apply w-[37vw] mt-[18rem] !important;
+    @apply w-[27vw] mt-[18rem] !important;
     scale: 120%;
   }
 
@@ -833,7 +831,7 @@ section {
   }
 
   #contactTitle {
-    @apply text-[3rem] w-[100%] text-left ml-5;
+    @apply text-[3rem] w-[70%] text-left ml-5;
     line-height: 3.9rem !important;
   }
 
@@ -864,8 +862,8 @@ section {
   }
 
   #contactTitle {
-    @apply text-[4rem];
-    line-height: 4.9rem !important;
+    @apply text-[3rem];
+    line-height: 3.8rem !important;
   }
 
   #casesTitle {
@@ -883,11 +881,8 @@ section {
   #about {
     @apply scale-[150%];
   }
-
-  #logoShort {
-    @apply -mt-[10%];
-  }
 }
+
 
 @keyframes fadeIn {
   0% {

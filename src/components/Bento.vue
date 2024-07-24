@@ -1,8 +1,8 @@
 <template>
   <div id="bentoWrapper">
     <div class="headingFont cardText" id="card1">
-      <span class="headingFont" id="upperText">WHO WE ARE</span>
-      <span>ASPHERASY<br />ECOSYSTEM</span>
+      <span class="headingFont" id="upperText">{{ $t('whoWeAre.title')}}</span>
+      <span>{{ $t('whoWeAre.subtitle') }}</span>
     </div>
     <div class="card" id="card2"></div>
     <div class="card" id="card3"></div>
@@ -134,7 +134,7 @@ export default {
     grid-template-rows: 1fr 1fr 1fr;
   }
   #card1 {
-    @apply justify-start items-start text-5xl flex flex-col gap-2;
+    @apply justify-start items-start text-[2.9rem] leading-none flex flex-col gap-2;
     grid-column: 1 / span 2;
     grid-row: 1;
   }

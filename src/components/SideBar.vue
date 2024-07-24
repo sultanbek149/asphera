@@ -6,10 +6,11 @@
       <img id="arrowImg" ref="arrow" src="../assets/icons/expandArrow.svg" alt="Arrow icon" />
     </button>
     <div id="sideLinksWrapper">
-      <my-dropdown :id="section.id" :name="section.name" v-for="section in sectionNames">
-        <inner-link @click="changeArticle" :parentSectionId="section.id" :id="part.id"
-          v-for="part in getCurrentParts()">{{ part.name
-          }}</inner-link>
+      <my-dropdown :name="section.name" v-for="section in $tm('docs.sections')" :id="section.id" :key="section.id">
+        <inner-link @click="changeArticle" :parentSectionId="section.id" :id="part.id" v-for="part in getCurrentParts()"
+          :key="part.id">
+          {{ part.name }}
+        </inner-link>
       </my-dropdown>
     </div>
 
@@ -60,8 +61,8 @@ export default {
       this.$emit('changeArticle')
     },
     getCurrentParts() {
-      let section = this.$store.getters['docs/getCurrentSectionParts']
-      console.log(section.parts)
+      let section = this.$tm(`sectionParts[${this.$store.getters['docs/getCurrentSectionId']}]`)
+
       return section.parts;
     }
 
@@ -74,7 +75,23 @@ export default {
 <style scoped>
 #sideBarWrapper {
   /* @apply fixed left-0 top-0 mb-20 flex flex-col justify-start items-start gap-10 font-light h-fit w-[20%] p-5 ml-10; */
-  @apply mb-20 flex flex-col justify-start items-start gap-10 font-light h-fit w-[25%] p-5;
+  @apply mb-20 flex flex-col justify-start items-start gap-10 font-light h-[100vh] hover:overflow-auto w-[25%] p-5;
+}
+
+@media not all and (hover: none) {
+  ::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
 }
 
 #sideTitle {

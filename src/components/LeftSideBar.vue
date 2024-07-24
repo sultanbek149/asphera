@@ -64,11 +64,11 @@ export default {
       }
     },
     handleElementClick(index) {
-      var navHooks = this.$store.getters['docs/getCurrentNavigationHook']
+      let navHooks = this.$store.getters['docs/getCurrentNavigationHook']
 
       let textHook = navHooks[index]
 
-      this.$emit('scrolTo', textHook);
+      this.$emit('scrollTo', textHook);
     },
     observeHeaders() {
       const observer = new IntersectionObserver((entries) => {
@@ -153,7 +153,7 @@ export default {
 
 
         for (let i = 0; i < liElements.length; i++) {
-          liElements[i].addEventListener('click', (event) => {
+          liElements[i].addEventListener('click', () => {
             this.handleElementClick(i);
           });
 

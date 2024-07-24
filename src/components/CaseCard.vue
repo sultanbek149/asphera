@@ -2,13 +2,14 @@
   <div id="wrapper">
     <div class="inter" id="companyWrapper">
       <div @click="goToAbout" id="headingWrapper">
-        <img class="companyLogo" src="/src/assets/icons/company1.png" alt="company logo" />
-        <h3 id="title">COMPANY</h3>
+        <!-- <img class="companyLogo" src="/src/assets/icons/company1.png" alt="company logo" /> -->
+        <h3 id="title">{{ caseItem.name }}</h3>
       </div>
       <div ref="social" class="socialCompanyWrapper">
-        <a target="_blank" class="social" href="https://discord.com/">
-          <img id="global" src="../assets/icons/global.png" alt="company one website" loading="lazy" />
-          <p>company.com</p>
+        <a target="_blank" class="social" href="https://discord.com/" v-if="caseItem.link">
+          <img id="global" src="../assets/icons/global.png" alt="company one website"
+            loading="lazy" />
+          <p>{{ caseItem.link }}</p>
         </a>
         <a class="social" href="https://twitter.com/" target="_blank">
           <img id="twitter" src="../assets/icons/twitter.png" alt="company one twitter" loading="lazy" />
@@ -16,11 +17,10 @@
         </a>
       </div>
       <p id="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sodales aptent taciti
-        sociosq
+        {{ caseItem.description }}
       </p>
     </div>
-    <div class="statWrapper" id="stat1">
+    <!-- <div class="statWrapper" id="stat1">
       <p class="headingFont statTitle">3X</p>
       <p class="statDesc">
         engagement <br />
@@ -40,12 +40,13 @@
         blockcahin <br />
         startup
       </p>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
 export default {
   name: 'case-card',
+  props: { caseItem: Object },
   methods: {
     goToAbout() {
       this.$store.commit('docs/setCurrentSectionId', 0);
@@ -71,7 +72,7 @@ export default {
 <style scoped>
 #wrapper {
   @apply grid w-[90%] h-fit bg-[#1E1E1E] rounded-2xl p-4 text-left gap-[0.3rem];
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
   transition: all 0.6s ease;
 }

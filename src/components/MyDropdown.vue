@@ -1,6 +1,7 @@
 <template>
-  <ul :class="{ expanded: id == $store.getters['docs/getCurrentSectionId'] }" class="headingFont" id="dropdownWrapper">
-    <p class="expandTitle" @click="expand">{{ name }}</p>
+  <ul :class="{ expanded: id === $store.getters['docs/getCurrentSectionId'] }" class="headingFont font-[500]"
+    id="dropdownWrapper">
+    <p class="transition font-[700]" @click="expand">{{ name }}</p>
     <slot></slot>
   </ul>
 
@@ -29,20 +30,14 @@ export default {
 #dropdownWrapper {
   @apply p-2 border-l-2 border-l-[#373737] text-lg text-[#373737] h-10 overflow-hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .expanded {
-  @apply text-white h-60 !important;
+  @apply text-white h-fit !important;
   /* box-shadow: -13px 0px 20px -10px #373737; */
-
+  transition: all 0.5s ease;
 }
-
-.expandTitle {
-  transition: all 0.1s ease;
-}
-
-
 
 @media(max-width: 1200px) {
   .expanded {
@@ -54,7 +49,6 @@ export default {
 @media(max-width: 500px) {
   .expanded {
     @apply h-[19rem] !important;
-
   }
 }
 </style>

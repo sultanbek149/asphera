@@ -1,6 +1,8 @@
 <template>
-  <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }" class="w-[10rem] flex items-center pt-[4px] pb-2 rounded-3xl font-[500]">
-    <slot></slot>
+  <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
+    <span>
+      <slot></slot>
+    </span>
   </button>
 </template>
 
@@ -11,7 +13,7 @@ export default {
 </script>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 const isActive = ref(false)
 
 const toggleActive = () => isActive.value = !isActive.value
@@ -19,12 +21,62 @@ const toggleActive = () => isActive.value = !isActive.value
 </script>
 
 <style scoped>
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 button {
+  @apply w-[10rem] h-[2.7rem] flex items-center justify-center rounded-[9px] font-[500] ml-1;
+  background: #191c29;
+  cursor: pointer;
+  position: relative;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  inset: -.1rem;
+  z-index: -1;
+  background: conic-gradient(from var(--gradient-angle), #707070, #707070, #6BA5A8, #4B71FF);
+  border-radius: inherit;
+  animation: rotation 2s linear infinite;
+}
+
+button span {
+  display: grid;
+  background: #000;
+  z-index: 10;
+  height: 100%;
+  place-items: center;
+  padding-bottom: 4px;
+
+  width: 100%;
+  border-radius: inherit;
+}
+
+button::after {
+  filter: blur(3.5rem)
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+
+  100% {
+    --gradient-angle: 360deg
+  }
+}
+
+/*button {
   background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242), rgb(21, 198, 251)) 0% 0% / 300% 300%;
   background-size: 200% auto;
   -webkit-animation: gradient_move 3s ease infinite;
   animation: gradient_move 3s ease infinite;
-}
+} */
 
 
 
@@ -33,48 +85,21 @@ button {
     transition: all 0.3s ease;
   }
 
-  button:hover {
+  button:hover span {
     @apply scale-105;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease;
   }
 
   button:active {
-    @apply scale-100;
+    @apply scale-95;
   }
 }
 
 @media (hover: none) {
   .active {
     @apply scale-95;
-  }
-}
-
-
-
-@-webkit-keyframes gradient_move {
-  0% {
-    background-position: 0% 92%
-  }
-
-  50% {
-    background-position: 100% 9%
-  }
-
-  100% {
-    background-position: 0% 92%
-  }
-}
-
-@keyframes gradient_move {
-  0% {
-    background-position: 0% 92%
-  }
-
-  50% {
-    background-position: 100% 9%
-  }
-
-  100% {
-    background-position: 0% 92%
   }
 }
 </style>

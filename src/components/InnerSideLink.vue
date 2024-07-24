@@ -14,9 +14,9 @@ export default {
   methods: {
     setNewActive() {
       this.$store.commit('docs/setCurrentPartId', this.id)
-      this.$store.commit('docs/setCurrentArticle')
-      this.$store.commit('docs/setCurrentPageInfo')
-      this.$store.commit('docs/setCurrentNavigationHooks')
+      // this.$store.commit('docs/setCurrentArticle')
+      // this.$store.commit('docs/setCurrentPageInfo')
+      // this.$store.commit('docs/setCurrentNavigationHooks')
 
     },
     isActive() {
@@ -25,10 +25,10 @@ export default {
       let parentId = this.$store.getters['docs/getCurrentSectionId']
 
 
-      let isSameParent = parentId == this.parentSectionId
-      let isSamePart = partId == this.id
+      let isSameParent = parentId === this.parentSectionId
+      let isSamePart = partId === this.id
 
-      return isSameParent == true && isSamePart == true
+      return isSameParent == true && isSamePart === true
     }
 
   },

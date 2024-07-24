@@ -5,7 +5,7 @@
       <article>
         <div v-html="markdownToHtml"></div>
       </article>
-      <left-sidebar @searchArticle="searchArticle" @scrolTo="scrollToWord"></left-sidebar>
+      <left-sidebar @searchArticle="searchArticle" @scrollTo="scrollToWord"></left-sidebar>
     </div>
     <art-header></art-header>
   </div>
@@ -20,7 +20,8 @@ export default {
   name: 'my-article',
   data() {
     return {
-      msg: this.$store.getters['docs/getCurrentArticle']
+      // msg: this.$store.getters['docs/getCurrentArticle']
+      msg: this.$t(`articles[${this.$store.getters['docs/getCurrentSectionId']}].parts[${this.$store.getters['docs/getCurrentPartId']}].msg`)
     }
   },
   methods: {
@@ -29,12 +30,11 @@ export default {
     },
     searchArticle(article) {
       if (article === "empty") {
-        this.msg = this.$store.getters['docs/getCurrentArticle']
+        this.msg = this.$t('articles[0].parts[0].msg')
       }
       this.msg = article
     },
     scrollToWord(text) {
-      console.log(text)
       const elements = Array.from(document.querySelectorAll('*'))
         .filter(el => el.textContent.includes(text));
 
@@ -76,7 +76,6 @@ export default {
 
 #articleWrapper {
   @apply mb-20 text-white flex flex-row justify-start items-start w-[100vw] h-fit;
-  overflow-y: auto;
   scrollbar-color: yellow;
 }
 
@@ -89,22 +88,30 @@ export default {
 }
 
 :deep(h2) {
-  @apply mb-10 font-normal text-4xl;
-
+  @apply mt-10 mb-4 font-normal text-4xl;
 }
 
 :deep(h3) {
-  @apply mb-10 font-light text-xl;
+  @apply font-light text-xl mt-5 mb-3;
+}
+
+:deep(a) {
+  @apply text-purple-500; 
 }
 
 :deep(strong) {
-  @apply font-bold text-purple-500;
+  @apply font-bold;
   display: inline-block;
 }
 
 :deep(ul) {
   @apply ml-10 mb-10;
   list-style-type: disc;
+}
+
+:deep(li > ul) {
+  @apply mb-0 mt-0;
+  list-style-type: circle;
 }
 
 :deep(ul > li) {

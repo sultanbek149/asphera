@@ -90,28 +90,9 @@
     "subtitle": "Singular company. We specialize in developing and implementing advanced Web2 and Web3 products for businesses. 50+ projects developed."
   },
   "marquee": [
-    [
-      "Web",
-      "AI",
-      "Blockchain",
-      "Telegram mini-Apps",
-      "Mobile Applications",
-      "Automation",
-      "Databases"
-    ],
-    [
-      "Website",
-      "Telegram mini-App",
-      "Application",
-      "Landing Page",
-      "Bot",
-      "NFT",
-      "dApp",
-      "Memecoin",
-      "Smart Contract",
-      "DeFi"
-    ],
-    ["Web2", "Web3", "Telegram", "iOS", "Android"]
+    " | Web | AI | Blockchain | Telegram mini-Apps | Mobile Applications | Automation | Databases",
+    " | Website | Telegram mini-App | Application | Landing Page | Bot | NFT | dApp | Memecoin | Smart Contract | DeFi",
+    " | Web2 | Web3 | Telegram | iOS | Android"
   ],
   "cases": {
     "title": "CASES",
@@ -122,27 +103,27 @@
         "name": "Suncontract.org",
         "type": "website",
         "link": "https://suncontract.org/",
-        "twitter": "https://x.com/sun_contract?s=21",
-        "description": "Developed a modern and high performing website using cutting edge technology. "
+        "social": "https://x.com/sun_contract?s=21",
+        "description": "Developed a modern and high performing website using cutting edge technology."
       },
       {
         "name": "Spool.fi",
         "type": "website",
         "link": "https://enterprise.spool.fi/",
-        "twitter": "https://x.com/spoolfi?s=21",
+        "social": "https://x.com/spoolfi?s=21",
         "description": "Developed a modern, minimalistic and intuitive website."
       },
       {
         "name": "Tea Story",
         "type": "website",
         "link": "https://www.teastory.club/",
-        "instagram": "https://www.instagram.com/_teastore_?igsh=aGVyb255NmExMHA=",
-        "description": "We designed a modern and stylish website for premium products. "
+        "social": "https://www.instagram.com/_teastore_?igsh=aGVyb255NmExMHA=",
+        "description": "We designed a modern and stylish website for premium products."
       },
       {
         "name": "Corpasbot",
         "type": "telegram-bot",
-        "description": "Developed a corporate telegram bot that helps employees complete daily tasks, receive information and keep in touch with colleagues"
+        "description": "Developed a corporate telegram bot that helps employees complete daily tasks, receive information and keep in touch with colleagues."
       },
       {
         "name": "Edu Track",
@@ -152,17 +133,17 @@
       {
         "name": "EventManagerBot",
         "type": "telegram-bot",
-        "description": "Developed a telegram bot to organize and manage corporate and public events"
+        "description": "Developed a telegram bot to organize and manage corporate and public events."
       },
       {
         "name": "Sm.Assistant",
         "type": "ai-chatbot",
-        "description": "Developed an AI chatbot for customer support at a large e-commerce company"
+        "description": "Developed an AI chatbot for customer support at a large e-commerce company."
       }
     ]
   },
   "whatWeOffer": {
-    "title": "WHAT WE OFFER",
+    "title": "What we offer?",
     "services": [
       "Websites",
       "Landing Pages",
@@ -180,9 +161,26 @@
       "Full list of services"
     ]
   },
-  "whoWeAre": [],
+  "whoWeAre": {
+    "title": "WHO WE ARE?",
+    "subtitle": "ASPHERA ECOSYSTEM"
+  },
   "feedbackForm": {
     "title": "Ready to improve your business performance?",
-    "subtitle": "Leave your contact details, and we will get in touch with you today to discuss and start working. We will offer optimal solutions to increase your profit, reduce costs, and enhance efficiency."
+    "subtitle": "Leave your contact details, and we will get in touch with you today to discuss and start working. We will offer optimal solutions to increase your profit, reduce costs, and enhance efficiency.",
+    "placeholders": {
+      "name": "Your name",
+      "socials": "Your telegram or whatsapp",
+      "email": "Your email",
+      "help": "How can we help you?",
+      "submit": "Submit"
+    }
+  },
+  "docs": {
+    "sections": [
+      { "id": 0, "name": "Cases" },
+      { "id": 1, "name": "Services" },
+      { "id": 2, "name": "About" }
+    ]
   }
 }

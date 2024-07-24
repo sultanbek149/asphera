@@ -52,18 +52,11 @@ export default {
 /* } */
 
 body {
-  @apply bg-black text-white;
+  @apply bg-black text-white hover:overflow-y-auto;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto;
   max-width: 100vw;
-  overscroll-behavior: none;
-
-}
-
-body {
-  overflow-y: hidden;
 }
 
 .headingFont {
@@ -89,7 +82,7 @@ body {
 
 @media not all and (hover: none) {
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
 
   /* Track */

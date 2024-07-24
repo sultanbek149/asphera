@@ -6,7 +6,6 @@ export const docsModule = {
     currentPartId: 0,
     currentArticle: '',
     currentNavigationHook: [],
-
     navigationHooks: [
       {
         'id': 0,
@@ -15,8 +14,9 @@ export const docsModule = {
           ['Our second company cas', 'What is this', 'And talking about this', "But we also can't omit this", 'And finishing this part'],
           ['Here is the third company', 'What is this', 'And talking about this', "But we also can't omit this", 'And finishing this part'],
           ['Fourth company case', 'What is this', 'And talking about this', "But we also can't omit this", 'And finishing this part'],
+          ['Fifth case', 'What is this', 'And talking about this', "But we also can't omit this", 'And finishing this part'],
+          ['Fifth case', 'What is this', 'And talking about this', "But we also can't omit this", 'And finishing this part'],
           ['Fifth case', 'What is this', 'And talking about this', "But we also can't omit this", 'And finishing this part']
-
         ]
       },
       {
@@ -52,6 +52,8 @@ export const docsModule = {
           { 'id': 2, 'name': 'Here is the third company' },
           { 'id': 3, 'name': 'Fourth company case' },
           { 'id': 4, 'name': 'Fifth case, fifth win' },
+          { 'id': 5, 'name': 'Fifth case, fifth win' },
+          { 'id': 6, 'name': 'Fifth case, fifth win' },
         ]
       },
       {
@@ -85,7 +87,7 @@ export const docsModule = {
           {
             'id': 0
             , 'info': `
-// - Introduction 
+- Introduction 
 - Main part 
 - Talking about this
 - Conclusion for first company`
@@ -122,8 +124,24 @@ export const docsModule = {
 - Introduction 
 - Main part 
 - Talking about this
-- Conclusion for fifth company`},
-
+- Conclusion for fifth company`
+          },
+          {
+            'id': 5,
+            'info': `
+- Introduction 
+- Main part 
+- Talking about this
+- Conclusion for fifth company`
+          },
+          {
+            'id': 6,
+            'info': `
+- Introduction 
+- Main part 
+- Talking about this
+- Conclusion for fifth company`
+          },
         ]
       },
       {
@@ -365,6 +383,62 @@ export const docsModule = {
 
 ### Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse, quis voluptatem blanditiis quidem accusamus modi odio consequatur laborum voluptas in non cum fugit rerum quasi qui, repellat ipsam iure! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et autem harum earum sit sunt iusto blanditiis id, odit minus voluptatum provident? Laborum consectetur sint eius illo assumenda. Ea, odit autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque ab explicabo iusto tempore, quos reiciendis suscipit similique iure excepturi ratione, qui eius eligendi repellat magnam minus aliquid eos quia?
 ` },
+          {
+            'id': 5, 'msg': `
+
+# Fifth case, fifth win
+
+### Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis earum quod molestiae itaque cupiditate deleniti vitae inventore impedit numquam qui illo autem, minima quia quidem nostrum **veritatis quibusdam officiis ex?**
+
+## What is this?
+
+### Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, fuga ab? Labore quod sequi, obcaecati unde eaque consectetur sunt? Nam facilis nostrum praesentium, velit accusamus consectetur minima repellat ut eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore animi ut velit suscipit. Ratione illumdolore exercitationem, possimus optio cupiditate modi sunt reprehenderit rem eius provident? Excepturi voluptates esse odio.
+
+## And talking about this.
+
+### Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde dicta quisquam exercitationem molestiae, fugit impedit corrupti temporibus facere culpa dolorum officiis quas, dolores ea neque ducimus.
+
+## But we also can't omit this: 
+
+### Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptatibus ipsa magni eum laborum nobis,nulla ab reprehenderit animi possimus laboriosam quaerat ullam inventore excepturi temporibus praesentium doloribus in. Ulla. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste amet magnam natus, veritatis unde voluptatibus nostrum perferendis? Harum, voluptates temporibus, consectetur aliquid maiores debitis nam distinctio impedit assumenda fuga deserunt!
+
+- The first case
+- The second case
+- The third case
+- And of course this
+
+## And finishing This part.
+
+### Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse, quis voluptatem blanditiis quidem accusamus modi odio consequatur laborum voluptas in non cum fugit rerum quasi qui, repellat ipsam iure! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et autem harum earum sit sunt iusto blanditiis id, odit minus voluptatum provident? Laborum consectetur sint eius illo assumenda. Ea, odit autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque ab explicabo iusto tempore, quos reiciendis suscipit similique iure excepturi ratione, qui eius eligendi repellat magnam minus aliquid eos quia?
+` },
+          {
+            'id': 6, 'msg': `
+
+# Fifth case, fifth win
+
+### Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis earum quod molestiae itaque cupiditate deleniti vitae inventore impedit numquam qui illo autem, minima quia quidem nostrum **veritatis quibusdam officiis ex?**
+
+## What is this?
+
+### Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, fuga ab? Labore quod sequi, obcaecati unde eaque consectetur sunt? Nam facilis nostrum praesentium, velit accusamus consectetur minima repellat ut eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore animi ut velit suscipit. Ratione illumdolore exercitationem, possimus optio cupiditate modi sunt reprehenderit rem eius provident? Excepturi voluptates esse odio.
+
+## And talking about this.
+
+### Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde dicta quisquam exercitationem molestiae, fugit impedit corrupti temporibus facere culpa dolorum officiis quas, dolores ea neque ducimus.
+
+## But we also can't omit this: 
+
+### Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptatibus ipsa magni eum laborum nobis,nulla ab reprehenderit animi possimus laboriosam quaerat ullam inventore excepturi temporibus praesentium doloribus in. Ulla. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste amet magnam natus, veritatis unde voluptatibus nostrum perferendis? Harum, voluptates temporibus, consectetur aliquid maiores debitis nam distinctio impedit assumenda fuga deserunt!
+
+- The first case
+- The second case
+- The third case
+- And of course this
+
+## And finishing This part.
+
+### Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse, quis voluptatem blanditiis quidem accusamus modi odio consequatur laborum voluptas in non cum fugit rerum quasi qui, repellat ipsam iure! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et autem harum earum sit sunt iusto blanditiis id, odit minus voluptatum provident? Laborum consectetur sint eius illo assumenda. Ea, odit autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque ab explicabo iusto tempore, quos reiciendis suscipit similique iure excepturi ratione, qui eius eligendi repellat magnam minus aliquid eos quia?
+` }
         ]
       },
       {

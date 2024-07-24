@@ -42,23 +42,23 @@
 export default {
   name: 'my-nav',
   props: {
-    isMenu: false
+    isMenu: Boolean
   },
   data() {
     return {
       options: [
-        { id: 2, name: 'cases' },
-        { id: 3, name: 'services' },
-        { id: 4, name: 'about' },
-        { id: 5, name: 'contact' }
+        { id: 0, name: 'cases' },
+        { id: 1, name: 'services' },
+        { id: 2, name: 'about' },
+        { id: 3, name: 'contact' }
       ]
     }
   },
   methods: {
     openPreview(id) {
       if (window.innerWidth >= 722) {
-        this.$store.commit('docs/setCurrentSectionId', id - 2);
-        this.$emit('openPreview', id);
+        this.$store.commit('docs/setCurrentSectionId', id);
+        this.$emit('openPreview');
       }
     },
     scrollTo(sectionId) {

@@ -22,7 +22,7 @@
         "description": null
       },
       {
-        "name": "AI Chatbot",
+        "name": "Ai Чатботы",
         "description": null
       },
       {
@@ -79,106 +79,104 @@
   "banner": {
     "title": "Asphera Tech",
     "phrases": [
-      "Digital Solutions for Your Business.",
-      "Transforming Ideas into Digital Reality.",
-      "Innovative Web2 and Web3 Development.`"
+      "Цифровые решения для вашего бизнеса.",
+      "Инновационная разработка Web2 и Web3.",
+      "Превращаем идеи в цифровую реальность."
     ],
-    "subtitle": "Singular company. We specialize in developing and implementing advanced Web2 and Web3 products for businesses. 50+ projects developed."
+    "subtitle": "Сингулярная компания. Мы специализируемся на разработке и внедрении передовых Web2 и Web3 продуктов в бизнес. 50+ разработанных проектов."
   },
   "marquee": [
-    [
-      "Web",
-      "AI",
-      "Blockchain",
-      "Telegram mini-Apps",
-      "Mobile Applications",
-      "Automation",
-      "Databases"
-    ],
-    [
-      "Website",
-      "Telegram mini-App",
-      "Application",
-      "Landing Page",
-      "Bot",
-      "NFT",
-      "dApp",
-      "Memecoin",
-      "Smart Contract",
-      "DeFi"
-    ],
-    ["Web2", "Web3", "Telegram", "iOS", "Android"]
+    " | Веб-разработка | ИИ | Блокчейн-разработка | Telegram mini-apps | Мобильные приложения | Автоматизация | Базы данных",
+    " | Веб-сайт | Лендинг | Приложение | Боты | NFT | dApp | Мемкоин | Смарт-контракт | Defi",
+    " | Web2 | Web3 | Telegram | IOS | Android"
   ],
   "cases": {
-    "title": "CASES",
-    "textAbove": "Honored projects",
-    "textBelow": "Building the future together",
+    "title": "КЕЙСЫ",
+    "textAbove": "Наши проекты",
+    "textBelow": "Мы создаём будущее вместе",
     "items": [
       {
         "name": "Suncontract.org",
         "type": "website",
         "link": "https://suncontract.org/",
         "twitter": "https://x.com/sun_contract?s=21",
-        "description": "Developed a modern and high performing website using cutting edge technology. "
+        "description": "Создали современный и высокопроизводительный веб-сайт с использованием передовых технологий."
       },
       {
         "name": "Spool.fi",
         "type": "website",
         "link": "https://enterprise.spool.fi/",
         "twitter": "https://x.com/spoolfi?s=21",
-        "description": "Developed a modern, minimalistic and intuitive website."
+        "description": "Разработали современный, минималистичный и интуитивно понятный веб-сайт."
       },
       {
         "name": "Tea Story",
         "type": "website",
         "link": "https://www.teastory.club/",
         "instagram": "https://www.instagram.com/_teastore_?igsh=aGVyb255NmExMHA=",
-        "description": "We designed a modern and stylish website for premium products. "
+        "description": "Мы разработали современный и стильный веб-сайт для премиум продукции."
       },
       {
         "name": "Corpasbot",
         "type": "telegram-bot",
-        "description": "Developed a corporate telegram bot that helps employees complete daily tasks, receive information and keep in touch with colleagues"
+        "description": "Разработали корпоративного телеграмм-бота, который помогает сотрудникам выполнять ежедневные задачи, получать информацию и поддерживать связь с коллегами."
       },
       {
         "name": "Edu Track",
         "type": "database",
-        "description": "Designed and implemented a Database to manage academic records of students, faculty, and courses."
+        "description": "Спроектировали и внедрили Базу данных для управления академическими записями студентов, преподавателей и курсов."
       },
       {
         "name": "EventManagerBot",
         "type": "telegram-bot",
-        "description": "Developed a telegram bot to organize and manage corporate and public events"
+        "description": "Разработали тг-бот для организации и управления корпоративными и публичными мероприятиями."
       },
       {
         "name": "Sm.Assistant",
         "type": "ai-chatbot",
-        "description": "Developed an AI chatbot for customer support at a large e-commerce company"
+        "description": "Разработали ИИ чат-бот для поддержки клиентов в крупной e-commerce компании."
       }
     ]
   },
   "whatWeOffer": {
-    "title": "WHAT WE OFFER",
+    "title": "Что мы предлагаем?",
     "services": [
-      "Websites",
-      "Landing Pages",
-      "Mobile Applications",
-      "AI Chatbots",
-      "Telegram Mini-Apps",
+      "Веб-сайты",
+      "Лендинги",
+      "Мобильные приложения",
+      "Чат-боты ИИ",
+      "Telegram mini-aps",
       "Telegram Bots",
-      "Databases",
-      "Software, Scripts for Business Process Automation",
-      "Smart Contract Development",
-      "NFT Collections",
-      "Tokens",
-      "DeFi Development",
+      "Базы данных",
+      "Софты, скрипты для автоматизации бизнес процессов",
+      "Разработка смарт-контрактов",
+      "NFT-коллекции",
+      "Токены",
+      "Разработка Defi",
       "dApps",
-      "Full list of services"
+      "Полный перечень услуг"
     ]
   },
-  "whoWeAre": [],
+  "whoWeAre": {
+    "title": "КТО МЫ?",
+    "subtitle": "ASPHERA ЭКОСИСТЕМА"
+  },
   "feedbackForm": {
-    "title": "Ready to improve your business performance?",
-    "subtitle": "Leave your contact details, and we will get in touch with you today to discuss and start working. We will offer optimal solutions to increase your profit, reduce costs, and enhance efficiency."
+    "title": "Готовы улучшить показатели вашего бизнеса? ",
+    "subtitle": "Оставьте контактные данные, и мы свяжемся с вами для обсуждения и начала работы уже сегодня. Мы предложим оптимальные решения для увеличения вашей прибыли, снижения затрат и повышения эффективности.",
+    "placeholders": {
+      "name": "Ваше имя",
+      "socials": "Ваш telegram или whatsapp",
+      "email": "Ваш email",
+      "help": "Чем мы можем вам помочь?",
+      "submit": "Отправить"
+    }
+  },
+  "docs": {
+    "sections": [
+      { "id": 0, "name": "Кейсы" },
+      { "id": 1, "name": "Услуги" },
+      { "id": 2, "name": "О нас" }
+    ]
   }
 }

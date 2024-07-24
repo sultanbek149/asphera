@@ -18,7 +18,7 @@ export default {
     },
     mounted() {
         console.log('HELL YA')
-        document.querySelector('html').style.overflowY = 'hidden'
+        document.querySelector('body').style.overflowY = 'hidden'
         this.showToggle()
     },
     methods: {
@@ -28,8 +28,8 @@ export default {
             }, 4000)
             setTimeout(() => {
                 this.show = false
-                document.querySelector('html').style.overflowY = 'scroll'
-            }, 4500);
+                document.querySelector('body').style.overflowY = 'scroll'
+            }, 4300);
         }
     }
 }

@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import Tr from '@/i18n/translation'
 export default {
   name: 'nav-preview',
   data() {
@@ -39,8 +40,8 @@ export default {
       this.$store.commit('docs/setCurrentArticle')
       this.$store.commit('docs/setCurrentPageInfo')
       this.$store.commit('docs/setCurrentNavigationHooks')
-
-      this.$router.push('/about')
+      console.log(Tr.guessDefaultLocale())
+      this.$router.push(Tr.i18nRoute({ name: 'docs' }))
     }
   }, computed: {
     getCurrentSection() {

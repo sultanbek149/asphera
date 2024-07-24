@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="$emit('toggleServiceInfo'), $emit('infoOpen'), expandWrapper()"
+    @click="$emit('infoOpen'), expandWrapper()"
     class="shortService"
   >
     <h3 class="serviceHeadingFont" id="wrapperTitle">{{ title }}</h3>
@@ -29,14 +29,6 @@ export default {
     description: { type: String },
     price: { type: Number },
     current: { type: String },
-    isService: { type: Boolean }
-  },
-  watch: {
-    isService(newValue, oldValue) {
-      if (newValue == false && this.current == this.title) {
-        this.expandWrapper()
-      }
-    }
   },
   methods: {
     expandWrapper() {
