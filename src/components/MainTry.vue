@@ -33,7 +33,6 @@
         <h2 id="logoShort" class="fira">
           {{ $t('banner.subtitle') }}
         </h2>
-
       </div>
 
       <div class="glb flex justify-end h-full">
@@ -74,7 +73,7 @@
       </div>
     </section>
     <section id="about">
-      <bento></bento>
+      <bento-grid></bento-grid>
     </section>
     <section id="contact">
       <contact-message ref="contactMessage"></contact-message>
@@ -443,7 +442,7 @@ export default {
         this.tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: 'top-=10% top', // Animation starts when the top of the section hits the top of the viewport
+            start: 'top-=2% top', // Animation starts when the top of the section hits the top of the viewport
             end: () => `+=${document.body.offsetHeight}`, // Ends when the bottom of the section leaves the top of the viewport
             scrub: true,
             pin: pinnedContent, // Pin the entire content section
@@ -536,7 +535,7 @@ header {
 }
 
 #hireSmall {
-  @apply hidden;
+  @apply hidden text-[12px] min-[425px]:text-[16px];
 }
 
 
@@ -591,7 +590,7 @@ section {
 }
 
 #cases {
-  @apply h-fit mb-[5rem] !important;
+  @apply h-fit mb-[5rem] md:gap-12 lg:gap-6 !important;
 }
 
 #casesTitle {
@@ -600,8 +599,7 @@ section {
 }
 
 #casesTitleWrapper {
-  @apply flex flex-col justify-start items-start;
-  width: 100% !important;
+  @apply flex flex-col justify-start items-start md:w-[25vw];
 }
 
 .casesSlogan {
@@ -609,7 +607,7 @@ section {
 }
 
 #casesWrapper {
-  @apply flex flex-col gap-14 justify-start items-center w-full h-full pt-[1vh] mt-[9rem];
+  @apply flex flex-col gap-14 justify-start items-center md:w-[70vw] h-full pt-[1vh] mt-[9rem];
 }
 
 .case {
@@ -745,15 +743,15 @@ section {
   }
 
   #cases {
-    @apply flex justify-center mt-[10rem] px-[1rem] !important;
+    @apply flex justify-between mt-[10rem] px-[1rem] !important;
   }
 
   #casesWrapper {
-    @apply w-[55vw] gap-[1.5rem];
+    @apply w-[60vw] gap-[1.5rem] lg:w-[70vw];
   }
 
   #casesTitleWrapper {
-    @apply mt-[9rem];
+    @apply w-[30vw] mt-[9rem];
   }
 
   #casesTitle {
@@ -769,7 +767,7 @@ section {
 
 @media (min-width: 1000px) {
   #cases {
-    @apply gap-[5rem] pb-[10rem] !important;
+    @apply gap-[1rem] pb-[10rem] !important;
   }
 
   #casesTitleWrapper {
@@ -777,7 +775,7 @@ section {
   }
 
   #about {
-    @apply mb-[30rem] scale-[120%];
+    @apply mb-[30rem];
   }
 
   #casesTitle {
@@ -818,12 +816,11 @@ section {
 
 @media (min-width: 1100px) {
   #casesTitleWrapper {
-    @apply w-[37%] ml-0 !important;
+    @apply w-[37vw] !important;
   }
 
   #casesWrapper {
-    @apply w-[27vw] mt-[18rem] !important;
-    scale: 120%;
+    @apply mt-[9rem];
   }
 
   #contact {
@@ -857,9 +854,7 @@ section {
     @apply text-left text-[3rem] mb-[2rem] pl-[2vw];
   }
 
-  #about {
-    @apply scale-[140%];
-  }
+  #about {}
 
   #contactTitle {
     @apply text-[3rem];
@@ -878,9 +873,7 @@ section {
 
 /*1400*/
 @media (min-width: 1400px) {
-  #about {
-    @apply scale-[150%];
-  }
+  #about {}
 }
 
 

@@ -54,7 +54,7 @@ export default {
         this.isSocialReady = true
         social.classList.remove('red')
       } else {
-        this.isSocialReady = fale
+        this.isSocialReady = false
         social.classList.add('red')
       }
 

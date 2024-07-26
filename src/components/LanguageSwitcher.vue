@@ -13,11 +13,25 @@
         </div>
     </div> -->
 
-    <select class="text-black font-medium cursor-pointer" @change="switchLanguage">
-        <option v-for="sLocale in supportedLocales" :key="sLocale" :value="sLocale" :selected="locale === sLocale">
-            {{ t(`locales.${sLocale}`) }}
-        </option>
-    </select>
+    <div class="flex items-center gap-2">
+        <button v-for="sLocale in supportedLocales" :key="sLocale" @click="switchLanguage(sLocale)"
+            :class="{ active: currentLocale === sLocale }"
+            class="flex items-center gap-1 border-2 border-[#717171] rounded-[10px] px-[.6rem] pt-[3px] pb-[6px] uppercase">
+            <svg class="pt-[2.95px]" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                    :stroke="currentLocale === sLocale ? '#000' : '#fff'" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M2 12H22" :stroke="currentLocale === sLocale ? '#000' : '#fff'" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z"
+                    :stroke="currentLocale === sLocale ? '#000' : '#fff'" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg> {{ sLocale }}
+        </button>
+    </div>
 </template>
 
 <script setup>
@@ -26,27 +40,26 @@ import { useRouter } from 'vue-router'
 import Tr from "../i18n/translation"
 import { useStore } from 'vuex'
 
-// import { ref } from "vue"
+import { ref } from "vue"
 
-// const colorSvg = ref('#fff')
+const currentLocale = ref(Tr.currentLocale)
 
-const { t, locale } = useI18n()
-
-const supportedLocales = Tr.supportedLocales
+    const supportedLocales = ref(Tr.supportedLocales)
 
 const router = useRouter()
 
 const store = useStore()
 
-const switchLanguage = async (event) => {
-    const newLocale = event.target.value
+const switchLanguage = async (newLocale) => {
 
+    currentLocale.value = newLocale
+
+    console.log(currentLocale.value, newLocale)
     await Tr.switchLanguage(newLocale)
 
     console.log('switchLAng')
 
     await store.dispatch('changeLocale', newLocale);
-
 
     try {
         await router.replace({ params: { locale: newLocale } })
@@ -64,3 +77,9 @@ export default {
     name: 'language-switcher'
 }
 </script>
+
+<style scoped>
+button.active {
+    @apply bg-white text-black font-medium border-white;
+}
+</style>

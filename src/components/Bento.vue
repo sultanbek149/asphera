@@ -1,22 +1,128 @@
 <template>
-  <div id="bentoWrapper">
-    <div class="headingFont cardText" id="card1">
-      <span class="headingFont" id="upperText">{{ $t('whoWeAre.title')}}</span>
-      <span>{{ $t('whoWeAre.subtitle') }}</span>
+  <div class="bentoGrid">
+    <div class="gridFirst">
+      <div class="a">
+        ASPHERA
+        ECOSYSTEM
+      </div>
+      <div :style="`background-image: url('./src/assets/icons/${$t('bento.images[1].img')}.png')`" class="b"></div>
+      <div :style="`background-image: url('./src/assets/icons/${$t('bento.images[2].img')}.png')`" class="c"></div>
     </div>
-    <div class="card" id="card2"></div>
-    <div class="card" id="card3"></div>
-    <div class="card" id="card4"></div>
-    <div class="card" id="card5"></div>
-    <div class="card" id="card6"></div>
+    <div class="gridSecond">
+      <div class="one"><img :src="`./src/assets/icons/${$t('bento.images[3].img')}.png`" alt=""></div>
+      <div class="two"><img :src="`./src/assets/icons/${$t('bento.images[4].img')}.png`" alt=""></div>
+      <div class="three"><img :src="`./src/assets/icons/${$t('bento.images[0].img')}.png`" alt=""></div>
+      <div class="four"><img :src="`./src/assets/icons/${$t('bento.images[5].img')}.png`" alt=""></div>
+    </div>
   </div>
+
 </template>
 <script>
 export default {
-  name: 'bento'
+  name: 'bento-grid'
 }
 </script>
+
 <style scoped>
+/* #1B1B1B */
+
+:is(.gridFirst, .gridSecond)>div {
+  @apply rounded-[15px] min-[375px]:rounded-[25px] min-[900px]:rounded-[30px];
+}
+
+
+.gridFirst {
+  @apply grid grid-cols-[1fr_100px] grid-rows-[100px_100px] gap-[6px] mb-2 min-[375px]:grid-cols-[1fr_110px] min-[375px]:grid-rows-[100px_120px] min-[425px]:gap-[8px] min-[425px]:mb-3 min-[455px]:grid-rows-[110px_140px] min-[492px]:grid-rows-[110px_150px] min-[492px]:grid-cols-[1fr_120px] min-[600px]:max-w-[500px] min-[900px]:max-w-[1200px] min-[900px]:grid-cols-[31fr_17fr_52fr] min-[900px]:grid-rows-[130px] min-[900px]:gap-3 min-[900px]:grid-rows-[140px] min-[1000px]:grid-rows-[150px] min-[1100px]:grid-rows-[170px] min-[1200px]:grid-rows-[190px] bg-[#000] w-[95%] mx-auto rounded-3xl;
+}
+
+.gridFirst>div:not(:first) {
+  border: 1px solid hsla(37, 86%, 74%, .1);
+}
+
+.a {
+  @apply flex items-center text-center font-semibold text-[27px] min-[375px]:text-[35px] min-[675px]:text-[50px] min-[425px]:pt-1 min-[425px]:text-start min-[1100px]:text-[55px] min-[1100px]:pb-[20px] min-[1100px]:pt-0 leading-none md:pt-0;
+}
+
+.b {
+  @apply bg-[url('@/assets/icons/2yEn.png')] bg-cover bg-no-repeat bg-center;
+}
+
+.c {
+  @apply max-[900px]:col-span-full bg-[url('@/assets/icons/50+.png')] bg-cover bg-no-repeat bg-center;
+}
+
+
+/* .one-a {
+  @apply basis-[47%] min-[435px]:basis-[30%] font-semibold text-[35px] min-[435px]:text-[55px] leading-none pt-10;
+}
+
+.one-b {
+  @apply basis-[47%] min-[435px]:basis-[16%] bg-[url('@/assets/icons/2yEn.png')] h-[110px] bg-cover bg-no-repeat bg-center;
+}
+
+.one-c {
+  @apply basis-[100%] min-[435px]:basis-[100%] h-[110px] bg-[url('@/assets/icons/50+.png')] bg-cover bg-no-repeat bg-center;
+} */
+
+.gridSecond {
+  @apply grid grid-cols-[1fr] min-[500px]:grid-cols-[1fr_1fr] min-[600px]:max-w-[500px] min-[900px]:grid-cols-[37fr_37fr_26fr] min-[900px]:grid-rows-[200px_140px] min-[1000px]:grid-rows-[200px_160px] min-[1200px]:grid-rows-[230px_180px] gap-[14px] w-[95%] min-[900px]:max-w-[1200px] mx-auto rounded-3xl bg-black;
+}
+
+/* grid-cols-[37fr_37fr_26fr] grid-rows-[220px_180px] */
+
+
+.gridSecond>div {
+  @apply bg-[#1B1B1B];
+  border: 1px solid hsla(37, 86%, 74%, .1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.one {
+  @apply min-[900px]:row-[1/-1]
+}
+
+.two {
+  @apply min-[500px]:col-[1/-1] min-[900px]:col-[2/3] min-[900px]:row-[1/2];
+}
+
+.three {
+  @apply min-[500px]:col-[2/3] min-[500px]:row-[1/-1] min-[900px]:col-[3/4] min-[900px]:row-[1/-1];
+}
+
+.four {
+  @apply min-[500px]:col-[1/-1] min-[900px]:col-[2/3] min-[900px]:row-[2/3];
+}
+
+
+
+/* .one {
+  @apply bg-[url('@/assets/icons/3x.png')] bg-contain bg-no-repeat bg-center h-[300px];
+} */
+
+/* row-[1/3] */
+
+/* .two {
+  @apply bg-[url('@/assets/icons/14.png')] bg-cover bg-no-repeat bg-center h-[145px];
+} */
+
+/* .three {
+  @apply bg-[url('@/assets/icons/20+.png')] bg-contain bg-no-repeat bg-center overflow-hidden h-[400px];
+} */
+/* row-[1/3] col-[3/4] */
+
+/* .four {
+  @apply bg-[url('@/assets/icons/15.png')] bg-[length:102%_110%] bg-no-repeat bg-center overflow-hidden h-[130px];
+} */
+
+
+/* bg-[url('@/assets/icons/3x.png')] bg-cover bg-no-repeat bg-center */
+</style>
+<!-- <style scoped>
 #bentoWrapper {
   @apply grid w-full p-7 h-fit gap-[1rem] justify-center;
   grid-template-columns: 1fr 1fr;
@@ -36,7 +142,7 @@ export default {
   */
 }
 #upperText {
-  @apply ml-1 text-white text-opacity-20 font-normal text-[0.7rem];
+  @apply ml-1 text-white text-opacity-20 text-[0.7rem];
   letter-spacing: 0.2rem;
 }
 #card2 {
@@ -163,4 +269,4 @@ export default {
     grid-row: 3;
   }
 }
-</style>
+</style> -->

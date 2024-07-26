@@ -1,6 +1,7 @@
 {
   "buttons": {
-    "hireUs": "Наймите нас"
+    "hireUs": "Наймите нас",
+    "learnMore": "Узнать Больше"
   },
   "navigation": {
     "header": {
@@ -22,7 +23,7 @@
         "description": null
       },
       {
-        "name": "Ai Чатботы",
+        "name": "Ai чатботы",
         "description": null
       },
       {
@@ -96,45 +97,75 @@
     "textBelow": "Мы создаём будущее вместе",
     "items": [
       {
-        "name": "Suncontract.org",
+        "name": "Suncontract",
+        "ico": "ico1",
         "type": "website",
         "link": "https://suncontract.org/",
-        "twitter": "https://x.com/sun_contract?s=21",
-        "description": "Создали современный и высокопроизводительный веб-сайт с использованием передовых технологий."
+        "link_name": "suncontract.org",
+        "social": "https://x.com/sun_contract?s=21",
+        "social_name": "sun_contract",
+        "sType": "x",
+        "description": "Создали современный и высокопроизводительный веб-сайт с использованием передовых технологий.",
+        "img": "suncontract",
+        "hint": "веб-дизайн"
       },
       {
         "name": "Spool.fi",
+        "ico": "ico2",
         "type": "website",
         "link": "https://enterprise.spool.fi/",
-        "twitter": "https://x.com/spoolfi?s=21",
-        "description": "Разработали современный, минималистичный и интуитивно понятный веб-сайт."
+        "link_name": "enterprise.spool.fi",
+        "social": "https://x.com/spoolfi?s=21",
+        "social_name": "spoolfi",
+        "sType": "x",
+        "description": "Разработали современный, минималистичный и интуитивно понятный веб-сайт.",
+        "img": "spoolfi",
+        "hint": "веб-дизайн"
       },
       {
         "name": "Tea Story",
+        "ico": "ico3",
         "type": "website",
         "link": "https://www.teastory.club/",
-        "instagram": "https://www.instagram.com/_teastore_?igsh=aGVyb255NmExMHA=",
-        "description": "Мы разработали современный и стильный веб-сайт для премиум продукции."
+        "link_name": "teastory.club",
+        "social": "https://www.instagram.com/_teastore_?igsh=aGVyb255NmExMHA=",
+        "social_name": "_teastore_",
+        "sType": "ig",
+        "description": "Мы разработали современный и стильный веб-сайт для премиум продукции.",
+        "img": "teastory",
+        "hint": "веб-дизайн"
       },
       {
         "name": "Corpasbot",
+        "ico": "ico4",
         "type": "telegram-bot",
-        "description": "Разработали корпоративного телеграмм-бота, который помогает сотрудникам выполнять ежедневные задачи, получать информацию и поддерживать связь с коллегами."
+        "description": "Разработали корпоративного телеграмм-бота, который помогает сотрудникам выполнять ежедневные задачи, получать информацию и поддерживать связь с коллегами.",
+        "img": "tgbot",
+        "hint": "тг-бот"
       },
       {
         "name": "Edu Track",
+        "ico": "ico5",
         "type": "database",
-        "description": "Спроектировали и внедрили Базу данных для управления академическими записями студентов, преподавателей и курсов."
+        "description": "Спроектировали и внедрили Базу данных для управления академическими записями студентов, преподавателей и курсов.",
+        "img": "database",
+        "hint": "база данных"
       },
       {
         "name": "EventManagerBot",
+        "ico": "ico4",
         "type": "telegram-bot",
-        "description": "Разработали тг-бот для организации и управления корпоративными и публичными мероприятиями."
+        "description": "Разработали тг-бот для организации и управления корпоративными и публичными мероприятиями.",
+        "img": "tgbot",
+        "hint": "тг-бот"
       },
       {
         "name": "Sm.Assistant",
+        "ico": "ico4",
         "type": "ai-chatbot",
-        "description": "Разработали ИИ чат-бот для поддержки клиентов в крупной e-commerce компании."
+        "description": "Разработали ИИ чат-бот для поддержки клиентов в крупной e-commerce компании.",
+        "img": "aibot",
+        "hint": "ии чат-бот"
       }
     ]
   },
@@ -171,6 +202,16 @@
       "help": "Чем мы можем вам помочь?",
       "submit": "Отправить"
     }
+  },
+  "bento": {
+    "images": [
+      { "img": "20+Ru" },
+      { "img": "2yRu" },
+      { "img": "50+Ru" },
+      { "img": "3xRu" },
+      { "img": "14Ru" },
+      { "img": "2.5xRu" }
+    ]
   },
   "docs": {
     "sections": [

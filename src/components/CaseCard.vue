@@ -1,24 +1,42 @@
 <template>
   <div id="wrapper">
-    <div class="inter" id="companyWrapper">
+    <div class="inter w-full" id="companyWrapper">
       <div @click="goToAbout" id="headingWrapper">
-        <!-- <img class="companyLogo" src="/src/assets/icons/company1.png" alt="company logo" /> -->
+        <img class="companyLogo" :src="`./src/assets/icons/icos/${caseItem.ico}.png`" alt="company logo" />
         <h3 id="title">{{ caseItem.name }}</h3>
       </div>
-      <div ref="social" class="socialCompanyWrapper">
-        <a target="_blank" class="social" href="https://discord.com/" v-if="caseItem.link">
-          <img id="global" src="../assets/icons/global.png" alt="company one website"
-            loading="lazy" />
-          <p>{{ caseItem.link }}</p>
+      <div ref="social" class="socialCompanyWrapper" v-if="caseItem.social || caseItem.link">
+        <a v-if="caseItem.link" target="_blank" class="social pt-[2px]" href="https://discord.com/">
+          <img id="global" src="../assets/icons/Union.png" alt="company one website" loading="lazy" />
+          <p class="pb-[1.4px]">{{ caseItem.link_name }}</p>
         </a>
-        <a class="social" href="https://twitter.com/" target="_blank">
-          <img id="twitter" src="../assets/icons/twitter.png" alt="company one twitter" loading="lazy" />
-          <p>company.com</p>
+        <a v-if="caseItem.sType === 'x'" target="_blank" class="social" :href="caseItem.social">
+          <img id="twitter" src="../assets/icons/x.png" alt="company one twitter" loading="lazy" />
+          <p class="pb-[1.3px]">{{
+            caseItem.social_name }}</p>
+        </a>
+        <a v-if="caseItem.sType === 'ig'" target="_blank" class="social" :href="caseItem.social">
+          <img id="twitter" src="../assets/icons/ins.png" alt="company one twitter" loading="lazy" />
+          <p class="pb-[1.5px]">{{
+            caseItem.social_name }}</p>
         </a>
       </div>
       <p id="description">
         {{ caseItem.description }}
       </p>
+
+      <div class="mt-4 z-[1000] lg:mt-[auto]">
+        <my-button class="learnmore">{{ $t('buttons.learnMore') }}</my-button>
+      </div>
+    </div>
+
+    <div class="banner">
+      <img :src="`./src/assets/icons/${caseItem.img}.png`" alt="web">
+      <p>{{ caseItem.hint }}</p>
+    </div>
+
+    <div class="mt-4 z-[1000] lg:hidden">
+      <my-button class="learnmore mob">{{ $t('buttons.learnMore') }}</my-button>
     </div>
     <!-- <div class="statWrapper" id="stat1">
       <p class="headingFont statTitle">3X</p>
@@ -44,6 +62,7 @@
   </div>
 </template>
 <script>
+import Tr from '@/i18n/translation'
 export default {
   name: 'case-card',
   props: { caseItem: Object },
@@ -57,7 +76,10 @@ export default {
       this.$store.commit('docs/setCurrentPageInfo')
       this.$store.commit('docs/setCurrentNavigationHooks')
 
-      this.$router.push('/about')
+      this.$router.push('/docs')
+
+      this.$router.push(Tr.i18nRoute({ name: 'docs' }))
+
     }
   },
   mounted() {
@@ -71,16 +93,13 @@ export default {
 </script>
 <style scoped>
 #wrapper {
-  @apply grid w-[90%] h-fit bg-[#1E1E1E] rounded-2xl p-4 text-left gap-[0.3rem];
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
-  transition: all 0.6s ease;
+  @apply flex flex-col w-[90%] h-fit bg-[#1E1E1E] rounded-[32px] p-6 md:p-8 text-left lg:flex-row lg:gap-[1rem];
+  /* grid-template-rows: auto auto auto; */
+  /* transition: all 0.6s ease; */
 }
 
 #companyWrapper {
-  @apply flex flex-col justify-start items-start gap-[0.5rem];
-  grid-column: 1;
-  grid-row: 1 / span 3;
+  @apply flex flex-col justify-start items-start lg:justify-normal;
   cursor: pointer;
 }
 
@@ -89,7 +108,35 @@ export default {
 }
 
 #title {
-  @apply font-semibold text-[1.8rem];
+  @apply font-semibold text-[1.6rem] md:text-[2rem] lg:text-[1.6rem] xl:text-[1.8rem] uppercase;
+}
+
+.learnmore {
+  border-radius: 20px;
+}
+
+.learnmore:not(.mob) {
+  @apply hidden lg:block;
+}
+
+.learnmore.mob {
+  @apply lg:hidden;
+}
+
+:deep(button) {
+  @apply lg:!h-[3rem] lg:!w-[12rem];
+  height: 2.3rem;
+}
+
+:deep(span) {
+  @apply lg:!text-xl;
+  font-size: 14px;
+  padding-top: 0px;
+  font-weight: normal;
+}
+
+.learnmore::after {
+  filter: none;
 }
 
 .companyLogo {
@@ -98,8 +145,11 @@ export default {
 }
 
 .socialCompanyWrapper {
-  @apply flex flex-row justify-evenly items-center w-[1rem] gap-[3rem];
-  scale: 65%;
+  @apply flex md:flex-row justify-evenly items-center gap-[2rem] mt-3 mb-2;
+}
+
+.socialCompanyWrapper p {
+  @apply text-[13px] lg:text-[14.5px] xl:text-[1rem];
 }
 
 .safariSocial {
@@ -108,7 +158,7 @@ export default {
 
 #twitter {
   aspect-ratio: 1;
-  @apply h-[2rem];
+  @apply h-[1rem];
 }
 
 #global {
@@ -121,60 +171,13 @@ export default {
 }
 
 #description {
-  @apply font-normal text-xs mt-[0.5rem];
-}
-
-.statWrapper {
-  @apply flex flex-row justify-end items-center gap-[1rem];
-}
-
-.statTitle {
-  @apply text-[1.4rem] text-right;
-  font-weight: 900;
-}
-
-.statDesc {
-  @apply text-xs;
-  width: 4rem;
-}
-
-#stat1 {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-#stat2 {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-#stat3 {
-  grid-column: 2;
-  grid-row: 3;
+  @apply font-normal w-full text-[16px] md:text-[1rem] mt-[0.5rem] lg:mt-1 lg:text-[1rem] xl:text-[1.2rem];
 }
 
 @media (max-width: 375px) {
   #title {
     @apply text-[1.5rem];
   }
-
-  #description {
-    font-size: 0.65rem;
-  }
-
-  .statTitle {
-    @apply text-[1.2rem];
-  }
-
-  .statDesc {
-    font-size: 0.65rem;
-    width: 3.4rem;
-  }
-}
-
-.highlighted {
-  @apply shadow-[#6242BD] shadow-lg !important;
-  scale: 102%;
 }
 
 @media (min-width: 722px) {
@@ -183,9 +186,18 @@ export default {
   }
 }
 
-@media (min-width: 1000px) {
-  .statDesc {
-    width: 5rem;
-  }
+.banner {
+  @apply w-full;
+}
+
+.banner img {
+  @apply mb-3 w-full rounded-[20px];
+}
+
+.banner p {
+  padding: 2px 15px 6px;
+  width: fit-content;
+  border: 1px solid;
+  border-radius: 16px;
 }
 </style>

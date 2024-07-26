@@ -1,6 +1,7 @@
 {
   "buttons": {
-    "hireUs": "Hire us"
+    "hireUs": "Hire us",
+    "learnMore": "Learn More"
   },
   "locales": {
     "en": "English",
@@ -100,45 +101,75 @@
     "textBelow": "Building the future together",
     "items": [
       {
-        "name": "Suncontract.org",
+        "name": "Suncontract",
+        "ico": "ico1",
         "type": "website",
         "link": "https://suncontract.org/",
+        "link_name": "suncontract.org",
         "social": "https://x.com/sun_contract?s=21",
-        "description": "Developed a modern and high performing website using cutting edge technology."
+        "social_name": "sun_contract",
+        "sType": "x",
+        "description": "Developed a modern and high performing website using cutting edge technology.",
+        "img": "suncontract",
+        "hint": "web-design"
       },
       {
         "name": "Spool.fi",
+        "ico": "ico2",
         "type": "website",
         "link": "https://enterprise.spool.fi/",
+        "link_name": "enterprise.spool.fi",
         "social": "https://x.com/spoolfi?s=21",
-        "description": "Developed a modern, minimalistic and intuitive website."
+        "social_name": "spoolfi",
+        "sType": "x",
+        "description": "Developed a modern, minimalistic and intuitive website.",
+        "img": "spoolfi",
+        "hint": "web-design"
       },
       {
         "name": "Tea Story",
+        "ico": "ico3",
         "type": "website",
         "link": "https://www.teastory.club/",
+        "sType": "ig",
+        "link_name": "teastory.club",
         "social": "https://www.instagram.com/_teastore_?igsh=aGVyb255NmExMHA=",
-        "description": "We designed a modern and stylish website for premium products."
+        "social_name": "_teastore_",
+        "description": "We designed a modern and stylish website for premium products.",
+        "img": "teastory",
+        "hint": "web-design"
       },
       {
         "name": "Corpasbot",
+        "ico": "ico4",
         "type": "telegram-bot",
-        "description": "Developed a corporate telegram bot that helps employees complete daily tasks, receive information and keep in touch with colleagues."
+        "description": "Developed a corporate telegram bot that helps employees complete daily tasks, receive information and keep in touch with colleagues.",
+        "img": "tgbot",
+        "hint": "telegram-bot"
       },
       {
         "name": "Edu Track",
         "type": "database",
-        "description": "Designed and implemented a Database to manage academic records of students, faculty, and courses."
+        "ico": "ico5",
+        "description": "Designed and implemented a Database to manage academic records of students, faculty, and courses.",
+        "img": "database",
+        "hint": "database"
       },
       {
         "name": "EventManagerBot",
+        "ico": "ico4",
         "type": "telegram-bot",
-        "description": "Developed a telegram bot to organize and manage corporate and public events."
+        "description": "Developed a telegram bot to organize and manage corporate and public events.",
+        "img": "tgbot",
+        "hint": "telegram-bot"
       },
       {
         "name": "Sm.Assistant",
+        "ico": "ico4",
         "type": "ai-chatbot",
-        "description": "Developed an AI chatbot for customer support at a large e-commerce company."
+        "description": "Developed an AI chatbot for customer support at a large e-commerce company.",
+        "img": "aibot",
+        "hint": "Ai-chatbot"
       }
     ]
   },
@@ -175,6 +206,16 @@
       "help": "How can we help you?",
       "submit": "Submit"
     }
+  },
+  "bento": {
+    "images": [
+      { "img": "20+" },
+      { "img": "2yEn" },
+      { "img": "50+" },
+      { "img": "3x" },
+      { "img": "14" },
+      { "img": "2.5x" }
+    ]
   },
   "docs": {
     "sections": [

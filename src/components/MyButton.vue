@@ -28,7 +28,7 @@ const toggleActive = () => isActive.value = !isActive.value
 }
 
 button {
-  @apply w-[10rem] h-[2.7rem] flex items-center justify-center rounded-[9px] font-[500] ml-1;
+  @apply w-[10rem] h-[2.7rem] flex items-center justify-center rounded-[9px] font-[500];
   background: #191c29;
   cursor: pointer;
   position: relative;
@@ -38,7 +38,7 @@ button::before,
 button::after {
   content: "";
   position: absolute;
-  inset: -.1rem;
+  inset: -.09rem;
   z-index: -1;
   background: conic-gradient(from var(--gradient-angle), #707070, #707070, #6BA5A8, #4B71FF);
   border-radius: inherit;
@@ -46,19 +46,20 @@ button::after {
 }
 
 button span {
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2.5px;
   background: #000;
   z-index: 10;
   height: 100%;
-  place-items: center;
-  padding-bottom: 4px;
-
   width: 100%;
   border-radius: inherit;
+  transition: all .3s ease;
 }
 
 button::after {
-  filter: blur(3.5rem)
+  filter: blur(3.5rem);
 }
 
 @keyframes rotation {
@@ -78,23 +79,23 @@ button::after {
   animation: gradient_move 3s ease infinite;
 } */
 
+button:hover {
+  @apply scale-105;
+}
+button:hover::after, button:hover::before {
+  animation: none;
+  background: white;
+}
 
+button:hover span {
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+  transition: all .3s ease;
+}
 
-@media (hover: hover) {
-  button {
-    transition: all 0.3s ease;
-  }
-
-  button:hover span {
-    @apply scale-105;
-    background-color: #fff;
-    color: #000;
-    transition: all 0.3s ease;
-  }
-
-  button:active {
-    @apply scale-95;
-  }
+button:active {
+  @apply scale-95;
 }
 
 @media (hover: none) {
