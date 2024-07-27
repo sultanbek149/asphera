@@ -535,7 +535,7 @@ header {
 }
 
 #hireSmall {
-  @apply hidden text-[12px] min-[425px]:text-[16px];
+  @apply hidden text-[14px] min-[425px]:text-[16px];
 }
 
 
@@ -616,7 +616,7 @@ section {
 
 @media (hover: hover) {
   #casesWrapper>.case:hover {
-    @apply shadow-[#6242BD] shadow-lg !important;
+    @apply shadow-[#4B71FF] shadow-lg !important;
     scale: 102%;
   }
 }

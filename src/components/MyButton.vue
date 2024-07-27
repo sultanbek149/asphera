@@ -32,7 +32,7 @@ button {
   background: #191c29;
   cursor: pointer;
   position: relative;
-}
+  transition: all .3s ease;}
 
 button::before,
 button::after {

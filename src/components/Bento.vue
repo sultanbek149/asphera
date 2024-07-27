@@ -115,9 +115,7 @@ export default {
 } */
 /* row-[1/3] col-[3/4] */
 
-/* .four {
-  @apply bg-[url('@/assets/icons/15.png')] bg-[length:102%_110%] bg-no-repeat bg-center overflow-hidden h-[130px];
-} */
+
 
 
 /* bg-[url('@/assets/icons/3x.png')] bg-cover bg-no-repeat bg-center */
