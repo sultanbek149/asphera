@@ -5,7 +5,7 @@
         ASPHERA
         ECOSYSTEM
       </div>
-      <div :style="`background-image: url('./${$t('bento.images[1].img')}.png')`" class="b"></div>
+      <div :style="`background-image: url('./src/assets/icons/${$t('bento.images[1].img')}.png')`" class="b"></div>
       <div :style="`background-image: url('./src/assets/icons/${$t('bento.images[2].img')}.png')`" class="c"></div>
     </div>
     <div class="gridSecond">
@@ -17,11 +17,6 @@
   </div>
 
 </template>
-<script setup>
-// const getImageUrl = (name) => {
-//   return new URL(`./src/assets/icons/${name}.png`, import.meta.url).href
-// }
-</script>
 <script>
 export default {
   name: 'bento-grid'
