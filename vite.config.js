@@ -27,7 +27,7 @@ export default defineConfig({
       targets: [
         {
           src: 'src/assets/**/*', // Source folder for images
-          dest: 'icons' // Destination folder in the build output
+          dest: 'assets' // Destination folder in the build output
         }
       ]
     })
