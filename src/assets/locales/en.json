@@ -91,9 +91,9 @@
     "subtitle": "Singular company. We specialize in developing and implementing advanced Web2 and Web3 products for businesses. 50+ projects developed."
   },
   "marquee": [
-    " | Web | AI | Blockchain | Telegram mini-Apps | Mobile Applications | Automation | Databases",
-    " | Website | Telegram mini-App | Application | Landing Page | Bot | NFT | dApp | Memecoin | Smart Contract | DeFi",
-    " | Web2 | Web3 | Telegram | iOS | Android"
+    " {'|'} Web {'|'} AI {'|'} Blockchain {'|'} Telegram mini-Apps {'|'} Mobile Applications {'|'} Automation {'|'} Databases",
+    " {'|'} Website {'|'} Telegram mini-App {'|'} Application {'|'} Landing Page {'|'} Bot {'|'} NFT {'|'} dApp {'|'} Memecoin {'|'} Smart Contract {'|'} DeFi",
+    " {'|'} Web2 {'|'} Web3 {'|'} Telegram {'|'} iOS {'|'} Android"
   ],
   "cases": {
     "title": "CASES",
