@@ -2,7 +2,7 @@
   <div id="wrapper">
     <div class="inter w-full" id="companyWrapper">
       <div @click="goToAbout" id="headingWrapper">
-        <img class="companyLogo" :src="`../assets/icons/icos/ico1.png`" alt="company logo" />
+        <img class="companyLogo" :src="`../assets/icons/icos/${caseItem.ico}.png`" alt="company logo" />
         <h3 id="title">{{ caseItem.name }}</h3>
       </div>
       <div ref="social" class="socialCompanyWrapper" v-if="caseItem.social || caseItem.link">
