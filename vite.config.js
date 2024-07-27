@@ -26,7 +26,7 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'src/assets/**/*', // Source folder for images
+          src: './src/assets/**/*', // Source folder for images
           dest: 'assets' // Destination folder in the build output
         }
       ]
