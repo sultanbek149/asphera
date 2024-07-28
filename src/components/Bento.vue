@@ -6,13 +6,13 @@
         ECOSYSTEM
       </div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? y2En : y2Ru})` }" class="b"></div>
-      <div :style="{ backgroundImage: `url(${fiftyplus})` }" class="c"></div>
+      <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50Ru : plus50En})` }" class="c"></div>
     </div>
     <div class="gridSecond">
-      <div class="one"><img :src="`./src/assets/icons/${$t('bento.images[3].img')}.png`" alt=""></div>
-      <div class="two"><img :src="`./src/assets/icons/${$t('bento.images[4].img')}.png`" alt=""></div>
-      <div class="three"><img :src="`./src/assets/icons/${$t('bento.images[0].img')}.png`" alt=""></div>
-      <div class="four"><img :src="`./src/assets/icons/${$t('bento.images[5].img')}.png`" alt=""></div>
+      <div class="one"><img :src="`${Tr.currentLocale === 'en' ? x3En : x3Ru}`" alt=""></div>
+      <div class="two"><img :src="`${Tr.currentLocale === 'en' ? En14 : Ru14}`" alt=""></div>
+      <div class="three"><img :src="`${Tr.currentLocale === 'en' ? plus20En : plus20Ru}`" alt=""></div>
+      <div class="four"><img :src="`${Tr.currentLocale === 'en' ? x25Ru : x25En}`" alt=""></div>
     </div>
   </div>
 
@@ -21,8 +21,16 @@
 import Tr from '@/i18n/translation'
 import y2Ru from '@/assets/icons/2yRu.png'
 import y2En from '@/assets/icons/2yEn.png'
-
-const fiftyplus = new URL(`@/assets/icons/50+Ru.png`, import.meta.url).href
+import plus50Ru from '@/assets/icons/50+Ru.png'
+import plus50En from '@/assets/icons/50+En.png'
+import x3Ru from '@/assets/icons/3xRu.png'
+import x3En from '@/assets/icons/3xEn.png'
+import Ru14 from '@/assets/icons/14Ru.png'
+import En14 from '@/assets/icons/14En.png'
+import plus20Ru from '@/assets/icons/20+Ru.png'
+import plus20En from '@/assets/icons/20+En.png'
+import x25Ru from '@/assets/icons/2.5xRu.png'
+import x25En from '@/assets/icons/2.5xEn.png'
 
 
 </script>
