@@ -2,7 +2,7 @@
   <div id="wrapper">
     <div class="inter w-full" id="companyWrapper">
       <div @click="goToAbout" id="headingWrapper">
-        <img class="companyLogo" :src="`./src/assets/icons/icos/ico2.png`" alt="company logo" />
+        <img class="companyLogo" :src="imageIco" alt="company logo" />
         <h3 id="title">{{ caseItem.name }}</h3>
       </div>
       <div ref="social" class="socialCompanyWrapper" v-if="caseItem.social || caseItem.link">
@@ -13,12 +13,12 @@
         <a v-if="caseItem.sType === 'x'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/x.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.3px]">{{
-            caseItem.social_name }}</p>
+        caseItem.social_name }}</p>
         </a>
         <a v-if="caseItem.sType === 'ig'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/ins.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.5px]">{{
-            caseItem.social_name }}</p>
+        caseItem.social_name }}</p>
         </a>
       </div>
       <p id="description">
@@ -61,11 +61,16 @@
     </div> -->
   </div>
 </template>
+<script setup>
+</script>
 <script>
 import Tr from '@/i18n/translation'
 export default {
   name: 'case-card',
-  props: { caseItem: Object },
+  props: { caseItem: Object, index: Number},
+  data() {
+    return { imageIco: new URL(`@/assets/icons/icos/ico${this.index}.png`, import.meta.url).href }
+  },
   methods: {
     goToAbout() {
       this.$store.commit('docs/setCurrentSectionId', 0);
@@ -124,12 +129,12 @@ export default {
 }
 
 :deep(button) {
-  @apply lg:!h-[3rem] lg:!w-[12rem];
+  @apply lg: !h-[3rem] lg: !w-[12rem];
   height: 2.3rem;
 }
 
 :deep(span) {
-  @apply lg:!text-xl;
+  @apply lg: !text-xl;
   font-size: 14px;
   padding-top: 0px;
   font-weight: normal;
