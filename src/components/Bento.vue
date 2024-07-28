@@ -32,7 +32,6 @@ import plus20Ru from '@/assets/icons/20+Ru.png'
 import plus20En from '@/assets/icons/20+En.png'
 import x25Ru from '@/assets/icons/2.5xRu.png'
 import x25En from '@/assets/icons/2.5xEn.png'
-import VLazyImage from "v-lazy-image";
 
 
 </script>
