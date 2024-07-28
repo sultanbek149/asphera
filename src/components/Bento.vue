@@ -5,7 +5,7 @@
         ASPHERA
         ECOSYSTM
       </div>
-      <div :style="{ backgroundImage: `url(./src/assets/icons/${$t('bento.images[1].img')}.png)` }" class="b"></div>
+      <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? y2En : y2Ru})` }" class="b"></div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50En : plus50Ru})` }" class="c"></div>
     </div>
     <div class="gridSecond">
@@ -20,8 +20,8 @@
 </template>
 <script setup>
 import Tr from '@/i18n/translation'
-// import y2Ru from '@/assets/icons/2yRu.png'
-// import y2En from '@/assets/icons/2yEn.png'
+import y2Ru from '@/assets/icons/2yRu.png'
+import y2En from '@/assets/icons/2yEn.png'
 import plus50Ru from '@/assets/icons/50+Ru.png'
 import plus50En from '@/assets/icons/50+En.png'
 import x3Ru from '@/assets/icons/3xRu.png'

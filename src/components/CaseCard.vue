@@ -31,7 +31,7 @@
     </div>
 
     <div class="banner">
-      <img :src="`../assets/icons/${caseItem.img}.png`" alt="web">
+      <img :src="caseImg" alt="web">
       <p>{{ caseItem.hint }}</p>
     </div>
 
@@ -69,7 +69,10 @@ export default {
   name: 'case-card',
   props: { caseItem: Object, index: Number },
   data() {
-    return { imageIco: new URL(`../assets/icons/icos/ico${this.index >= 5 ? 4 : this.index + 1}.png`, import.meta.url).href }
+    return {
+      imageIco: new URL(`../assets/icons/icos/ico${this.index >= 5 ? 4 : this.index + 1}.png`, import.meta.url).href,
+      caseImg: new URL(`../assets/icons/cases/${(this.index === 3 || this.index === 5) ? 3 : this.index + 1}case.png`, import.meta.url).href
+    }
   },
   methods: {
     goToAbout() {
