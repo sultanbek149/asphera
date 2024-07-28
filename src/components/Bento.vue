@@ -3,7 +3,7 @@
     <div class="gridFirst">
       <div class="a">
         ASPHERA
-        ECOSYSTEM
+        ECOSYSTE
       </div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? y2En : y2Ru})` }" class="b"></div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50Ru : plus50En})` }" class="c"></div>
