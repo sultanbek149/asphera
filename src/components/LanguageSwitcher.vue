@@ -35,20 +35,18 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import Tr from "../i18n/translation"
-import { useStore } from 'vuex'
 
 import { ref } from "vue"
 
 const currentLocale = ref(Tr.currentLocale)
 
-    const supportedLocales = ref(Tr.supportedLocales)
+const supportedLocales = ref(Tr.supportedLocales)
 
 const router = useRouter()
 
-const store = useStore()
+// const store = useStore()
 
 const switchLanguage = async (newLocale) => {
 
@@ -59,7 +57,7 @@ const switchLanguage = async (newLocale) => {
 
     console.log('switchLAng')
 
-    await store.dispatch('changeLocale', newLocale);
+    // await store.dispatch('changeLocale', newLocale);
 
     try {
         await router.replace({ params: { locale: newLocale } })
