@@ -19,9 +19,8 @@
 </template>
 <script setup>
 import Tr from '@/i18n/translation'
-
-const y2Ru = new URL(`@/assets/icons/2yRu.png`, import.meta.url).href
-const y2En = new URL(`@/assets/icons/2yEn.png`, import.meta.url).href
+import y2Ru from '@/assets/icons/2yRu.png'
+import y2En from '@/assets/icons/2yEn.png'
 
 const fiftyplus = new URL(`@/assets/icons/50+Ru.png`, import.meta.url).href
 
