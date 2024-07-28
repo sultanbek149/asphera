@@ -9,11 +9,11 @@
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50En : plus50Ru})` }" class="c"></div>
     </div>
     <div class="gridSecond">
-      <div class="one"><img :src="`${Tr.currentLocale === 'en' ? x3En : x3Ru}`" alt=""></div>
-      <div class="two"><img :src="`${Tr.currentLocale === 'en' ? En14 : Ru14}`" alt=""></div>
-      <div class="three"><img :src="`${Tr.currentLocale === 'en' ? plus20En : plus20Ru}`" alt="">
+      <div class="one"><img loading="lazy" :src="`${Tr.currentLocale === 'en' ? x3En : x3Ru}`" alt=""></div>
+      <div class="two"><img loading="lazy" :src="`${Tr.currentLocale === 'en' ? En14 : Ru14}`" alt=""></div>
+      <div class="three"><img loading="lazy" :src="`${Tr.currentLocale === 'en' ? plus20En : plus20Ru}`" alt="">
       </div>
-      <div class="four"><img :src="`${Tr.currentLocale === 'en' ? x25En : x25Ru}`" alt=""></div>
+      <div class="four"><img loading="lazy" :src="`${Tr.currentLocale === 'en' ? x25En : x25Ru}`" alt=""></div>
     </div>
   </div>
 
