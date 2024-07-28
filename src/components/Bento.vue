@@ -5,8 +5,8 @@
         ASPHERA
         ECOSYSTEM
       </div>
-      <div :style="`background-image: url('./src/assets/icons/${$t('bento.images[1].img')}.png')`" class="b"></div>
-      <div :style="`background-image: url('./src/assets/icons/${$t('bento.images[2].img')}.png')`" class="c"></div>
+      <div :style="{ backgroundImage: `url(${y2})` }" class="b"></div>
+      <div :style="{ backgroundImage: `url(${fiftyplus})` }" class="c"></div>
     </div>
     <div class="gridSecond">
       <div class="one"><img :src="`./src/assets/icons/${$t('bento.images[3].img')}.png`" alt=""></div>
@@ -17,6 +17,15 @@
   </div>
 
 </template>
+<script setup>
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
+
+const y2 = new URL(`@/assets/icons/2yRu.png`, import.meta.url).href
+const fiftyplus = new URL(`@/assets/icons/50+Ru.png`, import.meta.url).href
+
+
+</script>
 <script>
 export default {
   name: 'bento-grid'
