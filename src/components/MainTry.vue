@@ -73,7 +73,7 @@
       </div>
     </section>
     <section id="about">
-      <bento-grid></bento-grid>
+      <!-- <bento-grid></bento-grid> -->
     </section>
     <section id="contact">
       <contact-message ref="contactMessage"></contact-message>
