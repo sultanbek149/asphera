@@ -71,7 +71,7 @@ export default {
   data() {
     return {
       imageIco: new URL(`../assets/icons/icos/ico${this.index >= 5 ? 4 : this.index + 1}.png`, import.meta.url).href,
-      caseImg: new URL(`../assets/icons/cases/${(this.index === 3 || this.index === 5) ? 3 : this.index + 1}case.png`, import.meta.url).href
+      caseImg: new URL(`../assets/icons/cases/${(this.index === 5) ? 4 : this.index + 1}case.png`, import.meta.url).href
     }
   },
   methods: {
