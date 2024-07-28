@@ -129,12 +129,12 @@ export default {
 }
 
 :deep(button) {
-  @apply lg: !h-[3rem] lg: !w-[12rem];
+  @apply lg:!h-[3rem] lg:!w-[12rem];
   height: 2.3rem;
 }
 
 :deep(span) {
-  @apply lg: !text-xl;
+  @apply lg:!text-xl;
   font-size: 14px;
   padding-top: 0px;
   font-weight: normal;
