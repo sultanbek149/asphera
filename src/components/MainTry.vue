@@ -1,5 +1,5 @@
 <template>
-  <!-- <pre-loader></pre-loader> -->
+  <pre-loader></pre-loader>
   <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
       <div class="relative w-[45px] h-full max-[500px]:ml-[20px] max-[500px]:mt-[5px]">
@@ -73,7 +73,7 @@
       </div>
     </section>
     <section id="about">
-      <!-- <bento-grid></bento-grid> -->
+      <bento-grid></bento-grid>
     </section>
     <section id="contact">
       <contact-message ref="contactMessage"></contact-message>
