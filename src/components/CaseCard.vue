@@ -31,7 +31,7 @@
     </div>
 
     <div class="banner">
-      <img :src="`./src/assets/icons/${caseItem.img}.png`" alt="web">
+      <img :src="`../assets/icons/${caseItem.img}.png`" alt="web">
       <p>{{ caseItem.hint }}</p>
     </div>
 
