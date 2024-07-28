@@ -14,7 +14,7 @@ export default defineConfig({
       template: {
         compilerOptions: {
           // Use a regex to match the tag name of your custom element
-          isCustomElement: (tag) => tag === 'spline-viewer'
+          isCustomElement: (tag) => ['spline-viewer', 'bento-grid'].includes(tag)
         }
       }
     }),

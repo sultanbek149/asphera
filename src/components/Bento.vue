@@ -11,7 +11,8 @@
     <div class="gridSecond">
       <div class="one"><img :src="`${Tr.currentLocale === 'en' ? x3En : x3Ru}`" alt=""></div>
       <div class="two"><img :src="`${Tr.currentLocale === 'en' ? En14 : Ru14}`" alt=""></div>
-      <div class="three"><img :src="`${Tr.currentLocale === 'en' ? plus20En : plus20Ru}`" alt=""></div>
+      <div class="three"><img :src="`${Tr.currentLocale === 'en' ? plus20En : plus20Ru}`" alt="">
+      </div>
       <div class="four"><img :src="`${Tr.currentLocale === 'en' ? x25En : x25Ru}`" alt=""></div>
     </div>
   </div>
@@ -31,6 +32,7 @@ import plus20Ru from '@/assets/icons/20+Ru.png'
 import plus20En from '@/assets/icons/20+En.png'
 import x25Ru from '@/assets/icons/2.5xRu.png'
 import x25En from '@/assets/icons/2.5xEn.png'
+import VLazyImage from "v-lazy-image";
 
 
 </script>
@@ -101,8 +103,6 @@ export default {
 .four {
   @apply min-[500px]:col-[1/-1] min-[900px]:col-[2/3] min-[900px]:row-[2/3];
 }
-
-
 </style>
 <!-- <style scoped>
 #bentoWrapper {

@@ -3,7 +3,6 @@ import NavBar from '@/components/NavBar.vue'
 import ServiceCard from '@/components/ServiceCard.vue'
 import TransparentButton from '@/components/TransparentButton.vue'
 import CaseCard from '@/components/CaseCard.vue'
-import Bento from '@/components/Bento.vue'
 import ContactForm from '@/components/ContactForm.vue'
 import MyFooter from '@/components/MyFooter.vue'
 import Marquee from '@/components/Marquee.vue'
@@ -21,6 +20,7 @@ import BurgerButton from '@/components/BurgerButton.vue'
 import ContactPopup from '@/components/ContactPopup.vue'
 import Preloader from '@/components/Preloader.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import Bento from '@/components/Bento.vue'
 
 
 export default [
@@ -38,7 +38,6 @@ export default [
   ServiceCard,
   TransparentButton,
   CaseCard,
-  Bento,
   ContactForm,
   MyFooter,
   Marquee,
@@ -46,5 +45,6 @@ export default [
   MainTry,
   MyDropdown,
   Preloader,
-  LanguageSwitcher
+  Bento,
+  LanguageSwitcher, 
 ]
