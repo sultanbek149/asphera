@@ -5,7 +5,7 @@
         ASPHERA
         ECOSYSTEM
       </div>
-      <div :style="{ backgroundImage: `url(${y2})` }" class="b"></div>
+      <div :style="{ backgroundImage: `url(${this.$i18n.locale === 'ru' ? y2Ru : y2En})` }" class="b"></div>
       <div :style="{ backgroundImage: `url(${fiftyplus})` }" class="c"></div>
     </div>
     <div class="gridSecond">
@@ -18,10 +18,9 @@
 
 </template>
 <script setup>
-import { useI18n } from "vue-i18n"
-const { t } = useI18n()
+const y2Ru = new URL(`@/assets/icons/2yRu.png`, import.meta.url).href
+const y2En = new URL(`@/assets/icons/2yEn.png`, import.meta.url).href
 
-const y2 = new URL(`@/assets/icons/2yRu.png`, import.meta.url).href
 const fiftyplus = new URL(`@/assets/icons/50+Ru.png`, import.meta.url).href
 
 
