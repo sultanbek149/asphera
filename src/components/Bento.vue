@@ -6,7 +6,7 @@
         ECOSYSTM
       </div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? y2En : y2Ru})` }" class="b"></div>
-      <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50Ru : plus50En})` }" class="c"></div>
+      <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50En : plus50Ru})` }" class="c"></div>
     </div>
     <div class="gridSecond">
       <div class="one"><img :src="`${Tr.currentLocale === 'en' ? x3En : x3Ru}`" alt=""></div>
