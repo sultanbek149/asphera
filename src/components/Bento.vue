@@ -61,25 +61,12 @@ export default {
 }
 
 .b {
-  @apply bg-[url('@/assets/icons/2yEn.png')] bg-cover bg-no-repeat bg-center;
+  @apply bg-cover bg-no-repeat bg-center;
 }
 
 .c {
-  @apply max-[900px]:col-span-full bg-[url('@/assets/icons/50+.png')] bg-cover bg-no-repeat bg-center;
+  @apply max-[900px]:col-span-full bg-cover bg-no-repeat bg-center;
 }
-
-
-/* .one-a {
-  @apply basis-[47%] min-[435px]:basis-[30%] font-semibold text-[35px] min-[435px]:text-[55px] leading-none pt-10;
-}
-
-.one-b {
-  @apply basis-[47%] min-[435px]:basis-[16%] bg-[url('@/assets/icons/2yEn.png')] h-[110px] bg-cover bg-no-repeat bg-center;
-}
-
-.one-c {
-  @apply basis-[100%] min-[435px]:basis-[100%] h-[110px] bg-[url('@/assets/icons/50+.png')] bg-cover bg-no-repeat bg-center;
-} */
 
 .gridSecond {
   @apply grid grid-cols-[1fr] min-[500px]:grid-cols-[1fr_1fr] min-[600px]:max-w-[500px] min-[900px]:grid-cols-[37fr_37fr_26fr] min-[900px]:grid-rows-[200px_140px] min-[1000px]:grid-rows-[200px_160px] min-[1200px]:grid-rows-[230px_180px] gap-[14px] w-[95%] min-[900px]:max-w-[1200px] mx-auto rounded-3xl bg-black;
@@ -114,8 +101,6 @@ export default {
 .four {
   @apply min-[500px]:col-[1/-1] min-[900px]:col-[2/3] min-[900px]:row-[2/3];
 }
-
-
 </style>
 <!-- <style scoped>
 #bentoWrapper {
