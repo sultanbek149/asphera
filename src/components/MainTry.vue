@@ -58,7 +58,8 @@
       </div>
 
       <div id="casesWrapper" ref="casesWrapper" @scroll="checkScroll">
-        <case-card v-for="item in $tm('cases.items')" ref="case" :key="item.name" class="case" :caseItem="item" />
+        <case-card v-for="(item, index) in $tm('cases.items')" ref="case" :key="item.name" class="case" :caseItem="item"
+          :index="index" />
       </div>
     </section>
 
