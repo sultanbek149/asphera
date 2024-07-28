@@ -5,7 +5,7 @@
         ASPHERA
         ECOSYSTEM
       </div>
-      <div :style="{ backgroundImage: `url(${this.$i18n.locale === 'ru' ? y2Ru : y2En})` }" class="b"></div>
+      <div :style="{ backgroundImage: `url(${cLang === 'en' ? y2En : y2Ru})` }" class="b"></div>
       <div :style="{ backgroundImage: `url(${fiftyplus})` }" class="c"></div>
     </div>
     <div class="gridSecond">
@@ -18,6 +18,10 @@
 
 </template>
 <script setup>
+import Tr from '@/i18n/translation'
+
+const cLang = Tr.currentLocale
+
 const y2Ru = new URL(`@/assets/icons/2yRu.png`, import.meta.url).href
 const y2En = new URL(`@/assets/icons/2yEn.png`, import.meta.url).href
 
