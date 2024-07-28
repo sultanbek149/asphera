@@ -67,9 +67,9 @@
 import Tr from '@/i18n/translation'
 export default {
   name: 'case-card',
-  props: { caseItem: Object, index: Number},
+  props: { caseItem: Object, index: Number },
   data() {
-    return { imageIco: new URL(`@/assets/icons/icos/ico${this.index}.png`, import.meta.url).href }
+    return { imageIco: new URL(`@/assets/icons/icos/ico${this.index >= 5 ? 5 : this.index}.png`, import.meta.url).href }
   },
   methods: {
     goToAbout() {
@@ -129,12 +129,12 @@ export default {
 }
 
 :deep(button) {
-  @apply lg:!h-[3rem] lg:!w-[12rem];
+  @apply lg: !h-[3rem] lg: !w-[12rem];
   height: 2.3rem;
 }
 
 :deep(span) {
-  @apply lg:!text-xl;
+  @apply lg: !text-xl;
   font-size: 14px;
   padding-top: 0px;
   font-weight: normal;
