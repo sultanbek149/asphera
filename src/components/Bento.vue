@@ -3,7 +3,7 @@
     <div class="gridFirst">
       <div class="a">
         ASPHERA
-        ECOSYSTEM
+        ECOSYSTM
       </div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? y2En : y2Ru})` }" class="b"></div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50Ru : plus50En})` }" class="c"></div>
@@ -12,7 +12,7 @@
       <div class="one"><img :src="`${Tr.currentLocale === 'en' ? x3En : x3Ru}`" alt=""></div>
       <div class="two"><img :src="`${Tr.currentLocale === 'en' ? En14 : Ru14}`" alt=""></div>
       <div class="three"><img :src="`${Tr.currentLocale === 'en' ? plus20En : plus20Ru}`" alt=""></div>
-      <div class="four"><img :src="`${Tr.currentLocale === 'en' ? x25Ru : x25En}`" alt=""></div>
+      <div class="four"><img :src="`${Tr.currentLocale === 'en' ? x25En : x25Ru}`" alt=""></div>
     </div>
   </div>
 
@@ -101,6 +101,8 @@ export default {
 .four {
   @apply min-[500px]:col-[1/-1] min-[900px]:col-[2/3] min-[900px]:row-[2/3];
 }
+
+
 </style>
 <!-- <style scoped>
 #bentoWrapper {
