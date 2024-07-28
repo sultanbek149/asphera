@@ -2,7 +2,7 @@
   <div id="wrapper">
     <div class="inter w-full" id="companyWrapper">
       <div @click="goToAbout" id="headingWrapper">
-        <img class="companyLogo" :src="`@/assets/icons/ico/${index <= 4 ? index : 4}.png`" alt="company logo" />
+        <img class="companyLogo" :src="`./src/assets/icons/icos/ico2.png`" alt="company logo" />
         <h3 id="title">{{ caseItem.name }}</h3>
       </div>
       <div ref="social" class="socialCompanyWrapper" v-if="caseItem.social || caseItem.link">
@@ -13,12 +13,12 @@
         <a v-if="caseItem.sType === 'x'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/x.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.3px]">{{
-        caseItem.social_name }}</p>
+            caseItem.social_name }}</p>
         </a>
         <a v-if="caseItem.sType === 'ig'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/ins.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.5px]">{{
-        caseItem.social_name }}</p>
+            caseItem.social_name }}</p>
         </a>
       </div>
       <p id="description">
@@ -65,7 +65,7 @@
 import Tr from '@/i18n/translation'
 export default {
   name: 'case-card',
-  props: { caseItem: Object, index: Number },
+  props: { caseItem: Object },
   methods: {
     goToAbout() {
       this.$store.commit('docs/setCurrentSectionId', 0);
