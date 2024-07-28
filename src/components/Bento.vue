@@ -3,7 +3,7 @@
     <div class="gridFirst">
       <div class="a">
         ASPHERA
-        ECOSYSTE
+        ECOSYSTEM
       </div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? y2En : y2Ru})` }" class="b"></div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50Ru : plus50En})` }" class="c"></div>
@@ -116,26 +116,6 @@ export default {
 }
 
 
-
-/* .one {
-  @apply bg-[url('@/assets/icons/3x.png')] bg-contain bg-no-repeat bg-center h-[300px];
-} */
-
-/* row-[1/3] */
-
-/* .two {
-  @apply bg-[url('@/assets/icons/14.png')] bg-cover bg-no-repeat bg-center h-[145px];
-} */
-
-/* .three {
-  @apply bg-[url('@/assets/icons/20+.png')] bg-contain bg-no-repeat bg-center overflow-hidden h-[400px];
-} */
-/* row-[1/3] col-[3/4] */
-
-
-
-
-/* bg-[url('@/assets/icons/3x.png')] bg-cover bg-no-repeat bg-center */
 </style>
 <!-- <style scoped>
 #bentoWrapper {
