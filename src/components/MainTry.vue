@@ -69,7 +69,7 @@
       <div id="servicesWrapper">
 
         <service-card v-for="service in services" :key="service.id" :title="service.title" :description="service.desc"
-          :price="service.price" :current="currentService" @infoOpen="currentService = service.title"></service-card>
+          :price="service.price" :current="currentService" @infoOpen="currentService = service.title"/>
 
       </div>
     </section>

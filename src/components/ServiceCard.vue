@@ -30,29 +30,29 @@ export default {
     price: { type: Number },
     current: { type: String },
   },
-  methods: {
-    expandWrapper() {
-      this.isOpen = !this.isOpen
-      if (this.isOpen) {
-        this.rotateArrowUp()
-      } else {
-        this.rotateArrowDown()
-      }
-    },
-    rotateArrowUp() {
-      let arrow = this.$refs.arrow
-      arrow.style.rotate = '-90deg'
-    },
-    rotateArrowDown() {
-      let arrow = this.$refs.arrow
-      arrow.style.rotate = '0deg'
-    }
-  }
+  // methods: {
+  //   expandWrapper() {
+  //     this.isOpen = !this.isOpen
+  //     if (this.isOpen) {
+  //       this.rotateArrowUp()
+  //     } else {
+  //       this.rotateArrowDown()
+  //     }
+  //   },
+  //   rotateArrowUp() {
+  //     let arrow = this.$refs.arrow
+  //     arrow.style.rotate = '-90deg'
+  //   },
+  //   rotateArrowDown() {
+  //     let arrow = this.$refs.arrow
+  //     arrow.style.rotate = '0deg'
+  //   }
+  // }
 }
 </script>
 
 <style scoped>
-.line {
+/* .line {
   @apply -mb-[1rem] bg-[rgb(9,9,9)] w-[100vw] h-1;
 }
 .arrow {
@@ -81,5 +81,5 @@ export default {
   .arrow {
     scale: 200%;
   }
-}
+} */
 </style>
