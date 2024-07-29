@@ -1,6 +1,6 @@
 <template>
   <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
-    <span class="max-[500px]:pt-[.05rem]">
+    <span>
       <slot></slot>
     </span>
   </button>
@@ -32,7 +32,8 @@ button {
   background: #191c29;
   cursor: pointer;
   position: relative;
-  transition: all .3s ease;}
+  transition: all .3s ease;
+}
 
 button::before,
 button::after {
@@ -46,6 +47,8 @@ button::after {
 }
 
 button span {
+  @apply max-[500px]:pt-[0.09rem];
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +85,9 @@ button::after {
 button:hover {
   @apply scale-105;
 }
-button:hover::after, button:hover::before {
+
+button:hover::after,
+button:hover::before {
   animation: none;
   background: white;
 }
