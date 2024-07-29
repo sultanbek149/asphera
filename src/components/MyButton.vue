@@ -1,6 +1,6 @@
 <template>
   <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
-    <span>
+    <span class="max-[500px]:pt-[.05rem]">
       <slot></slot>
     </span>
   </button>
