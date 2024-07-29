@@ -116,7 +116,7 @@ export default {
 }
 
 #title {
-  @apply font-semibold text-[1.6rem] md:text-[2rem] lg:text-[1.6rem] xl:text-[1.8rem] uppercase;
+  @apply font-semibold text-[1.6rem] md:text-[2rem] lg:text-[1.6rem] uppercase;
 }
 
 .learnmore {
@@ -149,7 +149,7 @@ export default {
 
 .companyLogo {
   aspect-ratio: 1;
-  height: 2rem;
+  height: 1.7rem;
 }
 
 .socialCompanyWrapper {
@@ -179,7 +179,7 @@ export default {
 }
 
 #description {
-  @apply font-normal w-full text-[16px] md:text-[1rem] mt-[0.5rem] lg:mt-1 lg:text-[1rem] xl:text-[1.2rem];
+  @apply font-normal w-full text-[16px] md:text-[1rem] mt-[0.5rem] lg:mt-1 lg:text-[1rem] xl:text-[1.15rem];
 }
 
 @media (max-width: 375px) {

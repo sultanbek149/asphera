@@ -55,6 +55,6 @@ export default {
 }
 
 .preloader video {
-    @apply min-[1000px]:h-[70%] min-[1000px]:w-[70%] w-full h-full; 
+    @apply w-full h-full min-[1000px]:h-[70%] min-[1000px]:w-[70%]; 
 }
 </style>

@@ -1,10 +1,9 @@
 <template>
-  <pre-loader></pre-loader>
+  <!-- <pre-loader></pre-loader> -->
   <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
-      <div class="relative w-[45px] h-full max-[500px]:ml-[20px] max-[500px]:mt-[5px]">
-        <img id="logoImg" class="absolute top-1/2" alt="Demos logo" loading="lazy"
-          src="@/assets/icons/asphera_black.png" />
+      <div class="relative w-[45px] h-full max-[500px]:ml-[20px]">
+        <img id="logoImg" alt="Demos logo" loading="lazy" src="@/assets/icons/asphera_black.png" />
       </div>
     </div>
 
@@ -63,29 +62,24 @@
       </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="px-[3vw]">
       <h2 ref="offer" class="headingFont uppercase" id="servicesTitle">{{ $t('whatWeOffer.title') }}</h2>
-
-      <div id="servicesWrapper">
-
-        <service-card v-for="service in services" :key="service.id" :title="service.title" :description="service.desc"
-          :price="service.price" :current="currentService" @infoOpen="currentService = service.title"/>
-
-      </div>
+      <services-wrapper />
     </section>
     <section id="about">
-      <bentoGrid/>
+      <bentoGrid />
     </section>
     <section id="contact">
       <contact-message ref="contactMessage"></contact-message>
-      <legend class="headingFont max-[768px]:!text-start" id="contactTitle">
-        {{ $t('feedbackForm.title') }}
+      <div class="w-[80%] mx-auto">
+        <legend class="headingFont max-[768px]:!text-start text-center" id="contactTitle">
+          {{ $t('feedbackForm.title') }}
+        </legend>
         <p
-          class="text-[1rem] mt-4 leading-6 min-[768px]:text-[1.5rem] min-[768px]:leading-10 min-[768px]:mt-10  font-[300] ">
+          class="text-[1rem] mt-4 leading-6 min-[768px]:text-[1.5rem] min-[768px]:leading-10 min-[768px]:mt-5 min-[1100px]:ml-5">
           {{ $t('feedbackForm.subtitle') }}
         </p>
-      </legend>
-
+      </div>
       <contact-form @send="showSuccessMessage"></contact-form>
     </section>
 
@@ -270,9 +264,6 @@ onMounted(() => {
 
 
 </script>
-
-
-
 
 <script>
 export default {
@@ -541,7 +532,7 @@ header {
 
 
 #logoImg {
-  @apply absolute top-1/2 w-[45px] -translate-y-1/2;
+  @apply absolute top-[44%] w-[45px] -translate-y-1/2;
   /* aspect-ratio: 7/1.5; */
 }
 
@@ -608,7 +599,7 @@ section {
 }
 
 #casesWrapper {
-  @apply flex flex-col gap-14 justify-start items-center md:w-[70vw] h-full pt-[1vh] mt-[9rem];
+  @apply flex flex-col gap-14 justify-start items-center h-full pt-[1vh] mt-[9rem];
 }
 
 .case {
@@ -630,13 +621,7 @@ section {
   @apply h-fit pb-[20rem] !important;
 }
 
-#servicesWrapper {
-  @apply flex flex-col justify-center items-center gap-[1rem] pt-14;
-}
 
-#servicesWrapper::-webkit-scrollbar {
-  display: none;
-}
 
 #servicesTitle {
   @apply text-[2rem] text-center;
@@ -652,7 +637,7 @@ section {
 }
 
 #contactTitle {
-  @apply text-center w-[80%] text-3xl;
+  @apply text-center text-3xl font-[500];
 }
 
 
@@ -748,7 +733,7 @@ section {
   }
 
   #casesWrapper {
-    @apply w-[60vw] gap-[1.5rem] lg:w-[70vw];
+    @apply w-[55vw] gap-[1.5rem];
   }
 
   #casesTitleWrapper {
@@ -829,7 +814,7 @@ section {
   }
 
   #contactTitle {
-    @apply text-[3rem] w-[70%] text-left ml-5;
+    @apply text-[3rem] text-left ml-5;
     line-height: 3.9rem !important;
   }
 
@@ -846,13 +831,8 @@ section {
 /*1200px*/
 
 @media (min-width: 1200px) {
-  #servicesWrapper {
-    @apply overflow-visible gap-[2rem];
-    white-space: nowrap;
-  }
-
   #servicesTitle {
-    @apply text-left text-[3rem] mb-[2rem] pl-[2vw];
+    @apply text-left text-[3rem] mb-[2rem] px-[2vw];
   }
 
   #about {}

@@ -21,6 +21,7 @@ import BurgerButton from '@/components/BurgerButton.vue'
 import ContactPopup from '@/components/ContactPopup.vue'
 import Preloader from '@/components/Preloader.vue'
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import ServicesWrapper from '@/components/ServicesWrapper.vue'
 
 
 export default [
@@ -38,6 +39,7 @@ export default [
   ServiceCard,
   TransparentButton,
   CaseCard,
+  ServicesWrapper,
   Bento,
   ContactForm,
   MyFooter,
@@ -46,5 +48,5 @@ export default [
   MainTry,
   MyDropdown,
   Preloader,
-  LanguageSwitcher
+  LanguageSwitcher,
 ]

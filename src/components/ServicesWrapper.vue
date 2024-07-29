@@ -1,0 +1,73 @@
+<template>
+    <div id="servicesWrapper" class="flex flex-wrap overflow-visible whitespace-nowrap relative gap-[1rem]">
+        <div id="marker" :style="markerStyle"
+            class="absolute text-[transparent] bg-white rounded-full p-2 px-4 text-[1.5rem] font-medium">
+            abc
+        </div>
+        <service-card v-for="service in $tm('whatWeOffer.services')" :key="service" :name="service"
+            class="service-card text-[1rem] md:text-[1.5rem] rounded-full bg-[hsla(0,0%,7%,.25)] hover:bg-transparent p-2 px-4 h-fit text-white cursor-pointer font-medium z-10 hover:z-0"
+            @mouseover="moveMarker" @mouseleave="resetMarker" id="service" />
+        <!-- hover:z-10 transition-all ease duration-500 -->
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'services-wrapper'
+}
+</script>
+
+<script setup>
+import { ref } from 'vue'
+const markerStyle = ref({
+    top: '0px',
+    left: '0px',
+    right: '0px',
+    width: '0px',
+    opacity: '0'
+});
+
+const moveMarker = (e) => {
+    const target = e.target;
+    markerStyle.value = {
+        top: `${target.offsetTop}px`,
+        left: `${target.offsetLeft}px`,
+        right: `${target.offsetRight}px`,
+        width: `${target.offsetWidth}px`,
+        opacity: '1'
+        // display: 'block'
+    };
+    target.style.color = '#000'
+};
+
+const resetMarker = (e) => {
+    const target = e.target;
+    markerStyle.value = {
+        ...markerStyle.value,
+        opacity: '0'
+    };
+    target.style.color = '#fff'
+    target.style.zIndex = 100
+};
+</script>
+
+<style scoped>
+#servicesWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#marker {
+    transition: top 200ms linear, left 200ms linear, opacity 100ms linear, width 100ms linear;
+}
+
+#service {
+    white-space: normal;
+}
+
+#service {
+    transition: color 10ms linear 10ms;
+}
+
+
+/* transition-[top] duration-200 */
+</style>
