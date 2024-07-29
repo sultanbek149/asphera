@@ -1,7 +1,7 @@
 <template>
     <transition>
         <div v-if="show" ref="preloader" class="preloader">
-            <video autoplay="true" muted="true" playsInline>
+            <video autoplay="true" muted="true" playsinline>
                 <source src="@/assets/white.mp4" type="video/mp4">
             </video>
         </div>
@@ -29,7 +29,7 @@ export default {
             setTimeout(() => {
                 this.show = false
                 document.querySelector('body').style.overflowY = 'scroll'
-            }, 60000);
+            }, 4300);
         }
     }
 }
@@ -55,6 +55,6 @@ export default {
 }
 
 .preloader video {
-    @apply w-full h-full min-[1000px]:h-[70%] min-[1000px]:w-[70%]; 
+    @apply min-[1000px]:h-[70%] min-[1000px]:w-[70%] w-full h-full; 
 }
 </style>
