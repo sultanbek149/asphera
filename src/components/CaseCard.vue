@@ -1,32 +1,32 @@
 <template>
   <div id="wrapper">
     <div class="inter w-full" id="companyWrapper">
-      <div @click="goToAbout" id="headingWrapper">
+      <div id="headingWrapper">
         <img class="companyLogo" :src="imageIco" alt="company logo" />
         <h3 id="title">{{ caseItem.name }}</h3>
       </div>
       <div ref="social" class="socialCompanyWrapper" v-if="caseItem.social || caseItem.link">
-        <a v-if="caseItem.link" target="_blank" class="social pt-[2px]" href="https://discord.com/">
+        <a v-if="caseItem.link" target="_blank" class="social pt-[2px] " :href="caseItem.link">
           <img id="global" src="../assets/icons/Union.png" alt="company one website" loading="lazy" />
           <p class="pb-[1.4px]">{{ caseItem.link_name }}</p>
         </a>
         <a v-if="caseItem.sType === 'x'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/x.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.3px]">{{
-        caseItem.social_name }}</p>
+            caseItem.social_name }}</p>
         </a>
         <a v-if="caseItem.sType === 'ig'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/ins.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.5px]">{{
-        caseItem.social_name }}</p>
+            caseItem.social_name }}</p>
         </a>
       </div>
       <p id="description">
         {{ caseItem.description }}
       </p>
 
-      <div class="mt-4 z-[1000] lg:mt-[auto]">
-        <my-button class="learnmore">{{ $t('buttons.learnMore') }}</my-button>
+      <div class="mt-4 z-[1000] lg:mt-[auto]" @click="goToAbout">
+        <my-button class="learnmore hover:!scale-[103%]">{{ $t('buttons.learnMore') }}</my-button>
       </div>
     </div>
 
@@ -35,8 +35,8 @@
       <p>{{ caseItem.hint }}</p>
     </div>
 
-    <div class="mt-4 z-[1000] lg:hidden">
-      <my-button class="learnmore mob">{{ $t('buttons.learnMore') }}</my-button>
+    <div class="mt-4 z-[1000] lg:hidden" @click="goToAbout">
+      <my-button class="learnmore mob hover:!scale-[103%]">{{ $t('buttons.learnMore') }}</my-button>
     </div>
     <!-- <div class="statWrapper" id="stat1">
       <p class="headingFont statTitle">3X</p>
@@ -79,7 +79,7 @@ export default {
       this.$store.commit('docs/setCurrentSectionId', 0);
 
       //TODO: set the part of the section by the case clicked
-      this.$store.commit('docs/setCurrentPartId', 0)
+      this.$store.commit('docs/setCurrentPartId', this.index)
       this.$store.commit('docs/setCurrentArticle')
       this.$store.commit('docs/setCurrentPageInfo')
       this.$store.commit('docs/setCurrentNavigationHooks')
@@ -87,7 +87,6 @@ export default {
       this.$router.push('/docs')
 
       this.$router.push(Tr.i18nRoute({ name: 'docs' }))
-
     }
   },
   mounted() {
@@ -108,7 +107,6 @@ export default {
 
 #companyWrapper {
   @apply flex flex-col justify-start items-start lg:justify-normal;
-  cursor: pointer;
 }
 
 #headingWrapper {

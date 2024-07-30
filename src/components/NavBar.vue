@@ -30,7 +30,7 @@
           <img id="twitter" src="../assets/icons/twitter.png" alt="twitter icon" loading="lazy" />
         </a>
       </ul>
-      <div class="flex gap-4 items-center">
+      <div class="flex gap-4 items-center max-[500px]:justify-end max-[500px]:mr-5">
         <language-switcher />
         <my-button @click="scrollTo(options[3].name)" id="hire">{{ $t('buttons.hireUs') }}</my-button>
       </div>

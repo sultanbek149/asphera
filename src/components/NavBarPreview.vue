@@ -35,11 +35,11 @@ export default {
     isVisible: { type: Boolean },
   },
   methods: {
-    goToAbout(id) {
-      this.$store.commit('docs/setCurrentPartId', id)
-      this.$store.commit('docs/setCurrentArticle')
-      this.$store.commit('docs/setCurrentPageInfo')
-      this.$store.commit('docs/setCurrentNavigationHooks')
+    goToAbout() {
+      // this.$store.commit('docs/setCurrentPartId', id)
+      // this.$store.commit('docs/setCurrentArticle')
+      // this.$store.commit('docs/setCurrentPageInfo')
+      // this.$store.commit('docs/setCurrentNavigationHooks')
       console.log(Tr.guessDefaultLocale())
       this.$router.push(Tr.i18nRoute({ name: 'docs' }))
     }

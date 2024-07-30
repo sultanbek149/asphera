@@ -609,7 +609,7 @@ section {
 @media (hover: hover) {
   #casesWrapper>.case:hover {
     @apply shadow-[#4B71FF] shadow-lg !important;
-    scale: 102%;
+    scale: 101%;
   }
 }
 

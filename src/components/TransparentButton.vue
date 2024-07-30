@@ -25,7 +25,7 @@ export default {
 </script>
 <style scoped>
 button {
-  @apply font-normal text-center rounded-3xl border border-violet-800 w-[70%] h-fit py-[1vh];
+  /* @apply font-normal text-center rounded-3xl border border-violet-800 w-[70%] h-fit py-[1vh]; */
   transition: all 0.1s ease;
 }
 
@@ -34,10 +34,10 @@ button {
     transition: all 0.3s ease;
   }
   button:hover {
-    @apply scale-105 bg-violet-800;
+    @apply scale-105;
   }
   button:active {
-    @apply scale-100 bg-violet-900 border-violet-900;
+    @apply scale-100;
   }
 }
 @media (hover: none) {
@@ -48,8 +48,7 @@ button {
 
 @media (min-width: 1200px) {
   button {
-    @apply w-[81%] text-[2rem] relative;
-    border-radius: 4rem;
+    /* @apply w-[81%] text-[2rem] relative; */
   }
 }
 </style>

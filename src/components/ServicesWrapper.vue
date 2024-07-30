@@ -2,11 +2,11 @@
     <div id="servicesWrapper" class="flex flex-wrap overflow-visible whitespace-nowrap relative gap-[1rem]">
         <div id="marker" :style="markerStyle"
             class="absolute text-[transparent] bg-white rounded-full p-2 px-4 text-[1rem] md:text-[1.5rem] h-fit font-medium">
-            
+
         </div>
-        <service-card v-for="service in $tm('whatWeOffer.services')" :key="service" :name="service"
+        <service-card v-for="(service, index) in $tm('whatWeOffer.services')" :key="service" :name="service"
             class="service-card text-[1rem] md:text-[1.5rem] rounded-full bg-[hsla(0,0%,7%,.25)] hover:bg-transparent p-2 px-4 h-fit text-white cursor-pointer font-medium z-10 hover:z-0"
-            @mouseover="moveMarker" @mouseleave="resetMarker" id="service" />
+            @mouseover="moveMarker" @mouseleave="resetMarker" id="service" @click="goToAbout(index)" />
         <!-- hover:z-10 transition-all ease duration-500 -->
     </div>
 </template>
@@ -19,6 +19,10 @@ export default {
 
 <script setup>
 import { ref } from 'vue'
+import store from '@/store'
+import router from '@/router'
+import Tr from '@/i18n/translation'
+
 const markerStyle = ref({
     top: '0px',
     left: '0px',
@@ -51,6 +55,20 @@ const resetMarker = (e) => {
     target.style.backgroundColor = 'hsla(0,0%,7%,.25)'
     target.style.zIndex = 100
 };
+
+const goToAbout = (id) => {
+    store.commit('docs/setCurrentSectionId', 1);
+
+    //TODO: set the part of the section by the case clicked
+    store.commit('docs/setCurrentPartId', id)
+    // store.commit('docs/setCurrentPageInfo')
+    // store.commit('docs/setCurrentNavigationHooks')
+
+    router.push('/docs')
+
+    router.push(Tr.i18nRoute({ name: 'docs' }))
+}
+
 </script>
 
 <style scoped>
