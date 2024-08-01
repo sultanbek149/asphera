@@ -13,12 +13,12 @@
         <a v-if="caseItem.sType === 'x'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/x.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.3px]">{{
-            caseItem.social_name }}</p>
+          caseItem.social_name }}</p>
         </a>
         <a v-if="caseItem.sType === 'ig'" target="_blank" class="social" :href="caseItem.social">
           <img id="twitter" src="../assets/icons/ins.png" alt="company one twitter" loading="lazy" />
           <p class="pb-[1.5px]">{{
-            caseItem.social_name }}</p>
+          caseItem.social_name }}</p>
         </a>
       </div>
       <p id="description">
@@ -103,6 +103,7 @@ export default {
   @apply flex flex-col w-[90%] h-fit bg-[#1E1E1E] rounded-[32px] p-6 md:p-8 text-left lg:flex-row lg:gap-[1rem];
   /* grid-template-rows: auto auto auto; */
   /* transition: all 0.6s ease; */
+  border: 1px solid hsl(227, 100%, 65%, .2);
 }
 
 #companyWrapper {
@@ -141,10 +142,9 @@ export default {
   height: 2.3rem;
 }
 
-:deep(span) {
-  @apply lg:!text-xl;
+:deep(.text) {
+  @apply lg:!text-[1.25rem];
   font-size: 14px;
-  padding-top: 0px;
   font-weight: normal;
 }
 
@@ -212,4 +212,5 @@ export default {
   width: fit-content;
   border: 1px solid;
   border-radius: 16px;
-}</style>
+}
+</style>

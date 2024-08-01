@@ -2,8 +2,7 @@
   <div class="bentoGrid">
     <div class="gridFirst">
       <div class="a">
-        ASPHERA
-        ECOSYSTM
+        {{ $t("whoWeAre.subtitle") }}
       </div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? y2En : y2Ru})` }" class="b"></div>
       <div :style="{ backgroundImage: `url(${Tr.currentLocale === 'en' ? plus50En : plus50Ru})` }" class="c"></div>

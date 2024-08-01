@@ -1,8 +1,9 @@
 <template>
   <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
-    <span>
+    <span class='text'>
       <slot></slot>
     </span>
+    <span></span>
   </button>
 </template>
 
@@ -46,19 +47,26 @@ button::after {
   animation: rotation 2s linear infinite;
 }
 
-button span {
+button span:not(.text) {
   @apply max-[500px]:pt-[0.09rem];
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 2.5px;
+  display: block;
   background: #000;
   z-index: 10;
   height: 100%;
   width: 100%;
+  z-index: 10;
   border-radius: inherit;
   transition: all .3s ease;
+}
+
+.text {
+  position: absolute;
+  top: 47%;
+  left: 0;
+  line-height: 0;
+  height: fit-content;
+  width: 100%;
 }
 
 button::after {
