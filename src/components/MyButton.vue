@@ -52,17 +52,15 @@ button span:not(.text) {
 
   display: block;
   background: #000;
-  z-index: 10;
   height: 100%;
   width: 100%;
-  z-index: 10;
   border-radius: inherit;
   transition: all .3s ease;
 }
 
 .text {
   position: absolute;
-  top: 47%;
+  top: 47.5%;
   left: 0;
   line-height: 0;
   height: fit-content;
