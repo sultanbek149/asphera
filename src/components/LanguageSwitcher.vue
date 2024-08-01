@@ -16,7 +16,7 @@
     <div class="flex items-center gap-2">
         <button v-for="sLocale in supportedLocales" :key="sLocale" @click="switchLanguage(sLocale)"
             :class="{ active: currentLocale === sLocale }"
-            class="flex items-center gap-1 border-2 border-[#717171] rounded-[10px] px-[.6rem] pt-[3px] pb-[6px] uppercase">
+            class="flex items-center gap-1 border-2 border-[#717171] rounded-[10px] px-[.6rem] pt-[1px] pb-[4px] uppercase">
             <svg class="pt-[2.95px]" width="20" height="20" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -29,7 +29,7 @@
                     d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z"
                     :stroke="currentLocale === sLocale ? '#000' : '#fff'" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
-            </svg> {{ sLocale }}
+            </svg> <span class="pt-[4.5px]">{{ sLocale }}</span>
         </button>
     </div>
 </template>

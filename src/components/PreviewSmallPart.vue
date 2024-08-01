@@ -1,6 +1,6 @@
 <template>
   <div class="prevSmallWrapper">
-    <h3 class="headingFont prevTitle">{{ title }}</h3>
+    <h3 class="prevTitle">{{ title }}</h3>
   </div>
 
 </template>
@@ -10,7 +10,7 @@
 export default {
   name: 'prev-small',
   props: {
-    title: '',
+    title: String
   }
 
 }
@@ -20,18 +20,23 @@ export default {
 
 <style scoped>
 .prevSmallWrapper {
-  @apply font-light gap-2 flex flex-col justify-start items-start p-5 w-[100%] h-[100%];
+  @apply font-medium gap-2 flex flex-col justify-center items-start p-5 w-[100%] h-[100%] text-[1.2rem];
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .prevTitle {
-  @apply text-2xl text-white;
+  @apply text-xl text-white;
   transition: all 0.3s ease;
 }
 
 .prevSmallWrapper:hover {
   @apply bg-white;
+  /* background-image: url('@/assets/icons/grid.png');
+    background-repeat: no-repeat;
+    background-size: 101%;
+    background-position: center center;
+    overflow: hidden; */
 }
 
 .prevSmallWrapper:hover>.prevTitle {

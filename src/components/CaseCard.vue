@@ -118,7 +118,14 @@ export default {
 }
 
 .learnmore {
-  border-radius: 20px;
+  border-radius: 10px;
+}
+
+.learnmore::before,
+.learnmore::after {
+  content: "";
+  position: absolute;
+  inset: -.09rem;
 }
 
 .learnmore:not(.mob) {
@@ -205,5 +212,4 @@ export default {
   width: fit-content;
   border: 1px solid;
   border-radius: 16px;
-}
-</style>
+}</style>

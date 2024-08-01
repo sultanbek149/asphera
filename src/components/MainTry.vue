@@ -1,5 +1,5 @@
 <template>
-  <!-- <pre-loader></pre-loader> -->
+  <pre-loader></pre-loader>
   <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
       <div class="relative w-[45px] h-full max-[500px]:ml-[20px]">

@@ -1,9 +1,10 @@
 <template>
   <transition name="fade">
     <div v-show="isVisible" id="previewWrapper">
-      <prev-big @click="goToAbout(0)" id="prevFirst" :teaser="$t(`navigation.${ids[getCurrentId]}[0].description`)"
+      <prev-big class="mx-5" @click="goToAbout(0)" id="prevFirst"
+        :teaser="$t(`navigation.${ids[getCurrentId]}[0].description`)"
         :title="$t(`navigation.${ids[getCurrentId]}[0].name`)"></prev-big>
-      <prev-big @click="goToAbout(1)" id="prevSecond" class="big"
+      <prev-big class="big mr-3" @click="goToAbout(1)" id="prevSecond"
         :teaser="$t(`navigation.${ids[getCurrentId]}[1].description`)"
         :title="$t(`navigation.${ids[getCurrentId]}[1].name`)"></prev-big>
 
@@ -62,7 +63,8 @@ export default {
 
 <style scoped>
 #previewWrapper {
-  @apply opacity-0 fixed top-0 mt-[4.5rem] h-64 w-full bg-black backdrop-blur-md bg-opacity-[20%] border-y-[#373737] border-y-2;
+  @apply opacity-0 fixed top-0 mt-[4.5rem] h-64 w-full bg-black backdrop-blur-md bg-opacity-[20%] ;
+  /* border-y-[#373737] border-y-2 */
   z-index: 1001;
   @apply grid;
   grid-template-columns: 1fr 1fr 1fr;

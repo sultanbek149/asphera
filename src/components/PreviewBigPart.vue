@@ -1,7 +1,7 @@
 <template>
   <div class="prevBigWrapper">
-    <h3 class="headingFont prevTitle">{{ title }}</h3>
-    <h4 class="headingFont prevTeaser">{{ teaser }}</h4>
+    <h3 class="prevTitle">{{ title }}</h3>
+    <h4 class="prevTeaser">{{ teaser }}</h4>
   </div>
 
 </template>
@@ -11,8 +11,8 @@
 export default {
   name: 'prev-big',
   props: {
-    title: '',
-    teaser: '',
+    title: String,
+    teaser: String,
   }
 
 }
@@ -22,13 +22,20 @@ export default {
 
 <style scoped>
 .prevBigWrapper {
-  @apply font-light gap-2 flex flex-col justify-start items-start p-5 w-[100%] h-[100%];
+  @apply font-light gap-2 flex flex-col justify-start items-start p-5 h-[100%];
   transition: all 0.3s ease;
   cursor: pointer;
+  border: 2px solid #2A2A2C;
+  border-radius: 20px;
 }
 
+.prevBigWrapper:first {
+  @apply ml-5;
+}
+
+
 .prevTitle {
-  @apply text-2xl text-white;
+  @apply text-2xl text-white font-medium;
   transition: all 0.3s ease;
 }
 
@@ -39,15 +46,17 @@ export default {
 
 
 
-.prevBigWrapper:hover>.prevTeaser {
-  @apply text-[#171717];
-}
+.prevBigWrapper:hover>.prevTeaser {}
 
 .prevBigWrapper:hover {
-  @apply bg-white;
+  background-image: url('@/assets/icons/grid.png');
+  background-repeat: no-repeat;
+  background-size: 102%;
+  background-position: center center;
+  overflow: hidden;
 }
 
 .prevBigWrapper:hover>.prevTitle {
-  @apply text-black;
+  /* @apply text-black; */
 }
 </style>
