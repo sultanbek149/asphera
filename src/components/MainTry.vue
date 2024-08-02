@@ -2,7 +2,7 @@
   <pre-loader></pre-loader>
   <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
-      <div class="relative w-[45px] h-full max-[722px]:ml-[20px] mt-[6px]">
+      <div class="relative w-[45px] h-full max-[722px]:ml-[20px] max-[722px]:mt-[4px]">
         <img id="logoImg" alt="Demos logo" loading="lazy" src="@/assets/icons/asphera_black.png" />
       </div>
     </div>
