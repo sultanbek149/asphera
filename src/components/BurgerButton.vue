@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 #nav-icon4 {
-  @apply mt-[.68rem] w-20 h-20;
+  @apply mt-[.60rem] w-20 h-20;
   scale: 59%;
   left: 15vw;
   position: relative;
