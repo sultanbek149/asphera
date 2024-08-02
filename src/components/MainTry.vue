@@ -572,7 +572,7 @@ section {
 }
 
 #slogan {
-  @apply text-[#777777] text-2xl w-[90%] pl-1 ;
+  @apply text-[#777777] text-2xl w-[90%] pl-1;
 }
 
 #host {
@@ -650,6 +650,10 @@ section {
   #hireSmall {
     @apply block fixed w-[30%] h-9 top-5 right-[20%];
     z-index: 100;
+  }
+
+  #hireSmall .text {
+    top: 51% !important;
   }
 
 }
