@@ -23,7 +23,7 @@ export default {
 <style scoped>
 .prevBigWrapper {
   @apply gap-2 flex flex-col justify-start items-start p-5 h-[100%];
-  transition: background-image 0.3s ease;
+  /* transition: background-image 1s ease; */
   cursor: pointer;
   border: 2px solid #2A2A2C;
   border-radius: 20px;

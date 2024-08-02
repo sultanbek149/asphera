@@ -1,10 +1,10 @@
 <template>
   <transition name="fade">
     <div v-show="isVisible" id="previewWrapper">
-      <prev-big class="mx-5" @click="goToAbout(0)" id="prevFirst"
+      <prev-big class="mr-5" @click="goToAbout(0)" id="prevFirst"
         :teaser="$t(`navigation.${ids[getCurrentId]}[0].description`)"
         :title="$t(`navigation.${ids[getCurrentId]}[0].name`)"></prev-big>
-      <prev-big class="big mr-3" @click="goToAbout(1)" id="prevSecond"
+      <prev-big class="big mr-5" @click="goToAbout(1)" id="prevSecond"
         :teaser="$t(`navigation.${ids[getCurrentId]}[1].description`)"
         :title="$t(`navigation.${ids[getCurrentId]}[1].name`)"></prev-big>
 
@@ -36,12 +36,21 @@ export default {
     isVisible: { type: Boolean },
   },
   methods: {
-    goToAbout() {
-      // this.$store.commit('docs/setCurrentPartId', id)
+    goToAbout(id) {
+      this.$store.commit('docs/setCurrentPartId', id)
+
+      if (this.$t(`navigation.about[${id}].link`) !== "null") {
+        const url = this.$t(`navigation.about[${id}].link`);
+
+        // Open the URL in a new tab
+        window.open(url, '_blank');
+        return
+      }
+
+
       // this.$store.commit('docs/setCurrentArticle')
       // this.$store.commit('docs/setCurrentPageInfo')
       // this.$store.commit('docs/setCurrentNavigationHooks')
-      console.log(Tr.guessDefaultLocale())
       this.$router.push(Tr.i18nRoute({ name: 'docs' }))
     }
   }, computed: {
@@ -63,9 +72,10 @@ export default {
 
 <style scoped>
 #previewWrapper {
-  @apply opacity-0 fixed top-0 mt-[4.5rem] h-64 w-full bg-black backdrop-blur-md bg-opacity-[20%] ;
+  @apply opacity-0 fixed top-0 mt-[4.5rem] h-[18rem] w-full bg-black;
+  /* backdrop-blur-md bg-opacity-[20%] */
   /* border-y-[#373737] border-y-2 */
-  z-index: 1001;
+  z-index: 1002;
   @apply grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
@@ -110,7 +120,7 @@ export default {
 
 @media (min-width: 722px) {
   #previewWrapper {
-    @apply opacity-100;
+    @apply opacity-100 pt-2 pb-6 px-3;
   }
 }
 

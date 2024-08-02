@@ -5,11 +5,11 @@
     <p id="copyright" class="inter">© 2024 ASPHERA</p>
 
     <div id="socialWrapper">
-      <a target="_blank" class="social" href="https://telegram.com/a">
-        <img id="telegram" src="../assets/icons/telegram.png" alt="telegram icon" loading="lazy" />
+      <a target="_blank" class="social" href="https://t.me/asphera_tech">
+        <img id="telegram" src="../assets/icons/tg.png" alt="telegram icon" loading="lazy" />
       </a>
-      <a class="social" href="https://twitter.com/" target="_blank">
-        <img id="twitter" src="../assets/icons/twitter.png" alt="twitter icon" loading="lazy" />
+      <a class="social" href="https://x.com/asphera_tech?s=21" target="_blank">
+        <img id="twitter" src="../assets/icons/Xblack.png" alt="twitter icon" loading="lazy" />
       </a>
     </div>
   </footer>
@@ -61,7 +61,15 @@ footer {
   }
 
   .social {
-    @apply h-[4rem];
+    @apply flex h-[3rem] items-center text-center;
+  }
+
+  .social img {
+    @apply w-[35px];
+  }
+
+  .social + .social {
+    margin-left: 10px;
   }
 }
 </style>

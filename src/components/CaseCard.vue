@@ -137,7 +137,7 @@ export default {
   @apply lg:hidden;
 }
 
-:deep(button) {
+:deep(a) {
   @apply lg:!h-[3rem] lg:!w-[12rem];
   height: 2.3rem;
 }

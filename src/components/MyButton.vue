@@ -1,10 +1,10 @@
 <template>
-  <button @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
+  <a @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
     <span class='text'>
       <slot></slot>
     </span>
     <span></span>
-  </button>
+  </a>
 </template>
 
 <script>
@@ -28,16 +28,16 @@ const toggleActive = () => isActive.value = !isActive.value
   inherits: false;
 }
 
-button {
-  @apply w-[10rem] h-[2.7rem] flex items-center justify-center rounded-[9px] font-[500];
+a {
+  @apply w-[10rem] h-[2.7rem] flex items-center text-center rounded-[9px];
   background: #191c29;
   cursor: pointer;
   position: relative;
   transition: all .3s ease;
 }
 
-button::before,
-button::after {
+a::before,
+a::after {
   content: "";
   position: absolute;
   inset: -.09rem;
@@ -47,7 +47,7 @@ button::after {
   animation: rotation 2s linear infinite;
 }
 
-button span:not(.text) {
+a span:not(.text) {
   @apply max-[500px]:pt-[0.09rem];
 
   display: block;
@@ -60,15 +60,15 @@ button span:not(.text) {
 
 .text {
   position: absolute;
-  top: 47.5%;
+  top: 48%;
   left: 0;
   line-height: 0;
   height: fit-content;
   width: 100%;
 }
 
-button::after {
-  filter: blur(3.5rem);
+a::after {
+  /* filter: blur(3.5rem); */
 }
 
 @keyframes rotation {
@@ -81,31 +81,31 @@ button::after {
   }
 }
 
-/*button {
+/*a {
   background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242), rgb(21, 198, 251)) 0% 0% / 300% 300%;
   background-size: 200% auto;
   -webkit-animation: gradient_move 3s ease infinite;
   animation: gradient_move 3s ease infinite;
 } */
 
-button:hover {
+a:hover {
   @apply scale-105;
 }
 
-button:hover::after,
-button:hover::before {
+a:hover::after,
+a:hover::before {
   animation: none;
   background: white;
 }
 
-button:hover span {
+a:hover span {
   font-weight: 700;
   background-color: #fff;
   color: #000;
   transition: all .3s ease;
 }
 
-button:active {
+a:active {
   @apply scale-95;
 }
 

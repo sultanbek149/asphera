@@ -18,7 +18,7 @@ export default {
 <style scoped>
 #cover {
   @apply fixed bottom-0 w-[100vw] h-[100vh] bg-black backdrop-blur-md bg-opacity-20;
-  z-index: 100;
+  z-index: 1001;
 }
 
 @keyframes fadeIn {

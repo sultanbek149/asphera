@@ -18,7 +18,7 @@
     </div>
 
 
-    <my-nav @openPreview="openPreview" :isMenu="isMenu" @closeSideBar="toggleMenu"></my-nav>
+    <my-nav @openPreview="openPreview" :isMenu="isMenu" @closeSideBar="toggleMenu" :isHovered="isNavHowered"></my-nav>
   </header>
   <nav-preview @mouseleave="toggleNavHower" :isVisible="isNavHowered"></nav-preview>
   <bottom-cover :isVisible="isNavHowered"></bottom-cover>
@@ -76,7 +76,7 @@
           {{ $t('feedbackForm.title') }}
         </legend>
         <p
-          class="text-[1rem] mt-4 leading-6 min-[768px]:text-[1.5rem] min-[768px]:leading-10 min-[768px]:mt-5 min-[1100px]:ml-5">
+          class="text-[1rem] mt-4 leading-6 min-[768px]:text-[1.5rem] min-[768px]:leading-10 min-[768px]:mt-5 min-[1100px]:ml-5 !font-thin">
           {{ $t('feedbackForm.subtitle') }}
         </p>
       </div>
@@ -568,11 +568,11 @@ section {
 }
 
 #logoShort {
-  @apply ml-1 text-[#777777] text-[0.9rem] font-light w-[80%];
+  @apply ml-1 text-[#777777] text-[.9rem] w-[80%];
 }
 
 #slogan {
-  @apply text-[#777777] font-light text-lg w-[90%] pl-1 max-[500px]:font-medium;
+  @apply text-[#777777] text-2xl w-[90%] pl-1 max-[500px]:font-medium;
 }
 
 #host {
@@ -637,7 +637,7 @@ section {
 }
 
 #contactTitle {
-  @apply text-center text-3xl font-[500];
+  @apply text-center text-3xl font-[400];
 }
 
 
@@ -649,7 +649,7 @@ section {
 @media (max-width: 499px) {
   #hireSmall {
     @apply block fixed w-[30%] h-9 top-5 right-[20%];
-    z-index: 1000;
+    z-index: 100;
   }
 
 }
@@ -783,17 +783,17 @@ section {
   }
 
   #logoWrapper {
-    @apply mt-[150px] ml-[2rem];
+    @apply mt-[170px] ml-[2rem];
     scale: 100%;
   }
 
   #logoShort {
-    @apply w-[50%] text-[1.2rem];
+    @apply w-[50%] text-[20px];
     height: fit-content;
   }
 
   #slogan {
-    @apply w-[60rem] text-[2.1rem] pl-0 mt-11;
+    @apply w-[60rem] text-[2.1rem] pl-0 mt-6;
     margin-bottom: 5px;
   }
 }

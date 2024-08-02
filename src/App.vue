@@ -61,7 +61,7 @@ body {
 }
 
 .headingFont {
-  font-family: 'Red Hat Display', sans-serif;
+  /* font-family: 'Red Hat Display', sans-serif; */
 }
 
 .serviceHeadingFont {
@@ -69,9 +69,9 @@ body {
 }
 
 .fira {
-  font-family: 'IBM Plex Mono', monospace;
+  /* font-family: 'IBM Plex Mono', monospace; */
   font-optical-sizing: auto;
-  font-weight: 700;
+  /* font-weight: 700; */
   font-style: normal;
 }
 

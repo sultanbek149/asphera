@@ -60,23 +60,28 @@
     "about": [
       {
         "name": "Who we are?",
-        "description": "Meet Asphera Tech."
+        "description": "Meet Asphera Tech.",
+        "link": "null"
       },
       {
         "name": "Referral Program.",
-        "description": "Participate in our referral program and get rewards up to $500 for each client."
+        "description": "Participate in our referral program and get rewards up to $500 for each client.",
+        "link": "null"
       },
       {
         "name": "Our blog",
-        "description": null
+        "description": null,
+        "link": "https://t.me/asphera_tech"
       },
       {
         "name": "Our team",
-        "description": null
+        "description": null,
+        "link": "null"
       },
       {
         "name": "Our partners",
-        "description": null
+        "description": null,
+        "link": "null"
       }
     ]
   },
@@ -194,7 +199,7 @@
   },
   "whoWeAre": {
     "title": "WHO WE ARE?",
-    "subtitle": "ASPHERA <br> ECOSYSTEM"
+    "subtitle": "ASPHERA  ECOSYSTEM"
   },
   "feedbackForm": {
     "title": "Ready to improve your business performance?",

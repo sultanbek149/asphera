@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <nav ref="nav" v-show="isMenu">
+    <nav ref="nav" v-show="isMenu" :class="{ isHovered }">
       <img ref="logo" id="logo" src="@/assets/icons/asphera_black.png" alt="Demos logo" loading="lazy" />
 
       <ul id="links" class="inter">
@@ -23,11 +23,12 @@
           <div class="line"></div>
         </div>
 
-        <a target="_blank" class="social" href="https://web.telegram.org/a/">
-          <img id="telegram" src="../assets/icons/telegram.png" alt="telegram icon" loading="lazy" />
+
+        <a target="_blank" class="social" href="https://x.com/asphera_tech?s=21">
+          <img id="twitter" src="../assets/icons/Xblack.png" alt="twitter icon" loading="lazy" />
         </a>
-        <a target="_blank" class="social" href="https://www.twitter.com/">
-          <img id="twitter" src="../assets/icons/twitter.png" alt="twitter icon" loading="lazy" />
+        <a target="_blank" class="social" href="https://t.me/asphera_tech">
+          <img id="telegram" src="../assets/icons/tg.png" alt="telegram icon" loading="lazy" />
         </a>
       </ul>
       <div class="flex gap-4 items-center max-[500px]:justify-end max-[500px]:mr-5">
@@ -42,7 +43,8 @@
 export default {
   name: 'my-nav',
   props: {
-    isMenu: Boolean
+    isMenu: Boolean,
+    isHovered: Boolean,
   },
   data() {
     return {
@@ -137,8 +139,12 @@ a {
 
 @media (min-width: 500px) {
   nav {
-    @apply backdrop-blur-md bg-opacity-[21%] h-[4.5rem] mt-0 !important;
+    @apply bg-black backdrop-blur-md bg-opacity-[21%] h-[4.5rem] mt-0 !important;
     transform: translateY(-50%);
+  }
+
+  nav.isHovered {
+    @apply !bg-opacity-[1];
   }
 
   #links {
@@ -187,7 +193,11 @@ a {
 
   ul,
   a {
-    @apply font-bold;
+    /* @apply font-bold; */
+  }
+
+  .linkWrapper a {
+    font-weight: 600;
   }
 
   /*
@@ -204,10 +214,18 @@ a {
     /* aspect-ratio: 7/1.5; */
   }
 
+  .social:first-child {
+    margin-left: 5px;
+  }
+
   .social {
-    @apply block h-[3rem];
+    @apply flex h-[3rem] items-center justify-center text-center;
     aspect-ratio: 1;
     transition: all 0.3s ease;
+  }
+
+  .social img {
+    @apply w-[30px];
   }
 }
 
