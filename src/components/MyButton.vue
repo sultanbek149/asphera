@@ -59,8 +59,8 @@ a span:not(.text) {
 }
 
 .text {
+  @apply top-[49%] md:top-[48%] !font-normal;
   position: absolute;
-  top: 48%;
   left: 0;
   line-height: 0;
   height: fit-content;
