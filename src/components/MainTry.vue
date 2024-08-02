@@ -319,9 +319,9 @@ export default {
       const element = document.getElementById(sectionId)
       if (element) {
         const yOffset = -1040
-        // const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
 
-        window.scrollTo({ behavior: 'smooth' })
+        window.scrollTo({ top: y, behavior: 'smooth' })
       }
     },
     handleScrollBar() {
@@ -648,11 +648,12 @@ section {
 
 @media (max-width: 722px) {
   #hireSmall {
-    @apply block fixed w-[30%] h-9 top-5 right-[20%];
+    @apply block fixed w-[33%] h-9 top-5 right-[20%];
     z-index: 100;
   }
 
   #hireSmall .text {
+    @apply text-[1rem];
     top: 51% !important;
   }
 
