@@ -4,7 +4,7 @@
 
     <p id="copyright" class="inter">© 2024 ASPHERA</p>
 
-    <div id="socialWrapper">
+    <div id="socialWrapper" class="max-md:gap-6">
       <a target="_blank" class="social" href="https://t.me/asphera_tech">
         <img id="telegram" src="../assets/icons/tg.png" alt="telegram icon" loading="lazy" />
       </a>
