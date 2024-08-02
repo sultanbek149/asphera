@@ -2,7 +2,7 @@
   <pre-loader></pre-loader>
   <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
-      <div class="relative w-[45px] h-full max-[722px]:ml-[20px] max-[722px]:mt-[4px]">
+      <div class="relative w-[45px] h-full max-[1280px]:ml-[20px] max-[1280px]:mt-[4px]">
         <img id="logoImg" alt="Demos logo" loading="lazy" src="@/assets/icons/asphera_black.png" />
       </div>
     </div>
@@ -360,7 +360,7 @@ export default {
       }
     },
     toggleMenu() {
-      if (window.innerWidth < 722) {
+      if (window.innerWidth < 1280) {
         this.isMenu = !this.isMenu
         // this.toggleMenuIcon()
       }
@@ -373,12 +373,12 @@ export default {
       }
     },
     handleResize() {
-      if (window.innerWidth < 722) {
+      if (window.innerWidth < 1280) {
         this.isMenu = false
       } else {
         this.isMenu = true
       }
-      if (window.innerWidth < 722) {
+      if (window.innerWidth < 1280) {
         this.isMobile = true
       } else {
         this.isMobile = false
@@ -514,7 +514,7 @@ export default {
     //scroll trigger for the cases section
     this.initScrollTrigger()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('resize', this.handleResize)
   }
 }
@@ -624,7 +624,7 @@ section {
 
 
 #servicesTitle {
-  @apply text-[2rem] text-center;
+  @apply text-[2rem] text-center mb-4;
   font-weight: 600;
 }
 
@@ -646,9 +646,9 @@ section {
 
 
 
-@media (max-width: 722px) {
+@media (max-width: 1280px) {
   #hireSmall {
-    @apply block fixed w-[30%] h-9 top-5 right-[20%];
+    @apply block fixed w-[30%] max-w-[15rem] h-9 top-5 right-[20%];
     z-index: 100;
   }
 
@@ -690,7 +690,7 @@ section {
 
 /*500px*/
 
-@media (min-width: 722px) {
+@media (min-width: 1280px) {
   #logoImg {
     @apply hidden;
   }
@@ -712,9 +712,9 @@ section {
   }
 }
 
-/*722px*/
+/*1280px*/
 
-@media (min-width: 722px) {
+@media (min-width: 1280px) {
   #logoWrapper>#logo {
     width: 100%;
   }

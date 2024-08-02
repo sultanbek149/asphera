@@ -31,15 +31,15 @@ export default {
 }
 
 .prevSmallWrapper:hover {
-  /* @apply bg-white; */
-  background-image: url('@/assets/icons/grid.png');
+  @apply bg-white;
+  /* background-image: url('@/assets/icons/grid.png');
   background-repeat: no-repeat;
   background-size: 101%;
   background-position: center center;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .prevSmallWrapper:hover>.prevTitle {
-  /* @apply text-black; */
+  @apply text-black;
 }
 </style>

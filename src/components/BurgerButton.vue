@@ -142,7 +142,7 @@ export default {
 /* } */
 
 
-@media (min-width: 722px) {
+@media (min-width: 1280px) {
   #nav-icon4 {
     @apply hidden;
     z-index: 999;

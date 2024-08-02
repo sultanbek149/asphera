@@ -193,7 +193,7 @@ export default {
   }
 }
 
-@media (min-width: 722px) {
+@media (min-width: 1280px) {
   #wrapper {
     @apply w-[97%];
   }

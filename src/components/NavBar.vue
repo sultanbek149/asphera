@@ -31,7 +31,7 @@
           <img id="telegram" src="../assets/icons/tg.png" alt="telegram icon" loading="lazy" />
         </a>
       </ul>
-      <div class="flex gap-4 items-center max-[722px]:justify-end max-[722px]:mr-5">
+      <div class="flex gap-4 items-center max-[1280px]:justify-end max-[1280px]:mr-5">
         <language-switcher />
         <my-button @click="scrollTo(options[3].name)" id="hire">{{ $t('buttons.hireUs') }}</my-button>
       </div>
@@ -58,7 +58,7 @@ export default {
   },
   methods: {
     openPreview(id) {
-      if (window.innerWidth >= 722) {
+      if (window.innerWidth >= 1280) {
         this.$store.commit('docs/setCurrentSectionId', id);
         this.$emit('openPreview');
       }
@@ -69,11 +69,11 @@ export default {
       if (element) {
         let yOffset = -60
 
-        if (window.innerWidth <= 722 && sectionId == this.options[1].name) {
+        if (window.innerWidth <= 1280 && sectionId == this.options[1].name) {
           yOffset = -90;
         }
 
-        if (window.innerWidth <= 722 && sectionId == this.options[0].name) {
+        if (window.innerWidth <= 1280 && sectionId == this.options[0].name) {
           yOffset = 100
 
         }
@@ -87,7 +87,7 @@ export default {
     },
     startAnimation() {
       // Check if the screen width is more than 600px
-      if (window.innerWidth >= 722) {
+      if (window.innerWidth >= 1280) {
         // Trigger animation for large screens
         this.animateLargeScreen()
       }
@@ -108,7 +108,7 @@ export default {
 
 <style scoped>
 nav {
-  @apply text-xl bg-black bg-opacity-[0.75] w-[100vw] h-[100vh] fixed mt-[10vh];
+  @apply text-lg bg-black bg-opacity-[0.75] w-[100vw] h-[100vh] fixed mt-[10vh];
   z-index: 1000;
 }
 
@@ -137,7 +137,7 @@ a {
   @apply hidden;
 }
 
-@media (min-width: 722px) {
+@media (min-width: 1280px) {
   nav {
     @apply bg-black backdrop-blur-md bg-opacity-[21%] h-[4.5rem] mt-0 !important;
     transform: translateY(-50%);
@@ -152,7 +152,7 @@ a {
   }
 
   .linkWrapper {
-    @apply mb-0 rounded-full bg-[#131313] bg-opacity-25 p-2 px-4;
+    @apply mb-0 rounded-full bg-[#131313] bg-opacity-25 py-[3px] px-[12px] cursor-pointer;
   }
 
   .line {
@@ -172,10 +172,10 @@ a {
   }
 }
 
-@media (min-width: 722px) {
+@media (min-width: 1280px) {
   #links {
     @apply p-0 gap-[0.25rem] !important;
-    scale: 85%;
+    /* scale: 85%; */
   }
 
   .linkWrapper {
@@ -197,7 +197,7 @@ a {
   }
 
   .linkWrapper a {
-    font-weight: 600;
+    font-weight: 500;
   }
 
   /*

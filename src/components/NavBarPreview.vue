@@ -118,7 +118,7 @@ export default {
 
 /* 56 */
 
-@media (min-width: 722px) {
+@media (min-width: 1280px) {
   #previewWrapper {
     @apply opacity-100 pt-2 pb-6 px-3;
   }

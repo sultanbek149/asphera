@@ -1,7 +1,8 @@
 {
   "buttons": {
     "hireUs": "Hire us",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "connectWithUs": "Connect with us"
   },
   "locales": {
     "en": "English",

@@ -35,7 +35,7 @@ export default {
 
 
 .prevTitle {
-  @apply text-2xl text-white font-medium;
+  @apply text-2xl text-white font-normal;
   transition: all 0.3s ease;
 }
 
@@ -51,7 +51,7 @@ export default {
 .prevBigWrapper:hover {
   background-image: url('@/assets/icons/grid.png');
   background-repeat: no-repeat;
-  background-size: 102%;
+  background-size: 101% 101%;
   background-position: center center;
   overflow: hidden;
 }

@@ -55,7 +55,7 @@ export default {
 }
 
 .a {
-  @apply flex items-center text-center font-semibold text-[27px] min-[375px]:text-[35px] min-[675px]:text-[50px] min-[425px]:pt-1 min-[425px]:text-start min-[1100px]:text-[55px] min-[1100px]:pb-[20px] min-[1100px]:pt-0 leading-none md:pt-0;
+  @apply flex items-center text-center font-semibold text-[27px] min-[375px]:text-[35px] min-[675px]:text-[40px] min-[425px]:pt-1 min-[425px]:text-start min-[1100px]:text-[45px] min-[1100px]:pb-[20px] min-[1100px]:pt-0 min-[1200px]:text-[50px] min-[1200px]:leading-[3.3rem] leading-none md:pt-0;
 }
 
 .b {
