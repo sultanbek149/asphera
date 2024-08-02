@@ -31,7 +31,7 @@
           <img id="telegram" src="../assets/icons/tg.png" alt="telegram icon" loading="lazy" />
         </a>
       </ul>
-      <div class="flex gap-4 items-center max-[500px]:justify-end max-[500px]:mr-5">
+      <div class="flex gap-4 items-center max-[722px]:justify-end max-[722px]:mr-5">
         <language-switcher />
         <my-button @click="scrollTo(options[3].name)" id="hire">{{ $t('buttons.hireUs') }}</my-button>
       </div>
@@ -69,11 +69,11 @@ export default {
       if (element) {
         let yOffset = -60
 
-        if (window.innerWidth <= 500 && sectionId == this.options[1].name) {
+        if (window.innerWidth <= 722 && sectionId == this.options[1].name) {
           yOffset = -90;
         }
 
-        if (window.innerWidth <= 500 && sectionId == this.options[0].name) {
+        if (window.innerWidth <= 722 && sectionId == this.options[0].name) {
           yOffset = 100
 
         }
@@ -87,7 +87,7 @@ export default {
     },
     startAnimation() {
       // Check if the screen width is more than 600px
-      if (window.innerWidth >= 500) {
+      if (window.innerWidth >= 722) {
         // Trigger animation for large screens
         this.animateLargeScreen()
       }
@@ -137,7 +137,7 @@ a {
   @apply hidden;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 722px) {
   nav {
     @apply bg-black backdrop-blur-md bg-opacity-[21%] h-[4.5rem] mt-0 !important;
     transform: translateY(-50%);

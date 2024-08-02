@@ -2,7 +2,7 @@
   <pre-loader></pre-loader>
   <header class="z-100">
     <div class="absolute left-0 w-[45px] h-full">
-      <div class="relative w-[45px] h-full max-[500px]:ml-[20px]">
+      <div class="relative w-[45px] h-full max-[722px]:ml-[20px] mt-2">
         <img id="logoImg" alt="Demos logo" loading="lazy" src="@/assets/icons/asphera_black.png" />
       </div>
     </div>
@@ -360,7 +360,7 @@ export default {
       }
     },
     toggleMenu() {
-      if (window.innerWidth < 500) {
+      if (window.innerWidth < 722) {
         this.isMenu = !this.isMenu
         // this.toggleMenuIcon()
       }
@@ -373,7 +373,7 @@ export default {
       }
     },
     handleResize() {
-      if (window.innerWidth < 500) {
+      if (window.innerWidth < 722) {
         this.isMenu = false
       } else {
         this.isMenu = true
@@ -563,8 +563,8 @@ section {
 }
 
 #logoWrapper>#logo {
-  @apply text-4xl ml-[0.1rem] w-[60%];
-  font-weight: 200;
+  @apply text-4xl ml-[0.1rem] w-[70%] font-medium;
+  /* font-weight: 200; */
 }
 
 #logoShort {
@@ -572,7 +572,7 @@ section {
 }
 
 #slogan {
-  @apply text-[#777777] text-2xl w-[90%] pl-1 max-[500px]:font-medium;
+  @apply text-[#777777] text-2xl w-[90%] pl-1 ;
 }
 
 #host {
@@ -646,7 +646,7 @@ section {
 
 
 
-@media (max-width: 499px) {
+@media (max-width: 722px) {
   #hireSmall {
     @apply block fixed w-[30%] h-9 top-5 right-[20%];
     z-index: 100;
@@ -686,7 +686,7 @@ section {
 
 /*500px*/
 
-@media (min-width: 500px) {
+@media (min-width: 722px) {
   #logoImg {
     @apply hidden;
   }
