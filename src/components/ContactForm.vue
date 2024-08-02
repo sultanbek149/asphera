@@ -12,12 +12,13 @@
       <textarea id="message" name="message" v-model="message" rows="4" required aria-required="true"
         :placeholder="$t('feedbackForm.placeholders.help')"></textarea>
 
-      <div class="flex gap-6 justify-start">
+      <div class="flex flex-col-reverse items-center gap-5 md:flex-row md:gap-3 justify-start">
         <transparent-button class="text-white bg-[#4B71FF] rounded-[15px] !w-[12rem] py-3 font-[200]"
           @click.prevent="submitForm" aria-label="Submit button">{{
           $t('feedbackForm.placeholders.submit') }}</transparent-button>
 
-        <my-button href='https://t.me/asphera_manager' target="_blank" class="connect !w-[14rem] !h-[3rem] !rounded-[15px] hover:text-black">
+        <my-button href='https://t.me/asphera_manager' target="_blank"
+          class="connect !w-[14rem] !h-[3rem] !rounded-[15px] hover:text-black">
           <svg class="mr-2" width="25" height="26" viewBox="0 0 25 26" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"

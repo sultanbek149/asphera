@@ -1,5 +1,5 @@
 <template>
-  <a @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
+  <a class="btn" @touchstart="toggleActive" @touchend="toggleActive" :class="{ active: isActive }">
     <span class='text'>
       <slot></slot>
     </span>

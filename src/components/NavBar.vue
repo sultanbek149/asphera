@@ -78,7 +78,7 @@ export default {
 
         }
 
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+        const y = element.getBoundingClientRect().top + yOffset
 
         console.log("OFFSET: " + yOffset)
 

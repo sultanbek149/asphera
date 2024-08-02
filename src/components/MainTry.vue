@@ -318,7 +318,7 @@ export default {
       this.$emit('closeSideBar')
       const element = document.getElementById(sectionId)
       if (element) {
-        const yOffset = -1040
+        const yOffset = -140
         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
 
         window.scrollTo({ top: y, behavior: 'smooth' })
@@ -633,7 +633,7 @@ section {
 }
 
 #contact {
-  @apply flex flex-col mt-[10rem] h-fit pb-20 justify-start items-center gap-10 !important;
+  @apply flex flex-col pt-[5rem] h-fit pb-20 justify-start items-center gap-10 !important;
 }
 
 #contactTitle {
@@ -648,12 +648,11 @@ section {
 
 @media (max-width: 722px) {
   #hireSmall {
-    @apply block fixed w-[33%] h-9 top-5 right-[20%];
+    @apply block fixed w-[30%] h-9 top-5 right-[20%];
     z-index: 100;
   }
 
   #hireSmall .text {
-    @apply text-[1rem];
     top: 51% !important;
   }
 
